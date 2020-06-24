@@ -5,6 +5,7 @@ import MonsterLogo from "../../../lib/assets/monster.png";
 import HostImage from "../../../lib/assets/urbnsurf_logo.png";
 
 import StabLogo from "../../../lib/assets/stab-logo.svg";
+import Surf100Logo from "../../../lib/assets/surf-100.png";
 
 import { Tooltip } from "antd";
 
@@ -44,6 +45,9 @@ import {
 
 const EventPage = () => {
   const [activeTab, setActiveTab] = useState("Description");
+
+  const iframe =
+    '<iframe height="865" style="width: 100%;" scrolling="no" title="fx." src="https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>';
 
   const renderCTA = () => {
     return (
@@ -109,13 +113,18 @@ const EventPage = () => {
     );
   };
 
+  const Iframe = () => {
+    console.log({ iframe });
+    return <div dangerouslySetInnerHTML={{ __html: iframe }} />;
+  };
+
   return (
     <>
-      <SorryBanner>
+      {/* <SorryBanner>
         Event Cancelled. Expect your refund to process within the next 36 hours
-      </SorryBanner>
+      </SorryBanner> */}
       <Nav>
-        <img src={StabLogo} />
+        <img src={Surf100Logo} />
         <div>
           <a
             style={{ marginLeft: "8px", fontSize: "18px" }}
@@ -143,7 +152,8 @@ const EventPage = () => {
       </Nav>
       <PageContainer>
         <Main>
-          <EventBanner />
+          {/* <EventBanner /> */}
+          <div>{Iframe()}</div>
           <MenuBar>
             <MenuItem
               href="/#description"
@@ -179,7 +189,7 @@ const EventPage = () => {
             <EventDetails>{renderHostDetails()}</EventDetails>
           </MobileView>
           <MainSection>
-            <SectionBlock id="description">
+            {/*<SectionBlock id="description">
               <SectionTitle>Description</SectionTitle>
               <SectionCopy>
                 Featuring Noa Deane, Harry Bryant, Mason Ho, Matt Meola and more
@@ -576,7 +586,7 @@ const EventPage = () => {
                 </div>
                 <h5>Goons of Doom</h5>
               </ScheduleCard>
-            </SectionBlock>
+            </SectionBlock> */}
 
             <SectionBlock id="competitors">
               <SectionTitle>Competitors</SectionTitle>

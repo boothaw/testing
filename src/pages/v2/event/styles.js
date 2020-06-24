@@ -13,7 +13,7 @@ const Nav = styled.div`
   padding: 0px 32px;
 
   img {
-    height: 20px;
+    height: 30px;
   }
 
   a {
