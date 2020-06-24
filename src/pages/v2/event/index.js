@@ -40,20 +40,21 @@ import {
   MobileView,
   DesktopView,
   StickyScroll,
-  SorryBanner
+  SorryBanner,
+  IframeContainer
 } from "./styles";
 
 const EventPage = () => {
   const [activeTab, setActiveTab] = useState("Description");
 
   const iframe =
-    '<iframe height="850" style="width: 100%;" scrolling="no" title="fx." src="https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>';
+    '<iframe width="802px" height="100%" id="scaled-frame" title="fx." src="https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>';
 
   const renderCTA = () => {
     return (
       <>
         <Title>Surf 100</Title>
-        <SubTitle>Hosted at ...</SubTitle>
+        <SubTitle>Hosted...</SubTitle>
         <div className="dates-and-price">
           <div className="row">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -90,7 +91,7 @@ const EventPage = () => {
             <img src={HostImage} />
           </div>
           <div>
-            <label>Hosted at</label>
+            <label>Event Info</label>
             <Title>TBD</Title>
           </div>
         </div>
@@ -114,7 +115,6 @@ const EventPage = () => {
   };
 
   const Iframe = () => {
-    console.log({ iframe });
     return <div dangerouslySetInnerHTML={{ __html: iframe }} />;
   };
 
@@ -151,19 +151,9 @@ const EventPage = () => {
         </div>
       </Nav>
       <PageContainer>
-        <div>{Iframe()}</div>
         <Main>
           {/* <EventBanner /> */}
-          <DesktopView>
-            <StickyScroll>
-              <EventDetails>{renderCTA()}</EventDetails>
-              <EventDetails>{renderHostDetails()}</EventDetails>
-            </StickyScroll>
-          </DesktopView>
-          {/* <MobileView>
-            <EventDetails>{renderCTA()}</EventDetails>
-            <EventDetails>{renderHostDetails()}</EventDetails>
-          </MobileView> */}
+          <IframeContainer>{Iframe()}</IframeContainer>
           <MenuBar>
             <MenuItem
               href="/#description"
@@ -194,6 +184,10 @@ const EventPage = () => {
               Competitors
             </MenuItem>
           </MenuBar>
+          <MobileView>
+            <EventDetails>{renderCTA()}</EventDetails>
+            <EventDetails>{renderHostDetails()}</EventDetails>
+          </MobileView>
           <MainSection>
             {/*<SectionBlock id="description">
               <SectionTitle>Description</SectionTitle>
@@ -611,7 +605,7 @@ const EventPage = () => {
                 ))}
               </CompetitorRow>
             </SectionBlock>
-            <SectionBlock>
+            {/* <SectionBlock>
               <SectionTitle>Ladybirds</SectionTitle>
               <CompetitorRow>
                 {ladybirds_melbourne_2020.map(surfer => (
@@ -627,16 +621,16 @@ const EventPage = () => {
                   </CompetitorCard>
                 ))}
               </CompetitorRow>
-            </SectionBlock>
+            </SectionBlock> */}
           </MainSection>
         </Main>
         <Panel>
-          {/* <DesktopView>
+          <DesktopView>
             <StickyScroll>
               <EventDetails>{renderCTA()}</EventDetails>
               <EventDetails>{renderHostDetails()}</EventDetails>
             </StickyScroll>
-          </DesktopView> */}
+          </DesktopView>
         </Panel>
       </PageContainer>
     </>
