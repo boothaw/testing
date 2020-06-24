@@ -22,18 +22,18 @@ const Nav = styled.div`
 `;
 
 const PageContainer = styled.div`
-  max-width: 1200px;
+  max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: 1fr 350px;
+  // grid-template-row: 1fr 350px;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   padding: 0px 16px;
 
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-  }
+  // @media (max-width: 900px) {
+  //   grid-template-columns: 1fr;
+  // }
 `;
 
 const Main = styled.div``;
@@ -478,6 +478,11 @@ const SorryBanner = styled.div`
   justify-content: center;
   color: #fff;
 `;
+
+// const IframeContainer = styled.div`
+//   height: 100%;
+//   width: 1250px;
+// `;
 
 export {
   Nav,

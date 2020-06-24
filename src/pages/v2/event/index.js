@@ -47,13 +47,13 @@ const EventPage = () => {
   const [activeTab, setActiveTab] = useState("Description");
 
   const iframe =
-    '<iframe height="865" style="width: 100%;" scrolling="no" title="fx." src="https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>';
+    '<iframe height="850" style="width: 100%;" scrolling="no" title="fx." src="https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>';
 
   const renderCTA = () => {
     return (
       <>
-        <Title>Stab High 2020 Melbourne</Title>
-        <SubTitle>Hosted at URBNSURF</SubTitle>
+        <Title>Surf 100</Title>
+        <SubTitle>Hosted at ...</SubTitle>
         <div className="dates-and-price">
           <div className="row">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -91,7 +91,7 @@ const EventPage = () => {
           </div>
           <div>
             <label>Hosted at</label>
-            <Title>URBNSURF</Title>
+            <Title>TBD</Title>
           </div>
         </div>
         <SecondaryText>
@@ -151,9 +151,19 @@ const EventPage = () => {
         </div>
       </Nav>
       <PageContainer>
+        <div>{Iframe()}</div>
         <Main>
           {/* <EventBanner /> */}
-          <div>{Iframe()}</div>
+          <DesktopView>
+            <StickyScroll>
+              <EventDetails>{renderCTA()}</EventDetails>
+              <EventDetails>{renderHostDetails()}</EventDetails>
+            </StickyScroll>
+          </DesktopView>
+          {/* <MobileView>
+            <EventDetails>{renderCTA()}</EventDetails>
+            <EventDetails>{renderHostDetails()}</EventDetails>
+          </MobileView> */}
           <MenuBar>
             <MenuItem
               href="/#description"
@@ -184,10 +194,6 @@ const EventPage = () => {
               Competitors
             </MenuItem>
           </MenuBar>
-          <MobileView>
-            <EventDetails>{renderCTA()}</EventDetails>
-            <EventDetails>{renderHostDetails()}</EventDetails>
-          </MobileView>
           <MainSection>
             {/*<SectionBlock id="description">
               <SectionTitle>Description</SectionTitle>
@@ -625,12 +631,12 @@ const EventPage = () => {
           </MainSection>
         </Main>
         <Panel>
-          <DesktopView>
+          {/* <DesktopView>
             <StickyScroll>
               <EventDetails>{renderCTA()}</EventDetails>
               <EventDetails>{renderHostDetails()}</EventDetails>
             </StickyScroll>
-          </DesktopView>
+          </DesktopView> */}
         </Panel>
       </PageContainer>
     </>
