@@ -432,33 +432,44 @@ const SorryBanner = styled.div`
 `;
 
 const IframeContainer = styled.div`
-  // width: 720px;
-  // height: 720px;
-  // padding: 0;
-  // overflow: hidden;
-  // border: red dashed;
+  width: 802px;
+  height: 555px;
+  // resize: both;
+  // overflow: auto;
+  padding: 0;
+  overflow: hidden;
 
-  // #scaled-frame {
-  //   width: 2000px;
-  //   height: 1000px;
-  //   border: purple dashed 1px;
-  // }
+  #scaled-frame {
+    width: 1902px;
+    height: 1050px;
+    // border: purple dashed 1px;
+    margin: 0;
+  }
 
-  // #scaled-frame {
-  //   zoom: 0.5;
-  //   -moz-transform: scale(0.5);
-  //   -moz-transform-origin: 0 0;
-  //   -o-transform: scale(0.5);
-  //   -o-transform-origin: 0 0;
-  //   -webkit-transform: scale(0.5);
-  //   -webkit-transform-origin: 0 0;
-  // }
+  #scaled-frame {
+    zoom: 0.65;
+    -moz-transform: scale(0.65);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.65);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.65);
+    -webkit-transform-origin: 0 0;
+  }
 
-  // @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  //   #scaled-frame {
-  //     zoom: 1;
-  //   }
-  // }
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    #scaled-frame {
+      zoom: 1;
+    }
+  }
+
+  @media (max-width: 900px) {
+  margin-left: 0;
+  margin-right: 0;
+  
+  #scaled-frame {
+
+  }
+    
 `;
 
 export {

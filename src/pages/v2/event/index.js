@@ -48,7 +48,7 @@ const EventPage = () => {
   const [activeTab, setActiveTab] = useState("Description");
 
   const iframe =
-    '<iframe width="802px" height="100%" id="scaled-frame" title="fx." src="https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>';
+    '<iframe width="100%" height="100%" id="scaled-frame" src="https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>';
 
   const renderCTA = () => {
     return (
@@ -76,9 +76,9 @@ const EventPage = () => {
         >
           Buy Tickets
         </Button>
-        <ButtonSecondary onClick={() => window.location.replace("/watch")}>
+        {/* <ButtonSecondary onClick={() => window.location.replace("/watch")}>
           Purchase Pay-Per-View
-        </ButtonSecondary>
+        </ButtonSecondary> */}
       </>
     );
   };
@@ -115,7 +115,7 @@ const EventPage = () => {
   };
 
   const Iframe = () => {
-    return <div dangerouslySetInnerHTML={{ __html: iframe }} />;
+    return <IframeContainer dangerouslySetInnerHTML={{ __html: iframe }} />;
   };
 
   return (
@@ -153,7 +153,7 @@ const EventPage = () => {
       <PageContainer>
         <Main>
           {/* <EventBanner /> */}
-          <IframeContainer>{Iframe()}</IframeContainer>
+          <div>{Iframe()}</div>
           <MenuBar>
             <MenuItem
               href="/#description"
@@ -189,11 +189,11 @@ const EventPage = () => {
             <EventDetails>{renderHostDetails()}</EventDetails>
           </MobileView>
           <MainSection>
-            {/*<SectionBlock id="description">
+            <SectionBlock id="description">
               <SectionTitle>Description</SectionTitle>
               <SectionCopy>
-                Featuring Noa Deane, Harry Bryant, Mason Ho, Matt Meola and more
-                on an artificial kicker...
+                Featuring Kelly Slater, Mike Reid and John Reader at their home
+                breaks.
                 <ul>
                   <li>
                     100% of ticket sales will be donated to Greening Australia.
@@ -586,7 +586,7 @@ const EventPage = () => {
                 </div>
                 <h5>Goons of Doom</h5>
               </ScheduleCard>
-            </SectionBlock> */}
+            </SectionBlock>
 
             <SectionBlock id="competitors">
               <SectionTitle>Competitors</SectionTitle>
