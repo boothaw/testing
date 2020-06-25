@@ -20,7 +20,6 @@ const Nav = styled.div`
 `;
 
 const PageContainer = styled.div`
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   display: grid;
@@ -28,13 +27,17 @@ const PageContainer = styled.div`
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   padding: 16px 16px 0;
-  @media (max-width: 900px) {
+  @media (max-width: 1600px) {
     grid-template-columns: 1fr;
   }
   background-color: #fafafa;
 `;
 
-const Main = styled.div``;
+const Main = styled.div`
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
 const Panel = styled.div``;
 
@@ -89,6 +92,22 @@ const EventDetails = styled.div`
       height: 60px;
     }
   }
+
+  .hosts100 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 76px;
+    width: 76px;
+    border: 1px solid #f1f2f5;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
+    border-radius: 8px;
+    margin-right: 12px;
+    img {
+      height: 30px;
+    }
+  }
 `;
 
 const EventBanner = styled.div`
@@ -115,22 +134,22 @@ const MenuBar = styled.div`
 `;
 
 const MenuItem = styled.a`
-  flex: 1;
-  display flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 0px 24px;
-  border-bottom: 2px solid ${props => (props.active ? "#000" : "#fff")};
-  color: #000;
-  text-decoration: none;
-  &:hover {
-    cursor: pointer;
-  }
-  @media (max-width: 900px) {
-    padding: 0px;
-    font-size: 12px;
-  }
+flex: 1;
+display flex;
+align-items: center;
+justify-content: center;
+height: 100%;
+padding: 0px 24px;
+border-bottom: 2px solid ${props => (props.active ? "#000" : "#fff")};
+color: #000;
+text-decoration: none;
+&:hover {
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  padding: 0px;
+  font-size: 12px;
+}
 `;
 
 const MainSection = styled.div`
@@ -413,16 +432,24 @@ const ButtonSecondary = styled.button`
 
 const MobileView = styled.div`
   display: initial;
-  @media (min-width: 900px) {
-    display: none;
+
+  // margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    // margin-top: 8px;
   }
 `;
 
 const DesktopView = styled.div`
   display: initial;
-  @media (max-width: 900px) {
-    display: none;
-  }
+  // @media (max-width: 900px) {
+  //   display: none;
+  // }
 `;
 
 const StickyScroll = styled.div`
@@ -442,17 +469,14 @@ const SorryBanner = styled.div`
 `;
 
 const IframeContainer = styled.div`
-  // width: 802px;
-  // height: 555px;
-  // // resize: both;
-  // // overflow: auto;
-  // padding: 0;
-  // overflow: hidden;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   width: 100%;
-  padding-top: 75%;
+  max-width: 902px;
+  // padding-top: 75%;
   height: 895px;
+  margin-left: auto;
+  margin-right: auto;
 
   #scaled-frame {
     position: absolute;
@@ -463,37 +487,6 @@ const IframeContainer = styled.div`
     width: 100%;
     height: 100%;
   }
-
-  // #scaled-frame {
-  //   width: 1902px;
-  //   height: 1050px;
-  //   // border: purple dashed 1px;
-  //   margin: 0;
-  // }
-
-  // #scaled-frame {
-  //   zoom: 0.65;
-  //   -moz-transform: scale(0.65);
-  //   -moz-transform-origin: 0 0;
-  //   -o-transform: scale(0.65);
-  //   -o-transform-origin: 0 0;
-  //   -webkit-transform: scale(0.65);
-  //   -webkit-transform-origin: 0 0;
-  // }
-
-  // @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  //   #scaled-frame {
-  //     zoom: 1;
-  //   }
-  // }
-
-  // @media (max-width: 900px) {
-  // margin-left: 0;
-  // margin-right: 0;
-
-  // #scaled-frame {
-
-  // }
 `;
 
 const S100Logo = styled.div`

@@ -55,9 +55,16 @@ const EventPage = () => {
     return (
       <>
         {/* <Title>Surf 100</Title> */}
-        <S100Logo>
-          <img src={Surf100Logo} />
-        </S100Logo>
+
+        <div className="host-banner">
+          <div className="hosts100">
+            <img src={Surf100Logo} />
+          </div>
+        </div>
+        <div>
+          {/* <label>Event Info</label> */}
+          {/* <Title>Watch the Event</Title> */}
+        </div>
 
         {/* <SubTitle>Hosted...</SubTitle> */}
         <div className="dates-and-price">
@@ -70,16 +77,8 @@ const EventPage = () => {
             From $14.99 - $127.20
           </div>
         </div>
-        {/* <Button
-          mb="12px"
-          onClick={() =>
-            window.open(
-              "https://www.eventbrite.com.au/e/stab-high-an-international-surfing-contest-in-melbourne-tickets-95535339773?aff=ebdssbeac",
-              "_blank"
-            )
-          }
-        >
-          Buy Tickets
+        {/* <Button mb="12px" onClick={() => window.open("", "_blank")}>
+          Log In
         </Button> */}
         <ButtonSecondary onClick={() => window.location.replace("/watch")}>
           Purchase Pay-Per-View
@@ -642,12 +641,12 @@ const EventPage = () => {
           </MainSection>
         </Main>
         <Panel>
-          <DesktopView>
+          {/* <DesktopView>
             <StickyScroll>
               <EventDetails>{renderCTA()}</EventDetails>
               <EventDetails>{renderHostDetails()}</EventDetails>
             </StickyScroll>
-          </DesktopView>
+          </DesktopView> */}
         </Panel>
       </PageContainer>
     </>
