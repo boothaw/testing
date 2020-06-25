@@ -1,14 +1,14 @@
 export const surfers_melbourne_2020 = [
   {
-    name: "Wade Goodall",
-    photo: "https://i.ibb.co/ydDbSv3/Wade-Goodall.png",
+    name: "Kelly Slater",
+    photo: "https://www.gstatic.com/tv/thumb/persons/215777/215777_v9_bb.jpg",
     age: 33,
     hometown: "Sunshine Coast, QLD, Australia",
     bio:
       "Not one to typically don the singlet, Mr. Goodall will make an exception at Stab High Melbourne because his conscience won’t allow him to pass up a free ramp.  "
   },
   {
-    name: "Harry Bryant",
+    name: "Mike Reid",
     photo: "https://i.ibb.co/DWKxDZB/Harry-Bryant.png",
     age: 23,
     hometown: "Sunshine Coast, QLD, Australia",
@@ -16,7 +16,7 @@ export const surfers_melbourne_2020 = [
       "Surfing’s best haircut belongs to Harry Bryant. If all goes well in Melbourne, he’ll have another meaningless trophy to rest on his mantle."
   },
   {
-    name: "Jett Schilling",
+    name: "John Reader",
     photo: "https://i.ibb.co/q1WMXLQ/Jett-Schilling.png",
     age: 16,
     hometown: "San Clemente, CA, USA",

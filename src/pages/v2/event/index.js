@@ -41,11 +41,12 @@ import {
   DesktopView,
   StickyScroll,
   SorryBanner,
-  IframeContainer
+  IframeContainer,
+  S100Logo
 } from "./styles";
 
 const EventPage = () => {
-  const [activeTab, setActiveTab] = useState("Description");
+  const [activeTab, setActiveTab] = useState("Scoring");
 
   const iframe =
     '<iframe width="100%" height="100%" id="scaled-frame" src="https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>';
@@ -53,8 +54,12 @@ const EventPage = () => {
   const renderCTA = () => {
     return (
       <>
-        <Title>Surf 100</Title>
-        <SubTitle>Hosted...</SubTitle>
+        {/* <Title>Surf 100</Title> */}
+        <S100Logo>
+          <img src={Surf100Logo} />
+        </S100Logo>
+
+        {/* <SubTitle>Hosted...</SubTitle> */}
         <div className="dates-and-price">
           <div className="row">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -65,7 +70,7 @@ const EventPage = () => {
             From $14.99 - $127.20
           </div>
         </div>
-        <Button
+        {/* <Button
           mb="12px"
           onClick={() =>
             window.open(
@@ -75,10 +80,10 @@ const EventPage = () => {
           }
         >
           Buy Tickets
-        </Button>
-        {/* <ButtonSecondary onClick={() => window.location.replace("/watch")}>
+        </Button> */}
+        <ButtonSecondary onClick={() => window.location.replace("/watch")}>
           Purchase Pay-Per-View
-        </ButtonSecondary> */}
+        </ButtonSecondary>
       </>
     );
   };
@@ -88,27 +93,24 @@ const EventPage = () => {
       <>
         <div className="host-banner">
           <div className="host">
-            <img src={HostImage} />
+            {" "}
+            {/* need permission or better logo for lost img here */}
+            <img src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/10517675_10152745041342688_1556850807273125968_n.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=8s_gIcQNuGIAX8g4ija&_nc_ht=scontent-sea1-1.xx&oh=5c6de695163248a8e5cc4e8591429489&oe=5F1AABC6" />{" "}
           </div>
           <div>
-            <label>Event Info</label>
-            <Title>TBD</Title>
+            {/* <label>Event Info</label> */}
+            <Title>Want to vote?</Title>
           </div>
         </div>
         <SecondaryText>
-          Located just 5 minutes from Melbourne airport and 23 minutes from
+          {/* Located just 5 minutes from Melbourne airport and 23 minutes from
           Melbourne CBD, Australia’s first-ever surf park is now open at 309
-          Melrose Drive, Tullamarine.
+          Melrose Drive, Tullamarine. */}
+          The person with the closest votes to our head judge will get a free
+          Mayhem surfboard! We just gotta know who you are to give it to you.
         </SecondaryText>
-        <ButtonSecondary
-          onClick={() =>
-            window.open(
-              "https://www.google.com/maps/dir//URBNSURF+Melbourne,+309+Melrose+Dr,+Tullamarine+VIC+3045,+Australia/@-37.6866251,144.8654545,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x6ad65978cf1f6f57:0x2b79603356a4d0d2!2m2!1d144.8676485!2d-37.6866251",
-              "_blank"
-            )
-          }
-        >
-          Get Directions
+        <ButtonSecondary onClick={() => window.location.replace("/watch")}>
+          Gimme that board!
         </ButtonSecondary>
       </>
     );
@@ -163,19 +165,26 @@ const EventPage = () => {
               Description
             </MenuItem>
             <MenuItem
-              href="/#sponsors"
-              onClick={() => setActiveTab("Sponsors")}
-              active={activeTab === "Sponsors"}
+              href="/#scoring"
+              onClick={() => setActiveTab("Scoring")}
+              active={activeTab === "Scoring"}
             >
-              Sponsors
+              Scoring
             </MenuItem>
             <MenuItem
+              href="/#sponsor"
+              onClick={() => setActiveTab("Sponsor")}
+              active={activeTab === "Sponsor"}
+            >
+              Sponsored by
+            </MenuItem>
+            {/* <MenuItem
               href="/#schedule"
               onClick={() => setActiveTab("Schedule")}
               active={activeTab === "Schedule"}
             >
               Schedule
-            </MenuItem>
+            </MenuItem> */}
             <MenuItem
               href="/#competitors"
               onClick={() => setActiveTab("Competitors")}
@@ -192,64 +201,72 @@ const EventPage = () => {
             <SectionBlock id="description">
               <SectionTitle>Description</SectionTitle>
               <SectionCopy>
-                Featuring Kelly Slater, Mike Reid and John Reader at their home
-                breaks.
                 <ul>
                   <li>
-                    100% of ticket sales will be donated to Greening Australia.
-                  </li>
-                  <li>
-                    The first stop of the Stab High world tour takes place in
-                    Melbourne, Australia. The event started in 2018 and this is
-                    the first event that have ever taken place outside of Waco,
-                    Texas.
-                  </li>
-                  <li>
-                    This year the Ladybirds will be back, a young women's aerial
-                    event. Reigning champ Sierra Kerr will be back to defend her
-                    title against the "flying squirrel", Quincy Symonds.
-                  </li>
-                  <li>
-                    There'll be live music, food carts and refreshments. The
-                    event is fully licensed and no outside drinks are permitted
-                    inside the venue.
-                  </li>
-                  <li>
-                    VIP tickets include coffee, lunch, alcoholic beverages along
-                    with non-alcoholic options. Tickets also include Stab High
-                    tote bag, hat, stubbie cooler and towel.
-                  </li>
-                  <li>
-                    Kids under 13 are free. It's a family friendly event and
-                    drinking will only take place in licensed areas.
-                  </li>
-                  <li>
-                    Everyone will be allowed to surf, sorry not the premiere
-                    out-the-back wave but the reform wave in the lagoon.
+                    Do we want an event description right here ?? Each one of
+                    the surfers gets 100 mins to surf their home break and you
+                    get to judge them. Simple, right? Each one of the surfers
+                    gets 100 mins to surf their home break and you get to judge
+                    them. Simple, right?
                   </li>
                 </ul>
               </SectionCopy>
             </SectionBlock>
 
+            <SectionBlock id="scoring">
+              <SectionTitle>How to score a wave in Surf100:</SectionTitle>
+              <SectionCopy>
+                <ul>
+                  <li>
+                    Our 50-point scale is based on 5 universal principles of
+                    surf spectating: first impression, style/flow, wave
+                    magnitude, productivity, and performance.
+                  </li>
+                </ul>
+                <ul>
+                  <li>Step 1: Watch the clip.</li>
+                  <li>
+                    Step 2: Consider the clip's quality relative to other clips
+                    from the session.
+                  </li>
+                  <li>Step 3: Score the clip out of 50.</li>
+                </ul>
+                <ul>
+                  <li>
+                    Hint: If you're used to scoring clips out of 10, simply
+                    multiply the score that came to your mind by 5.
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    So, if you think a clip is a 5/10, it would be a 25/50 here.
+                  </li>
+                </ul>
+                <ul>
+                  <li>Capiche?</li>
+                </ul>
+              </SectionCopy>
+            </SectionBlock>
+
             <SectionBlock id="sponsors">
-              <SectionTitle>Sponsors</SectionTitle>
+              <SectionTitle>Sponsored By</SectionTitle>
               <SponsorsRow>
-                <a href="https://www.vans.com/" target="_blank">
+                <a href="https://stabmag.com/" target="_blank">
                   <SponsorCard>
-                    <img src={VansLogo} />
+                    <img src={StabLogo} />
                   </SponsorCard>
                 </a>
-                <a href="https://www.monsterenergy.com/" target="_blank">
+                {/* <a href="https://www.monsterenergy.com/" target="_blank">
                   <SponsorCard large>
                     <img src={MonsterLogo} />
                   </SponsorCard>
-                </a>
+                </a> */}
               </SponsorsRow>
             </SectionBlock>
 
-            <SectionBlock id="schedule">
-              <SectionTitle>Schedule</SectionTitle>
-              <ScheduleCard>
+            {/* <SectionBlock id="schedule">
+              <SectionTitle>Schedule</SectionTitle> */}
+            {/* <ScheduleCard>
                 <div className="label-row">
                   <div>
                     <label>RIGHTS</label>
@@ -586,7 +603,7 @@ const EventPage = () => {
                 </div>
                 <h5>Goons of Doom</h5>
               </ScheduleCard>
-            </SectionBlock>
+            </SectionBlock> */}
 
             <SectionBlock id="competitors">
               <SectionTitle>Competitors</SectionTitle>

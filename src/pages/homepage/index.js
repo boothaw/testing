@@ -126,16 +126,22 @@ const Homepage = () => {
       </Section>
 
       <Section>
-        <SectionTitle>
-          Purchase Live Stream
-        </SectionTitle>
-        <div id="inplayer-91519" className="inplayer-paywall preview-frame"></div>
+        <SectionTitle>Purchase Live Stream</SectionTitle>
+        <div
+          id="inplayer-91519"
+          className="inplayer-paywall preview-frame"
+        ></div>
       </Section>
       <Section id="faq" topSpace>
         <SectionTitle>Frequently Asked Questions</SectionTitle>
         <FaqContainer>
           {faqData.faqs.map(f => (
-            <Faq key={f.title} title={f.title} p1={f.paragraph_one} p2={f.paragraph_two} />
+            <Faq
+              key={f.title}
+              title={f.title}
+              p1={f.paragraph_one}
+              p2={f.paragraph_two}
+            />
           ))}
         </FaqContainer>
       </Section>

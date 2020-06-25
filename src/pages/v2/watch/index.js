@@ -28,6 +28,8 @@ import {
 
 import PhoneDoodle from "../../../lib/assets/phone.png";
 
+import Surf100Logo from "../../../lib/assets/surf-100.png";
+
 const Watch = () => {
   const [loading, setLoading] = useState(true);
   const [signedIn, setSignedIn] = useState(false);
@@ -398,7 +400,7 @@ const Watch = () => {
     <>
       <Nav>
         <a href="/">
-          <img src={StabLogo} />
+          <img src={Surf100Logo} />
         </a>
         <div>
           <a

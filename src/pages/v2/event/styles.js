@@ -3,7 +3,7 @@ import styled from "styled-components";
 import EventBannerImage from "../../../lib/assets/stab_melbourne_2020.jpg";
 
 const Nav = styled.div`
-  margin-bottom: 16px;
+  // margin-bottom: 16px;
   height: 64px;
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
@@ -27,10 +27,11 @@ const PageContainer = styled.div`
   grid-template-columns: 1fr 350px;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
-  padding: 0px 16px;
+  padding: 16px 16px 0;
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
   }
+  background-color: #fafafa;
 `;
 
 const Main = styled.div``;
@@ -177,14 +178,23 @@ const SectionCopy = styled.p`
   font-size: 14px;
   line-height: 24px;
   color: #757a8a;
+
   p {
     margin-top: 6px;
     margin-bottom: 6px;
   }
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    list-style: none;
+  }
 `;
 
 const SponsorsRow = styled.div`
-  display: grid;
+  display: row;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 16px;
@@ -432,44 +442,65 @@ const SorryBanner = styled.div`
 `;
 
 const IframeContainer = styled.div`
-  width: 802px;
-  height: 555px;
-  // resize: both;
-  // overflow: auto;
-  padding: 0;
+  // width: 802px;
+  // height: 555px;
+  // // resize: both;
+  // // overflow: auto;
+  // padding: 0;
+  // overflow: hidden;
+  position: relative;
   overflow: hidden;
+  width: 100%;
+  padding-top: 75%;
+  height: 895px;
 
   #scaled-frame {
-    width: 1902px;
-    height: 1050px;
-    // border: purple dashed 1px;
-    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
   }
 
-  #scaled-frame {
-    zoom: 0.65;
-    -moz-transform: scale(0.65);
-    -moz-transform-origin: 0 0;
-    -o-transform: scale(0.65);
-    -o-transform-origin: 0 0;
-    -webkit-transform: scale(0.65);
-    -webkit-transform-origin: 0 0;
-  }
+  // #scaled-frame {
+  //   width: 1902px;
+  //   height: 1050px;
+  //   // border: purple dashed 1px;
+  //   margin: 0;
+  // }
 
-  @media screen and (-webkit-min-device-pixel-ratio: 0) {
-    #scaled-frame {
-      zoom: 1;
-    }
-  }
+  // #scaled-frame {
+  //   zoom: 0.65;
+  //   -moz-transform: scale(0.65);
+  //   -moz-transform-origin: 0 0;
+  //   -o-transform: scale(0.65);
+  //   -o-transform-origin: 0 0;
+  //   -webkit-transform: scale(0.65);
+  //   -webkit-transform-origin: 0 0;
+  // }
 
-  @media (max-width: 900px) {
-  margin-left: 0;
-  margin-right: 0;
-  
-  #scaled-frame {
+  // @media screen and (-webkit-min-device-pixel-ratio: 0) {
+  //   #scaled-frame {
+  //     zoom: 1;
+  //   }
+  // }
 
+  // @media (max-width: 900px) {
+  // margin-left: 0;
+  // margin-right: 0;
+
+  // #scaled-frame {
+
+  // }
+`;
+
+const S100Logo = styled.div`
+  img {
+    height: 40px;
+    margin-bottom: 8px;
   }
-    
 `;
 
 export {
@@ -499,5 +530,6 @@ export {
   DesktopView,
   StickyScroll,
   SorryBanner,
-  IframeContainer
+  IframeContainer,
+  S100Logo
 };
