@@ -276,7 +276,7 @@ const Watch = () => {
       return (
         <ChatNotLoggedIn>
           <img src={PhoneDoodle} />
-          <SectionTitle>Join the Stab High Convo!</SectionTitle>
+          <SectionTitle>Join the Surf 100 Convo!</SectionTitle>
           <SecondaryText>
             Don't leave the commentary to the judges. Have something to say? Do
             it here.
@@ -315,7 +315,7 @@ const Watch = () => {
       return (
         <ChatNotLoggedIn>
           <img src={PhoneDoodle} />
-          <SectionTitle>Join the Stab High Convo!</SectionTitle>
+          <SectionTitle>Join the Surf 100 Convo!</SectionTitle>
           <SecondaryText>
             Login with your email and password to chat
           </SecondaryText>

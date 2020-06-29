@@ -54,19 +54,15 @@ const EventPage = () => {
   const renderCTA = () => {
     return (
       <>
-        {/* <Title>Surf 100</Title> */}
+        <Title>Surf 100</Title>
 
-        <div className="host-banner">
+        {/* <div className="host-banner">
           <div className="hosts100">
             <img src={Surf100Logo} />
           </div>
-        </div>
-        <div>
-          {/* <label>Event Info</label> */}
-          {/* <Title>Watch the Event</Title> */}
-        </div>
+        </div> */}
 
-        {/* <SubTitle>Hosted...</SubTitle> */}
+        <SubTitle>Hosted...</SubTitle>
         <div className="dates-and-price">
           <div className="row">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -98,7 +94,7 @@ const EventPage = () => {
           </div>
           <div>
             {/* <label>Event Info</label> */}
-            <Title>Want to vote?</Title>
+            <Title>Free Surfboard?</Title>
           </div>
         </div>
         <SecondaryText>
@@ -109,7 +105,7 @@ const EventPage = () => {
           Mayhem surfboard! We just gotta know who you are to give it to you.
         </SecondaryText>
         <ButtonSecondary onClick={() => window.location.replace("/watch")}>
-          Gimme that board!
+          Log In
         </ButtonSecondary>
       </>
     );
@@ -247,7 +243,7 @@ const EventPage = () => {
               </SectionCopy>
             </SectionBlock>
 
-            <SectionBlock id="sponsors">
+            <SectionBlock id="sponsor">
               <SectionTitle>Sponsored By</SectionTitle>
               <SponsorsRow>
                 <a href="https://stabmag.com/" target="_blank">

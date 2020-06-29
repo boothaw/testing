@@ -26,10 +26,11 @@ const PageContainer = styled.div`
   grid-template-columns: 1fr 350px;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
-  padding: 16px 16px 0;
-  @media (max-width: 1600px) {
-    grid-template-columns: 1fr;
-  }
+  padding: 0 16px 0;
+  // @media (max-width: 1600px) {
+  //   grid-template-columns: 1fr;
+  // }
+  grid-template-columns: 1fr;
   background-color: #fafafa;
 `;
 
