@@ -20,24 +20,28 @@ const Nav = styled.div`
 `;
 
 const PageContainer = styled.div`
+  background-color: #fafafa;
+  padding: 16px 16px 0;
+`;
+
+const BodyContainer = styled.div`
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: 1fr 350px;
+  grid-template-columns: 1fr 300px;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
-  padding: 0 16px 0;
-  // @media (max-width: 1600px) {
-  //   grid-template-columns: 1fr;
-  // }
-  grid-template-columns: 1fr;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+
   background-color: #fafafa;
 `;
 
 const Main = styled.div`
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 900px;
 `;
 
 const Panel = styled.div``;
@@ -435,23 +439,39 @@ const MobileView = styled.div`
   display: initial;
 
   // margin-top: 16px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // grid-template-rows: 1fr;
+  // grid-column-gap: 16px;
+  // grid-row-gap: 16px;
+  @media (min-width: 900px) {
+    // grid-template-columns: 1fr;
     // margin-top: 8px;
+    display: none;
   }
 `;
 
+// const MobileView = styled.div`
+//   display: initial;
+//   @media (min-width: 900px) {
+//     display: none;
+//   }
+// `;
+
 const DesktopView = styled.div`
   display: initial;
-  // @media (max-width: 900px) {
-  //   display: none;
-  // }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
+
+// const DesktopView = styled.div`
+//   display: initial;
+//   @media (max-width: 900px) {
+//     display: none;
+//   }
+// `;
 
 const StickyScroll = styled.div`
   position: sticky;
@@ -473,7 +493,7 @@ const IframeContainer = styled.div`
   position: relative;
   // overflow: hidden;
   width: 100%;
-  max-width: 902px;
+  max-width: 875px;
   // padding-top: 75%;
   height: 895px;
   margin-left: auto;
@@ -525,5 +545,6 @@ export {
   StickyScroll,
   SorryBanner,
   IframeContainer,
-  S100Logo
+  S100Logo,
+  BodyContainer
 };

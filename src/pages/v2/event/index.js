@@ -42,7 +42,8 @@ import {
   StickyScroll,
   SorryBanner,
   IframeContainer,
-  S100Logo
+  S100Logo,
+  BodyContainer
 } from "./styles";
 
 const EventPage = () => {
@@ -148,120 +149,122 @@ const EventPage = () => {
         </div>
       </Nav>
       <PageContainer>
-        <Main>
-          {/* <EventBanner /> */}
-          <div>{Iframe()}</div>
-          <MenuBar>
-            <MenuItem
-              href="/#description"
-              onClick={() => setActiveTab("Description")}
-              active={activeTab === "Description"}
-            >
-              Description
-            </MenuItem>
-            <MenuItem
-              href="/#scoring"
-              onClick={() => setActiveTab("Scoring")}
-              active={activeTab === "Scoring"}
-            >
-              Scoring
-            </MenuItem>
-            <MenuItem
-              href="/#sponsor"
-              onClick={() => setActiveTab("Sponsor")}
-              active={activeTab === "Sponsor"}
-            >
-              Sponsored by
-            </MenuItem>
-            {/* <MenuItem
+        <BodyContainer>
+          <Main>
+            {/* <EventBanner /> */}
+            <div>{Iframe()}</div>
+            <MenuBar>
+              <MenuItem
+                href="/#description"
+                onClick={() => setActiveTab("Description")}
+                active={activeTab === "Description"}
+              >
+                Description
+              </MenuItem>
+              <MenuItem
+                href="/#scoring"
+                onClick={() => setActiveTab("Scoring")}
+                active={activeTab === "Scoring"}
+              >
+                Scoring
+              </MenuItem>
+              <MenuItem
+                href="/#sponsor"
+                onClick={() => setActiveTab("Sponsor")}
+                active={activeTab === "Sponsor"}
+              >
+                Sponsored by
+              </MenuItem>
+              {/* <MenuItem
               href="/#schedule"
               onClick={() => setActiveTab("Schedule")}
               active={activeTab === "Schedule"}
             >
               Schedule
             </MenuItem> */}
-            <MenuItem
-              href="/#competitors"
-              onClick={() => setActiveTab("Competitors")}
-              active={activeTab === "Competitors"}
-            >
-              Competitors
-            </MenuItem>
-          </MenuBar>
-          <MobileView>
-            <EventDetails>{renderCTA()}</EventDetails>
-            <EventDetails>{renderHostDetails()}</EventDetails>
-          </MobileView>
-          <MainSection>
-            <SectionBlock id="description">
-              <SectionTitle>Description</SectionTitle>
-              <SectionCopy>
-                <ul>
-                  <li>
-                    Do we want an event description right here ?? Each one of
-                    the surfers gets 100 mins to surf their home break and you
-                    get to judge them. Simple, right? Each one of the surfers
-                    gets 100 mins to surf their home break and you get to judge
-                    them. Simple, right?
-                  </li>
-                </ul>
-              </SectionCopy>
-            </SectionBlock>
+              <MenuItem
+                href="/#competitors"
+                onClick={() => setActiveTab("Competitors")}
+                active={activeTab === "Competitors"}
+              >
+                Competitors
+              </MenuItem>
+            </MenuBar>
+            <MobileView>
+              <EventDetails>{renderCTA()}</EventDetails>
+              <EventDetails>{renderHostDetails()}</EventDetails>
+            </MobileView>
+            <MainSection>
+              <SectionBlock id="description">
+                <SectionTitle>Description</SectionTitle>
+                <SectionCopy>
+                  <ul>
+                    <li>
+                      Do we want an event description right here ?? Each one of
+                      the surfers gets 100 mins to surf their home break and you
+                      get to judge them. Simple, right? Each one of the surfers
+                      gets 100 mins to surf their home break and you get to
+                      judge them. Simple, right?
+                    </li>
+                  </ul>
+                </SectionCopy>
+              </SectionBlock>
 
-            <SectionBlock id="scoring">
-              <SectionTitle>How to score a wave in Surf100:</SectionTitle>
-              <SectionCopy>
-                <ul>
-                  <li>
-                    Our 50-point scale is based on 5 universal principles of
-                    surf spectating: first impression, style/flow, wave
-                    magnitude, productivity, and performance.
-                  </li>
-                </ul>
-                <ul>
-                  <li>Step 1: Watch the clip.</li>
-                  <li>
-                    Step 2: Consider the clip's quality relative to other clips
-                    from the session.
-                  </li>
-                  <li>Step 3: Score the clip out of 50.</li>
-                </ul>
-                <ul>
-                  <li>
-                    Hint: If you're used to scoring clips out of 10, simply
-                    multiply the score that came to your mind by 5.
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    So, if you think a clip is a 5/10, it would be a 25/50 here.
-                  </li>
-                </ul>
-                <ul>
-                  <li>Capiche?</li>
-                </ul>
-              </SectionCopy>
-            </SectionBlock>
+              <SectionBlock id="scoring">
+                <SectionTitle>How to score a wave in Surf100:</SectionTitle>
+                <SectionCopy>
+                  <ul>
+                    <li>
+                      Our 50-point scale is based on 5 universal principles of
+                      surf spectating: first impression, style/flow, wave
+                      magnitude, productivity, and performance.
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>Step 1: Watch the clip.</li>
+                    <li>
+                      Step 2: Consider the clip's quality relative to other
+                      clips from the session.
+                    </li>
+                    <li>Step 3: Score the clip out of 50.</li>
+                  </ul>
+                  <ul>
+                    <li>
+                      Hint: If you're used to scoring clips out of 10, simply
+                      multiply the score that came to your mind by 5.
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      So, if you think a clip is a 5/10, it would be a 25/50
+                      here.
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>Capiche?</li>
+                  </ul>
+                </SectionCopy>
+              </SectionBlock>
 
-            <SectionBlock id="sponsor">
-              <SectionTitle>Sponsored By</SectionTitle>
-              <SponsorsRow>
-                <a href="https://stabmag.com/" target="_blank">
-                  <SponsorCard>
-                    <img src={StabLogo} />
-                  </SponsorCard>
-                </a>
-                {/* <a href="https://www.monsterenergy.com/" target="_blank">
+              <SectionBlock id="sponsor">
+                <SectionTitle>Sponsored By</SectionTitle>
+                <SponsorsRow>
+                  <a href="https://stabmag.com/" target="_blank">
+                    <SponsorCard>
+                      <img src={StabLogo} />
+                    </SponsorCard>
+                  </a>
+                  {/* <a href="https://www.monsterenergy.com/" target="_blank">
                   <SponsorCard large>
                     <img src={MonsterLogo} />
                   </SponsorCard>
                 </a> */}
-              </SponsorsRow>
-            </SectionBlock>
+                </SponsorsRow>
+              </SectionBlock>
 
-            {/* <SectionBlock id="schedule">
+              {/* <SectionBlock id="schedule">
               <SectionTitle>Schedule</SectionTitle> */}
-            {/* <ScheduleCard>
+              {/* <ScheduleCard>
                 <div className="label-row">
                   <div>
                     <label>RIGHTS</label>
@@ -600,24 +603,24 @@ const EventPage = () => {
               </ScheduleCard>
             </SectionBlock> */}
 
-            <SectionBlock id="competitors">
-              <SectionTitle>Competitors</SectionTitle>
-              <CompetitorRow>
-                {surfers_melbourne_2020.map(surfer => (
-                  <CompetitorCard>
-                    <img src={surfer.photo} />
-                    <div>
-                      <h4>
-                        {surfer.name}, {surfer.age}
-                      </h4>
-                      <h5>{surfer.hometown}</h5>
-                      <p>{surfer.bio}</p>
-                    </div>
-                  </CompetitorCard>
-                ))}
-              </CompetitorRow>
-            </SectionBlock>
-            {/* <SectionBlock>
+              <SectionBlock id="competitors">
+                <SectionTitle>Competitors</SectionTitle>
+                <CompetitorRow>
+                  {surfers_melbourne_2020.map(surfer => (
+                    <CompetitorCard>
+                      <img src={surfer.photo} />
+                      <div>
+                        <h4>
+                          {surfer.name}, {surfer.age}
+                        </h4>
+                        <h5>{surfer.hometown}</h5>
+                        <p>{surfer.bio}</p>
+                      </div>
+                    </CompetitorCard>
+                  ))}
+                </CompetitorRow>
+              </SectionBlock>
+              {/* <SectionBlock>
               <SectionTitle>Ladybirds</SectionTitle>
               <CompetitorRow>
                 {ladybirds_melbourne_2020.map(surfer => (
@@ -634,16 +637,17 @@ const EventPage = () => {
                 ))}
               </CompetitorRow>
             </SectionBlock> */}
-          </MainSection>
-        </Main>
-        <Panel>
-          {/* <DesktopView>
-            <StickyScroll>
-              <EventDetails>{renderCTA()}</EventDetails>
-              <EventDetails>{renderHostDetails()}</EventDetails>
-            </StickyScroll>
-          </DesktopView> */}
-        </Panel>
+            </MainSection>
+          </Main>
+          <Panel>
+            <DesktopView>
+              <StickyScroll>
+                <EventDetails>{renderCTA()}</EventDetails>
+                <EventDetails>{renderHostDetails()}</EventDetails>
+              </StickyScroll>
+            </DesktopView>
+          </Panel>
+        </BodyContainer>
       </PageContainer>
     </>
   );
