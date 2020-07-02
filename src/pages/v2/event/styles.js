@@ -22,10 +22,12 @@ const Nav = styled.div`
 const PageContainer = styled.div`
   background-color: #fafafa;
   padding: 16px 16px 0;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const BodyContainer = styled.div`
-  max-width: 1200px;
+  max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
   display: grid;
@@ -33,7 +35,7 @@ const BodyContainer = styled.div`
   grid-column-gap: 16px;
   grid-row-gap: 16px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1200px) {
     grid-template-columns: 1fr;
   }
 
@@ -42,6 +44,8 @@ const BodyContainer = styled.div`
 
 const Main = styled.div`
   max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const Panel = styled.div``;
@@ -52,6 +56,7 @@ const EventDetails = styled.div`
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
   border-radius: 8px;
   margin-bottom: 16px;
+
   @media (max-width: 900px) {
     padding: 16px;
   }
@@ -438,40 +443,26 @@ const ButtonSecondary = styled.button`
 const MobileView = styled.div`
   display: initial;
 
-  // margin-top: 16px;
-  // display: grid;
-  // grid-template-columns: 1fr 1fr;
-  // grid-template-rows: 1fr;
-  // grid-column-gap: 16px;
-  // grid-row-gap: 16px;
-  @media (min-width: 900px) {
-    // grid-template-columns: 1fr;
-    // margin-top: 8px;
+  @media (min-width: 1200px) {
     display: none;
   }
-`;
 
-// const MobileView = styled.div`
-//   display: initial;
-//   @media (min-width: 900px) {
-//     display: none;
-//   }
-// `;
+  @media (max-width: 1199px) and (min-width: 900px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    margin-top: 16px;
+  }
+`;
 
 const DesktopView = styled.div`
   display: initial;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1200px) {
     display: none;
   }
 `;
-
-// const DesktopView = styled.div`
-//   display: initial;
-//   @media (max-width: 900px) {
-//     display: none;
-//   }
-// `;
 
 const StickyScroll = styled.div`
   position: sticky;

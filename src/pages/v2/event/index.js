@@ -64,6 +64,8 @@ const EventPage = () => {
         </div> */}
 
         <SubTitle>Hosted...</SubTitle>
+        <SubTitle>Extra Info</SubTitle>
+
         <div className="dates-and-price">
           <div className="row">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -84,7 +86,7 @@ const EventPage = () => {
     );
   };
 
-  const renderHostDetails = () => {
+  const renderGiveAway = () => {
     return (
       <>
         <div className="host-banner">
@@ -94,8 +96,8 @@ const EventPage = () => {
             <img src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/10517675_10152745041342688_1556850807273125968_n.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=8s_gIcQNuGIAX8g4ija&_nc_ht=scontent-sea1-1.xx&oh=5c6de695163248a8e5cc4e8591429489&oe=5F1AABC6" />{" "}
           </div>
           <div>
-            {/* <label>Event Info</label> */}
-            <Title>Free Surfboard?</Title>
+            <label>Free...</label>
+            <Title>Mayhem Surfboard?</Title>
           </div>
         </div>
         <SecondaryText>
@@ -103,7 +105,7 @@ const EventPage = () => {
           Melbourne CBD, Australia’s first-ever surf park is now open at 309
           Melrose Drive, Tullamarine. */}
           The person with the closest votes to our head judge will get a free
-          Mayhem surfboard! We just gotta know who you are to give it to you.
+          Mayhem surfboard!
         </SecondaryText>
         <ButtonSecondary onClick={() => window.location.replace("/watch")}>
           Log In
@@ -192,21 +194,18 @@ const EventPage = () => {
             </MenuBar>
             <MobileView>
               <EventDetails>{renderCTA()}</EventDetails>
-              <EventDetails>{renderHostDetails()}</EventDetails>
+              <EventDetails>{renderGiveAway()}</EventDetails>
             </MobileView>
             <MainSection>
               <SectionBlock id="description">
                 <SectionTitle>Description</SectionTitle>
                 <SectionCopy>
-                  <ul>
-                    <li>
-                      Do we want an event description right here ?? Each one of
-                      the surfers gets 100 mins to surf their home break and you
-                      get to judge them. Simple, right? Each one of the surfers
-                      gets 100 mins to surf their home break and you get to
-                      judge them. Simple, right?
-                    </li>
-                  </ul>
+                  <p>
+                    Each one of the surfers gets 100 mins to surf their home
+                    break and you get to judge them. Simple, right? Each one of
+                    the surfers gets 100 mins to surf their home break and you
+                    get to judge them. Simple, right?
+                  </p>
                 </SectionCopy>
               </SectionBlock>
 
@@ -643,7 +642,7 @@ const EventPage = () => {
             <DesktopView>
               <StickyScroll>
                 <EventDetails>{renderCTA()}</EventDetails>
-                <EventDetails>{renderHostDetails()}</EventDetails>
+                <EventDetails>{renderGiveAway()}</EventDetails>
               </StickyScroll>
             </DesktopView>
           </Panel>
