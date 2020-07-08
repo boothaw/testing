@@ -55,7 +55,7 @@ const EventPage = () => {
   const renderCTA = () => {
     return (
       <>
-        <Title>Surf 100</Title>
+        <Title>SURF 100</Title>
 
         {/* <div className="host-banner">
           <div className="hosts100">
@@ -63,17 +63,17 @@ const EventPage = () => {
           </div>
         </div> */}
 
-        <SubTitle>Hosted...</SubTitle>
-        <SubTitle>Extra Info</SubTitle>
+        <SubTitle>Lorem ipsum dolor sit amet</SubTitle>
+        <SubTitle>Morbi porttitor quis dui eget cursus. </SubTitle>
 
         <div className="dates-and-price">
           <div className="row">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            Sat. 21 March 2020 11am - 9:00pm AEDT
+            Tues. 21 July 2020 6:00pm AEDT
           </div>
           <div className="row">
             <i class="fa fa-ticket" aria-hidden="true"></i>
-            From $14.99 - $127.20
+            $14.99
           </div>
         </div>
         {/* <Button mb="12px" onClick={() => window.open("", "_blank")}>
@@ -96,18 +96,36 @@ const EventPage = () => {
             <img src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/10517675_10152745041342688_1556850807273125968_n.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=8s_gIcQNuGIAX8g4ija&_nc_ht=scontent-sea1-1.xx&oh=5c6de695163248a8e5cc4e8591429489&oe=5F1AABC6" />{" "}
           </div>
           <div>
-            <label>Free...</label>
-            <Title>Mayhem Surfboard?</Title>
+            <Title>...Lost Board Giveaway</Title>
+            <label>Lorem ipsum dolor sit</label>
           </div>
         </div>
         <SecondaryText>
+          <p>
+            Matt ‘Mayhem’ Biolos is a revered San Clemente shaper, surf film
+            director, and always-abiding alliterator. He also happens to
+            construct surfboards for all three of our Surf100 competitors,
+            making this event one big (free) advertisement for his product.{" "}
+          </p>
+          <p>You’re welcome, Matt.</p>
+          <p>
+            Recognizing his good fortune and wanting to pay it forward, Mayhem
+            is offering a free board to one lucky Surf100 viewer. Actually, it’s
+            less about “luck” and more about scoring a subjective sport as
+            closely as possible to another flawed human. Silly, yes, but
+            officially a “game of skill.”
+          </p>
+          <p>Here’s how you win:</p>
+          <p>
+            Score each wave in the event out of 50 points. The viewer whose
+            scores on average are closest to our head judge’s, wins.
+          </p>
+          <p>It’s that easy...and that arbitrary. Good lu-- skill!</p>
           {/* Located just 5 minutes from Melbourne airport and 23 minutes from
           Melbourne CBD, Australia’s first-ever surf park is now open at 309
           Melrose Drive, Tullamarine. */}
-          The person with the closest votes to our head judge will get a free
-          Mayhem surfboard!
         </SecondaryText>
-        <ButtonSecondary onClick={() => window.location.replace("/watch")}>
+        <ButtonSecondary onClick={() => window.location.replace("")}>
           Log In
         </ButtonSecondary>
       </>
@@ -154,8 +172,19 @@ const EventPage = () => {
         <BodyContainer>
           <Main>
             {/* <EventBanner /> */}
+            <div
+              id="inplayer-91519"
+              className="inplayer-paywall preview-frame"
+            ></div>
             <div>{Iframe()}</div>
             <MenuBar>
+              <MenuItem
+                href="/#concept"
+                onClick={() => setActiveTab("Concept")}
+                active={activeTab === "Concept"}
+              >
+                Concept
+              </MenuItem>
               <MenuItem
                 href="/#description"
                 onClick={() => setActiveTab("Description")}
@@ -197,20 +226,85 @@ const EventPage = () => {
               <EventDetails>{renderGiveAway()}</EventDetails>
             </MobileView>
             <MainSection>
+              <SectionBlock id="concept">
+                <SectionTitle>Concept</SectionTitle>
+                <SectionCopy>
+                  <ul>
+                    <li>
+                      SURF100 is a video-part competition that takes place over
+                      a single, 100-minute period and is judged live, at a later
+                      date, by the internet. All of this is done following
+                      social distancing guidelines.
+                    </li>
+                  </ul>
+                </SectionCopy>
+              </SectionBlock>
               <SectionBlock id="description">
                 <SectionTitle>Description</SectionTitle>
                 <SectionCopy>
-                  <p>
-                    Each one of the surfers gets 100 mins to surf their home
-                    break and you get to judge them. Simple, right? Each one of
-                    the surfers gets 100 mins to surf their home break and you
-                    get to judge them. Simple, right?
+                  <ul>
+                    <li>
+                      The first event will be held at Lower Trestles, but we
+                      plan to recreate this format around the globe.
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>Here’s how it works:</li>
+                  </ul>
+                  <ul>
+                    <li>
+                      Three prominent surfers from a shared region will convene
+                      on a pristine day of waves at their local. They will surf
+                      against one another for 100 minutes, attempting to capture
+                      the best two-wave (right + left) video section in that
+                      time.
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      Unlike a traditional competition, the surfers will be
+                      performing in a lineup of everyday punters, just as they
+                      do every other day of the year. There are no spot permits,
+                      water-clearings, start-of-the-session horns, nor enforced
+                      priority between the surfers.
+                    </li>
+                  </ul>
+                  {/* <p>
+                    Three prominent surfers from a shared region will convene on
+                    a pristine day of waves at their local. They will surf
+                    against one another for 100 minutes, attempting to capture
+                    the best two-wave (right + left) video section in that time.
                   </p>
+                  <p>
+                    Unlike a traditional competition, the surfers will be
+                    performing in a lineup of everyday punters, just as they do
+                    every other day of the year. There are no spot permits,
+                    water-clearings, start-of-the-session horns, nor enforced
+                    priority between the surfers.
+                  </p> */}
+                  <ul>
+                    <li>
+                      The 100 minutes start with the wave of the
+                      local/state/country flag.{" "}
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      The surfers can ride as many waves as they want in the
+                      100-minute session. The waves will each be considered
+                      separate “clips” that can be used in their final
+                      “section”. Each section will consist of two clips—one
+                      right, one left.
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>The best section, according to the internet, wins. </li>
+                  </ul>
                 </SectionCopy>
               </SectionBlock>
 
               <SectionBlock id="scoring">
-                <SectionTitle>How to score a wave in Surf100:</SectionTitle>
+                <SectionTitle>How to score a wave:</SectionTitle>
                 <SectionCopy>
                   <ul>
                     <li>
@@ -253,11 +347,11 @@ const EventPage = () => {
                       <img src={StabLogo} />
                     </SponsorCard>
                   </a>
-                  {/* <a href="https://www.monsterenergy.com/" target="_blank">
-                  <SponsorCard large>
-                    <img src={MonsterLogo} />
-                  </SponsorCard>
-                </a> */}
+                  <a href="https://www.monsterenergy.com/" target="_blank">
+                    <SponsorCard large>
+                      <img src={MonsterLogo} />
+                    </SponsorCard>
+                  </a>
                 </SponsorsRow>
               </SectionBlock>
 

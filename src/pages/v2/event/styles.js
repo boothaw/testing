@@ -46,6 +46,41 @@ const Main = styled.div`
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+
+  .inplayer-paywall {
+    width: 100%;
+    color: #fff;
+
+    .preview-text {
+      color: #fff;
+      position: absolute;
+      bottom: -30px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .preview-frame {
+    > div {
+      position: relative;
+      // overflow: hidden;
+      padding-top: 56.25%;
+    }
+
+    .inplayer-preview-box {
+      padding: 0px;
+      border: none;
+    }
+
+    .iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
 `;
 
 const Panel = styled.div``;
@@ -223,7 +258,7 @@ const SectionCopy = styled.p`
 `;
 
 const SponsorsRow = styled.div`
-  display: row;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 16px;
