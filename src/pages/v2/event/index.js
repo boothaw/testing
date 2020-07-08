@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import VansLogo from "../../../lib/assets/vans.png";
 import MonsterLogo from "../../../lib/assets/monster.png";
@@ -6,8 +6,13 @@ import HostImage from "../../../lib/assets/urbnsurf_logo.png";
 
 import StabLogo from "../../../lib/assets/stab-logo.svg";
 import Surf100Logo from "../../../lib/assets/surf-100.png";
+import useCollapse from "react-collapsed";
 
 import { Tooltip } from "antd";
+
+import fire from "../../../lib/firebase";
+import moment from "moment";
+import { Spin, message } from "antd";
 
 import {
   surfers_melbourne_2020,
@@ -43,11 +48,37 @@ import {
   SorryBanner,
   IframeContainer,
   S100Logo,
-  BodyContainer
+  BodyContainer,
+  ChatNotLoggedIn,
+  Input,
+  Error,
+  ChatView,
+  MessageBox,
+  MessageList,
+  Message,
+  LoadingWrapper,
+  NewMessages,
+  LostCopyContainer
 } from "./styles";
 
 const EventPage = () => {
   const [activeTab, setActiveTab] = useState("Scoring");
+
+  const [loading, setLoading] = useState(true);
+  const [signedIn, setSignedIn] = useState(false);
+  const [showSignIn, setShowSignIn] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [userName, setUsername] = useState("");
+  const [formError, setFormError] = useState("");
+  const [userId, setUserId] = useState("");
+  const [currentMessage, setCurrentMessage] = useState("");
+  const [messages, setMessages] = useState({});
+  const [newMessages, setNewMessages] = useState(false);
+  const [isExpanded, setExpanded] = useState(false);
+  const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
+
+  // const inputRef = useRef();
 
   const iframe =
     '<iframe width="100%" height="100%" id="scaled-frame" src="https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>';
@@ -64,7 +95,10 @@ const EventPage = () => {
         </div> */}
 
         <SubTitle>Lorem ipsum dolor sit amet</SubTitle>
-        <SubTitle>Morbi porttitor quis dui eget cursus. </SubTitle>
+        <SubTitle>
+          Duis pharetra dictum hendrerit. Morbi nisi turpis, elementum vel
+          tristique non.{" "}
+        </SubTitle>
 
         <div className="dates-and-price">
           <div className="row">
@@ -83,6 +117,35 @@ const EventPage = () => {
           Purchase Pay-Per-View
         </ButtonSecondary>
       </>
+    );
+  };
+
+  const renderLostCopy = () => {
+    return (
+      <LostCopyContainer>
+        <section {...getCollapseProps()}>
+          <p>
+            Recognizing his good fortune and wanting to pay it forward, Mayhem
+            is offering a free board to one lucky Surf100 viewer. Actually, it’s
+            less about “luck” and more about scoring a subjective sport as
+            closely as possible to another flawed human. Silly, yes, but
+            officially a “game of skill.”
+          </p>
+          <p>Here’s how you win:</p>
+          <p>
+            Score each wave in the event out of 50 points. The viewer whose
+            scores on average are closest to our head judge’s, wins.
+          </p>
+          <p>It’s that easy...and that arbitrary. Good lu-- skill!</p>
+        </section>
+        <button
+          {...getToggleProps({
+            onClick: () => setExpanded(prevExpanded => !prevExpanded)
+          })}
+        >
+          {isExpanded ? "See Less" : "See More"}
+        </button>
+      </LostCopyContainer>
     );
   };
 
@@ -107,20 +170,9 @@ const EventPage = () => {
             construct surfboards for all three of our Surf100 competitors,
             making this event one big (free) advertisement for his product.{" "}
           </p>
-          <p>You’re welcome, Matt.</p>
-          <p>
-            Recognizing his good fortune and wanting to pay it forward, Mayhem
-            is offering a free board to one lucky Surf100 viewer. Actually, it’s
-            less about “luck” and more about scoring a subjective sport as
-            closely as possible to another flawed human. Silly, yes, but
-            officially a “game of skill.”
-          </p>
-          <p>Here’s how you win:</p>
-          <p>
-            Score each wave in the event out of 50 points. The viewer whose
-            scores on average are closest to our head judge’s, wins.
-          </p>
-          <p>It’s that easy...and that arbitrary. Good lu-- skill!</p>
+          {/* <p>You’re welcome, Matt.</p> */}
+          {/* <div>{renderLostCopy()}</div> */}
+
           {/* Located just 5 minutes from Melbourne airport and 23 minutes from
           Melbourne CBD, Australia’s first-ever surf park is now open at 309
           Melrose Drive, Tullamarine. */}
@@ -135,6 +187,80 @@ const EventPage = () => {
   const Iframe = () => {
     return <IframeContainer dangerouslySetInnerHTML={{ __html: iframe }} />;
   };
+
+  useEffect(() => {
+    const checkUserSignedIn = async () => {
+      try {
+        const user = localStorage.getItem("STAB_HIGH_CHAT_UID");
+
+        if (user) {
+          setUserId(user);
+
+          const userDetails = await fire
+            .database()
+            .ref(`users/${user}`)
+            .once("value");
+
+          const value = await userDetails.val();
+
+          if (value.userName) {
+            setUsername(value.userName);
+            setEmail(value.email);
+            setSignedIn(true);
+            setFormError(false);
+            setShowSignIn(false);
+
+            localStorage.setItem("STAB_HIGH_CHAT_EMAIL", value.email);
+            localStorage.setItem("STAB_HIGH_CHAT_USERNAME", value.userName);
+            localStorage.setItem("STAB_HIGH_CHAT_COLOR", value.color);
+          }
+        } else {
+          setSignedIn(false);
+          setFormError(false);
+          setShowSignIn(true);
+        }
+      } catch (error) {
+        setSignedIn(false);
+        setFormError(false);
+        setShowSignIn(true);
+      }
+    };
+
+    checkUserSignedIn();
+
+    const threadRef = fire.database().ref("thread");
+    threadRef.on("value", function(snapshot) {
+      setMessages(snapshot.val());
+      // should update message???
+      const messageList = document.getElementById("message-list");
+
+      if (messageList) {
+        const threshold = messageList.scrollTop;
+        const bounds = messageList.scrollHeight - messageList.clientHeight;
+
+        if (bounds - threshold < 200) {
+          messageList.scrollTop = messageList.scrollHeight;
+        } else {
+          setNewMessages(true);
+        }
+      }
+    });
+
+    if (window.InplayerPaywall) {
+      var paywall = new window.InplayerPaywall(
+        "23b08bc0-c50c-4bb1-8606-6a2db940919e",
+        [
+          {
+            id: 91519
+          }
+        ]
+      );
+
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+    }
+  }, []);
 
   return (
     <>

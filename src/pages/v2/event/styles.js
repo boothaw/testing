@@ -543,6 +543,22 @@ const S100Logo = styled.div`
   }
 `;
 
+const LostCopyContainer = styled.div`
+  button {
+    border: none;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.2s ease;
+    ${props => props.mb && `margin-bottom: ${props.mb};`}
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+`;
+
 export {
   Nav,
   PageContainer,
@@ -572,5 +588,6 @@ export {
   SorryBanner,
   IframeContainer,
   S100Logo,
-  BodyContainer
+  BodyContainer,
+  LostCopyContainer
 };

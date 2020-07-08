@@ -263,138 +263,138 @@ const Watch = () => {
     }
   };
 
-  const renderView = () => {
-    if (loading) {
-      return (
-        <LoadingWrapper>
-          <Spin />
-        </LoadingWrapper>
-      );
-    }
+  // const renderView = () => {
+  //   if (loading) {
+  //     return (
+  //       <LoadingWrapper>
+  //         <Spin />
+  //       </LoadingWrapper>
+  //     );
+  //   }
 
-    if (!signedIn && !showSignIn) {
-      return (
-        <ChatNotLoggedIn>
-          <img src={PhoneDoodle} />
-          <SectionTitle>Join the Surf 100 Convo!</SectionTitle>
-          <SecondaryText>
-            Don't leave the commentary to the judges. Have something to say? Do
-            it here.
-          </SecondaryText>
-          <Input
-            onChange={e => setEmail(e.currentTarget.value)}
-            placeholder="Email address"
-          />
-          <Input
-            onChange={e => setPassword(e.currentTarget.value)}
-            placeholder="Password"
-            type="password"
-          />
-          <Input
-            maxLength={20}
-            onChange={e => setUsername(e.currentTarget.value)}
-            placeholder="Username"
-          />
-          <Button mb="12px" onClick={createUserAccount} google>
-            {loading ? "Loading..." : "Create Account"}
-          </Button>
-          <Button
-            onClick={() => {
-              setShowSignIn(true);
-              setFormError(false);
-            }}
-          >
-            Sign In
-          </Button>
-          {formError && <Error>{formError}</Error>}
-        </ChatNotLoggedIn>
-      );
-    }
+  //   if (!signedIn && !showSignIn) {
+  //     return (
+  //       <ChatNotLoggedIn>
+  //         <img src={PhoneDoodle} />
+  //         <SectionTitle>Join the Surf 100 Convo!</SectionTitle>
+  //         <SecondaryText>
+  //           Don't leave the commentary to the judges. Have something to say? Do
+  //           it here.
+  //         </SecondaryText>
+  //         <Input
+  //           onChange={e => setEmail(e.currentTarget.value)}
+  //           placeholder="Email address"
+  //         />
+  //         <Input
+  //           onChange={e => setPassword(e.currentTarget.value)}
+  //           placeholder="Password"
+  //           type="password"
+  //         />
+  //         <Input
+  //           maxLength={20}
+  //           onChange={e => setUsername(e.currentTarget.value)}
+  //           placeholder="Username"
+  //         />
+  //         <Button mb="12px" onClick={createUserAccount} google>
+  //           {loading ? "Loading..." : "Create Account"}
+  //         </Button>
+  //         <Button
+  //           onClick={() => {
+  //             setShowSignIn(true);
+  //             setFormError(false);
+  //           }}
+  //         >
+  //           Sign In
+  //         </Button>
+  //         {formError && <Error>{formError}</Error>}
+  //       </ChatNotLoggedIn>
+  //     );
+  //   }
 
-    if (!signedIn && showSignIn) {
-      return (
-        <ChatNotLoggedIn>
-          <img src={PhoneDoodle} />
-          <SectionTitle>Join the Surf 100 Convo!</SectionTitle>
-          <SecondaryText>
-            Login with your email and password to chat
-          </SecondaryText>
-          <Input
-            onChange={e => setEmail(e.currentTarget.value)}
-            placeholder="Email address"
-          />
-          <Input
-            onChange={e => setPassword(e.currentTarget.value)}
-            placeholder="Password"
-            type="password"
-          />
-          <Button mb="12px" onClick={signInUser} google>
-            {loading ? "Loading..." : "Sign In"}
-          </Button>
-          <Button
-            onClick={() => {
-              setShowSignIn(false);
-              setFormError(false);
-            }}
-          >
-            No account? Create one.
-          </Button>
-          {formError && <Error>{formError}</Error>}
-        </ChatNotLoggedIn>
-      );
-    }
+  //   if (!signedIn && showSignIn) {
+  //     return (
+  //       <ChatNotLoggedIn>
+  //         <img src={PhoneDoodle} />
+  //         <SectionTitle>Join the Surf 100 Convo!</SectionTitle>
+  //         <SecondaryText>
+  //           Login with your email and password to chat
+  //         </SecondaryText>
+  //         <Input
+  //           onChange={e => setEmail(e.currentTarget.value)}
+  //           placeholder="Email address"
+  //         />
+  //         <Input
+  //           onChange={e => setPassword(e.currentTarget.value)}
+  //           placeholder="Password"
+  //           type="password"
+  //         />
+  //         <Button mb="12px" onClick={signInUser} google>
+  //           {loading ? "Loading..." : "Sign In"}
+  //         </Button>
+  //         <Button
+  //           onClick={() => {
+  //             setShowSignIn(false);
+  //             setFormError(false);
+  //           }}
+  //         >
+  //           No account? Create one.
+  //         </Button>
+  //         {formError && <Error>{formError}</Error>}
+  //       </ChatNotLoggedIn>
+  //     );
+  //   }
 
-    return (
-      <ChatView>
-        <div className="chat-header">
-          <img src={PhoneDoodle} />
-          <SectionTitle>Event Chat</SectionTitle>
-        </div>
+  //   return (
+  //     <ChatView>
+  //       <div className="chat-header">
+  //         <img src={PhoneDoodle} />
+  //         <SectionTitle>Event Chat</SectionTitle>
+  //       </div>
 
-        <MessageList id="message-list">
-          {messages &&
-            Object.keys(messages).map(message => {
-              const m = messages[message];
+  //       <MessageList id="message-list">
+  //         {messages &&
+  //           Object.keys(messages).map(message => {
+  //             const m = messages[message];
 
-              return (
-                <Message key={message} you={m.message.user === userName}>
-                  <div className="header">
-                    <div style={{ display: "flex", alignItems: "center" }}>
-                      <div
-                        className="avatar"
-                        style={{ backgroundColor: m.message.color }}
-                      >
-                        {m.message.user.charAt(0).toUpperCase()}
-                      </div>
-                      <div className="user">{m.message.user}</div>
-                    </div>
+  //             return (
+  //               <Message key={message} you={m.message.user === userName}>
+  //                 <div className="header">
+  //                   <div style={{ display: "flex", alignItems: "center" }}>
+  //                     <div
+  //                       className="avatar"
+  //                       style={{ backgroundColor: m.message.color }}
+  //                     >
+  //                       {m.message.user.charAt(0).toUpperCase()}
+  //                     </div>
+  //                     <div className="user">{m.message.user}</div>
+  //                   </div>
 
-                    <div className="time">
-                      {moment(m.message.timeSent).format("MM/DD hh:mm a")}
-                    </div>
-                  </div>
-                  <div className="body">{m.message.message}</div>
-                </Message>
-              );
-            })}
-        </MessageList>
+  //                   <div className="time">
+  //                     {moment(m.message.timeSent).format("MM/DD hh:mm a")}
+  //                   </div>
+  //                 </div>
+  //                 <div className="body">{m.message.message}</div>
+  //               </Message>
+  //             );
+  //           })}
+  //       </MessageList>
 
-        <MessageBox>
-          {newMessages && (
-            <NewMessages onClick={scrollMessagesToBottom}>
-              New Messages
-            </NewMessages>
-          )}
-          <Input
-            ref={inputRef}
-            onChange={e => setCurrentMessage(e.target.value)}
-            value={currentMessage}
-            placeholder="Type your message"
-          />
-        </MessageBox>
-      </ChatView>
-    );
-  };
+  //       <MessageBox>
+  //         {newMessages && (
+  //           <NewMessages onClick={scrollMessagesToBottom}>
+  //             New Messages
+  //           </NewMessages>
+  //         )}
+  //         <Input
+  //           ref={inputRef}
+  //           onChange={e => setCurrentMessage(e.target.value)}
+  //           value={currentMessage}
+  //           placeholder="Type your message"
+  //         />
+  //       </MessageBox>
+  //     </ChatView>
+  //   );
+  // };
 
   return (
     <>
@@ -434,9 +434,9 @@ const Watch = () => {
             className="inplayer-paywall preview-frame"
           ></div>
         </Main>
-        <Panel>
+        {/* <Panel>
           <EventDetails>{renderView()}</EventDetails>
-        </Panel>
+        </Panel> */}
       </PageContainer>
     </>
   );
