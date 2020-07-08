@@ -13,7 +13,7 @@ export const surfers_melbourne_2020 = [
     photo:
       "https://m.media-amazon.com/images/M/MV5BOWNmYTc5NTQtZDdkZC00M2VkLWE2NWUtYjhiYjMwYmZjMWRkXkEyXkFqcGdeQXVyMzI5NDcxNzI@._V1_.jpg",
     age: 21,
-    hometown: "Mission Viejo????, CA, USA",
+    hometown: "San Clemente, CA, USA",
     bio:
       "The next in line for Lowers supremacy is Griffin Colapinto, whose very existence threatens Kolohe’s reign. More of a “feel” surfer than Brother, Griffin’s languid approach is easy on the eyes and warming to the heart. But don’t let his leisurely gait fool you--Griff’s as competitive as they come and would love nothing more than to knock Kolohe from his perch. "
   },

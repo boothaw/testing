@@ -83,6 +83,12 @@ const EventPage = () => {
   const iframe =
     '<iframe width="100%" height="100%" id="scaled-frame" src="https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>';
 
+  // const url_string = "http://localhost:3000/";
+
+  // iframe.src = url_string;
+
+  // const user = url_string+"?"
+
   const renderCTA = () => {
     return (
       <>
@@ -177,9 +183,7 @@ const EventPage = () => {
           Melbourne CBD, Australia’s first-ever surf park is now open at 309
           Melrose Drive, Tullamarine. */}
         </SecondaryText>
-        <ButtonSecondary onClick={() => window.location.replace("")}>
-          Log In
-        </ButtonSecondary>
+        <ButtonSecondary>Log In</ButtonSecondary>
       </>
     );
   };
