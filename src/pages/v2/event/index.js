@@ -45,20 +45,10 @@ import {
   MobileView,
   DesktopView,
   StickyScroll,
-  SorryBanner,
   IframeContainer,
   S100Logo,
   BodyContainer,
-  ChatNotLoggedIn,
-  Input,
-  Error,
-  ChatView,
-  MessageBox,
-  MessageList,
-  Message,
-  LoadingWrapper,
-  NewMessages,
-  LostCopyContainer
+  SeeMoreButton
 } from "./styles";
 
 const EventPage = () => {
@@ -100,7 +90,6 @@ const EventPage = () => {
           </div>
         </div> */}
 
-        <SubTitle>Lorem ipsum dolor sit amet</SubTitle>
         <SubTitle>
           Duis pharetra dictum hendrerit. Morbi nisi turpis, elementum vel
           tristique non.{" "}
@@ -126,35 +115,6 @@ const EventPage = () => {
     );
   };
 
-  const renderLostCopy = () => {
-    return (
-      <LostCopyContainer>
-        <section {...getCollapseProps()}>
-          <p>
-            Recognizing his good fortune and wanting to pay it forward, Mayhem
-            is offering a free board to one lucky Surf100 viewer. Actually, it’s
-            less about “luck” and more about scoring a subjective sport as
-            closely as possible to another flawed human. Silly, yes, but
-            officially a “game of skill.”
-          </p>
-          <p>Here’s how you win:</p>
-          <p>
-            Score each wave in the event out of 50 points. The viewer whose
-            scores on average are closest to our head judge’s, wins.
-          </p>
-          <p>It’s that easy...and that arbitrary. Good lu-- skill!</p>
-        </section>
-        <button
-          {...getToggleProps({
-            onClick: () => setExpanded(prevExpanded => !prevExpanded)
-          })}
-        >
-          {isExpanded ? "See Less" : "See More"}
-        </button>
-      </LostCopyContainer>
-    );
-  };
-
   const renderGiveAway = () => {
     return (
       <>
@@ -165,8 +125,8 @@ const EventPage = () => {
             <img src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/10517675_10152745041342688_1556850807273125968_n.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=8s_gIcQNuGIAX8g4ija&_nc_ht=scontent-sea1-1.xx&oh=5c6de695163248a8e5cc4e8591429489&oe=5F1AABC6" />{" "}
           </div>
           <div>
-            <Title>...Lost Board Giveaway</Title>
-            <label>Lorem ipsum dolor sit</label>
+            <Title>...Lost Giveaway</Title>
+            <label></label>
           </div>
         </div>
         <SecondaryText>
@@ -176,12 +136,11 @@ const EventPage = () => {
             construct surfboards for all three of our Surf100 competitors,
             making this event one big (free) advertisement for his product.{" "}
           </p>
-          {/* <p>You’re welcome, Matt.</p> */}
-          {/* <div>{renderLostCopy()}</div> */}
+          <p>You're welcome, Matt.</p>
 
-          {/* Located just 5 minutes from Melbourne airport and 23 minutes from
-          Melbourne CBD, Australia’s first-ever surf park is now open at 309
-          Melrose Drive, Tullamarine. */}
+          <SeeMoreButton onClick={() => window.location.replace("/#giveaway")}>
+            See more...
+          </SeeMoreButton>
         </SecondaryText>
         <ButtonSecondary>Log In</ButtonSecondary>
       </>
@@ -334,7 +293,7 @@ const EventPage = () => {
                 onClick={() => setActiveTab("Sponsor")}
                 active={activeTab === "Sponsor"}
               >
-                Sponsored by
+                Sponsors
               </MenuItem>
               {/* <MenuItem
               href="/#schedule"
@@ -343,6 +302,13 @@ const EventPage = () => {
             >
               Schedule
             </MenuItem> */}
+              <MenuItem
+                href="/#giveaway"
+                onClick={() => setActiveTab("Giveaway")}
+                active={activeTab === "Giveaway"}
+              >
+                Giveaway
+              </MenuItem>
               <MenuItem
                 href="/#competitors"
                 onClick={() => setActiveTab("Competitors")}
@@ -483,6 +449,50 @@ const EventPage = () => {
                     </SponsorCard>
                   </a>
                 </SponsorsRow>
+              </SectionBlock>
+
+              <SectionBlock id="giveaway">
+                <SectionTitle>...Lost Giveaway</SectionTitle>
+                <SectionCopy>
+                  <ul>
+                    <li>
+                      Matt ‘Mayhem’ Biolos is a revered San Clemente shaper,
+                      surf film director, and always-abiding alliterator. He
+                      also happens to construct surfboards for all three of our
+                      Surf100 competitors, making this event one big (free)
+                      advertisement for his product.{" "}
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>You’re welcome, Matt. </li>
+                  </ul>
+
+                  <ul>
+                    <li>
+                      Recognizing his good fortune and wanting to pay it
+                      forward, Mayhem is offering a free board to one lucky
+                      Surf100 viewer. Actually, it’s less about “luck” and more
+                      about scoring a subjective sport as closely as possible to
+                      another flawed human. Silly, yes, but officially a “game
+                      of skill.”
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>Here’s how you win: </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      Score each wave in the event out of 50 points. The viewer
+                      whose scores on average are closest to our head judge’s,
+                      wins.
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      It’s that easy...and that arbitrary. Good lu-- skill!{" "}
+                    </li>
+                  </ul>
+                </SectionCopy>
               </SectionBlock>
 
               {/* <SectionBlock id="schedule">

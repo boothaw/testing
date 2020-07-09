@@ -35,7 +35,7 @@ const BodyContainer = styled.div`
   grid-column-gap: 16px;
   grid-row-gap: 16px;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1205px) {
     grid-template-columns: 1fr;
   }
 
@@ -478,12 +478,12 @@ const ButtonSecondary = styled.button`
 const MobileView = styled.div`
   display: initial;
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1205px) {
     display: none;
   }
 
-  @media (max-width: 1199px) and (min-width: 900px) {
-    display: grid;
+  @media (max-width: 1205px) {
+    display: row;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 16px;
     grid-row-gap: 16px;
@@ -494,7 +494,7 @@ const MobileView = styled.div`
 const DesktopView = styled.div`
   display: initial;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1205px) {
     display: none;
   }
 `;
@@ -543,7 +543,11 @@ const S100Logo = styled.div`
   }
 `;
 
-const LostCopyContainer = styled.div`
+const LostDesktopContainer = styled.div`
+  @media (max-width: 1205px) {
+    display: none;
+  }
+
   button {
     border: none;
     background-color: white;
@@ -556,6 +560,26 @@ const LostCopyContainer = styled.div`
     &:hover {
       transform: scale(1.02);
     }
+  }
+`;
+
+const LostMobileContainer = styled.div`
+  @media (min-width: 1205px) {
+    display: none;
+  }
+`;
+
+const SeeMoreButton = styled.button`
+  border: none;
+  background-color: white;
+  color: #757a8a;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.2s ease;
+  ${props => props.mb && `margin-bottom: ${props.mb};`}
+  &:hover {
+    transform: scale(1.02);
   }
 `;
 
@@ -589,5 +613,7 @@ export {
   IframeContainer,
   S100Logo,
   BodyContainer,
-  LostCopyContainer
+  LostDesktopContainer,
+  LostMobileContainer,
+  SeeMoreButton
 };
