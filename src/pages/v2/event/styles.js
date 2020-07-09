@@ -238,7 +238,7 @@ const SectionTitle = styled.h3`
   color: #2c3242;
 `;
 
-const SectionCopy = styled.p`
+const SectionCopy = styled.div`
   font-size: 14px;
   line-height: 24px;
   color: #757a8a;
@@ -574,6 +574,7 @@ const SeeMoreButton = styled.button`
   background-color: white;
   color: #757a8a;
   margin: 0;
+  margin-bottom: 8px;
   padding: 0;
   cursor: pointer;
   transition: 0.2s ease;

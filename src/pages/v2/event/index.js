@@ -66,18 +66,11 @@ const EventPage = () => {
   const [messages, setMessages] = useState({});
   const [newMessages, setNewMessages] = useState(false);
   const [isExpanded, setExpanded] = useState(false);
-  const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
 
   // const inputRef = useRef();
 
   const iframe =
     '<iframe width="100%" height="100%" id="scaled-frame" src="https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>';
-
-  // const url_string = "http://localhost:3000/";
-
-  // iframe.src = url_string;
-
-  // const user = url_string+"?"
 
   const renderCTA = () => {
     return (
@@ -130,18 +123,17 @@ const EventPage = () => {
           </div>
         </div>
         <SecondaryText>
-          <p>
-            Matt ‘Mayhem’ Biolos is a revered San Clemente shaper, surf film
-            director, and always-abiding alliterator. He also happens to
-            construct surfboards for all three of our Surf100 competitors,
-            making this event one big (free) advertisement for his product.{" "}
-          </p>
-          <p>You're welcome, Matt.</p>
-
-          <SeeMoreButton onClick={() => window.location.replace("/#giveaway")}>
-            See more...
-          </SeeMoreButton>
+          Matt ‘Mayhem’ Biolos is a revered San Clemente shaper, surf film
+          director, and always-abiding alliterator. He also happens to construct
+          surfboards for all three of our Surf100 competitors, making this event
+          one big (free) advertisement for his product.{" "}
         </SecondaryText>
+        <SecondaryText> You're welcome, Matt.</SecondaryText>
+
+        <SeeMoreButton onClick={() => window.location.replace("/#giveaway")}>
+          See more...
+        </SeeMoreButton>
+
         <ButtonSecondary>Log In</ButtonSecondary>
       </>
     );
@@ -365,19 +357,7 @@ const EventPage = () => {
                       priority between the surfers.
                     </li>
                   </ul>
-                  {/* <p>
-                    Three prominent surfers from a shared region will convene on
-                    a pristine day of waves at their local. They will surf
-                    against one another for 100 minutes, attempting to capture
-                    the best two-wave (right + left) video section in that time.
-                  </p>
-                  <p>
-                    Unlike a traditional competition, the surfers will be
-                    performing in a lineup of everyday punters, just as they do
-                    every other day of the year. There are no spot permits,
-                    water-clearings, start-of-the-session horns, nor enforced
-                    priority between the surfers.
-                  </p> */}
+
                   <ul>
                     <li>
                       The 100 minutes start with the wave of the
