@@ -203,7 +203,7 @@ const EventPage = () => {
         "23b08bc0-c50c-4bb1-8606-6a2db940919e",
         [
           {
-            id: 91519,
+            id: 108337,
           },
         ]
       );
@@ -251,7 +251,7 @@ const EventPage = () => {
           <Main>
             {/* <EventBanner /> */}
             <div
-              id="inplayer-91519"
+              id="inplayer-108337"
               className="inplayer-paywall preview-frame"
             ></div>
             <div>{Iframe()}</div>

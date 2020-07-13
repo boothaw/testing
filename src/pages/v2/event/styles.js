@@ -76,7 +76,7 @@ const Main = styled.div`
     > div {
       position: relative;
       // overflow: hidden;
-      padding-top: 56.25%;
+      // padding-top: 56.25%;
     }
 
     .inplayer-preview-box {
