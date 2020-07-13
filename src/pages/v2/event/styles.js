@@ -42,6 +42,18 @@ const BodyContainer = styled.div`
   background-color: #fafafa;
 `;
 
+const Input = styled.input`
+  outline: none;
+  border: 1px solid #ccc;
+  height: 48px;
+  border-radius: 4px;
+  width: 100%;
+  padding: 0px 24px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  font-size: 18px;
+`;
+
 const Main = styled.div`
   max-width: 900px;
   margin-left: auto;
@@ -185,7 +197,7 @@ align-items: center;
 justify-content: center;
 height: 100%;
 padding: 0px 24px;
-border-bottom: 2px solid ${props => (props.active ? "#000" : "#fff")};
+border-bottom: 2px solid ${(props) => (props.active ? "#000" : "#fff")};
 color: #000;
 text-decoration: none;
 &:hover {
@@ -280,7 +292,7 @@ const SponsorCard = styled.div`
   align-items: center;
   justify-content: center;
   img {
-    height: ${props => (props.large ? "100px" : "40px")};
+    height: ${(props) => (props.large ? "100px" : "40px")};
   }
 `;
 
@@ -447,7 +459,7 @@ const Button = styled.button`
   color: #ffffff;
   cursor: pointer;
   transition: 0.2s ease;
-  ${props => props.mb && `margin-bottom: ${props.mb};`}
+  ${(props) => props.mb && `margin-bottom: ${props.mb};`}
   &:hover {
     transform: scale(1.02);
   }
@@ -556,7 +568,7 @@ const LostDesktopContainer = styled.div`
     padding: 0;
     cursor: pointer;
     transition: 0.2s ease;
-    ${props => props.mb && `margin-bottom: ${props.mb};`}
+    ${(props) => props.mb && `margin-bottom: ${props.mb};`}
     &:hover {
       transform: scale(1.02);
     }
@@ -578,7 +590,7 @@ const SeeMoreButton = styled.button`
   padding: 0;
   cursor: pointer;
   transition: 0.2s ease;
-  ${props => props.mb && `margin-bottom: ${props.mb};`}
+  ${(props) => props.mb && `margin-bottom: ${props.mb};`}
   &:hover {
     transform: scale(1.02);
   }
@@ -616,5 +628,6 @@ export {
   BodyContainer,
   LostDesktopContainer,
   LostMobileContainer,
-  SeeMoreButton
+  SeeMoreButton,
+  Input,
 };

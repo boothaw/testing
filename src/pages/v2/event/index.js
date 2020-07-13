@@ -16,7 +16,7 @@ import { Spin, message } from "antd";
 
 import {
   surfers_melbourne_2020,
-  ladybirds_melbourne_2020
+  ladybirds_melbourne_2020,
 } from "../../../surfers";
 
 import {
@@ -48,7 +48,8 @@ import {
   IframeContainer,
   S100Logo,
   BodyContainer,
-  SeeMoreButton
+  SeeMoreButton,
+  Input,
 } from "./styles";
 
 const EventPage = () => {
@@ -75,7 +76,7 @@ const EventPage = () => {
   const renderCTA = () => {
     return (
       <>
-        <Title>SURF 100</Title>
+        <Title>Details</Title>
 
         {/* <div className="host-banner">
           <div className="hosts100">
@@ -101,9 +102,9 @@ const EventPage = () => {
         {/* <Button mb="12px" onClick={() => window.open("", "_blank")}>
           Log In
         </Button> */}
-        <ButtonSecondary onClick={() => window.location.replace("/watch")}>
+        {/* <ButtonSecondary onClick={() => window.location.replace("/watch")}>
           Purchase Pay-Per-View
-        </ButtonSecondary>
+        </ButtonSecondary> */}
       </>
     );
   };
@@ -128,13 +129,9 @@ const EventPage = () => {
           surfboards for all three of our Surf100 competitors, making this event
           one big (free) advertisement for his product.{" "}
         </SecondaryText>
-        <SecondaryText> You're welcome, Matt.</SecondaryText>
-
-        <SeeMoreButton onClick={() => window.location.replace("/#giveaway")}>
-          See more...
-        </SeeMoreButton>
-
-        <ButtonSecondary>Log In</ButtonSecondary>
+        <h3>Register to Vote</h3>
+        <Input placeholder="Email address" />
+        <ButtonSecondary>Submit</ButtonSecondary>
       </>
     );
   };
@@ -184,7 +181,7 @@ const EventPage = () => {
     checkUserSignedIn();
 
     const threadRef = fire.database().ref("thread");
-    threadRef.on("value", function(snapshot) {
+    threadRef.on("value", function (snapshot) {
       setMessages(snapshot.val());
       // should update message???
       const messageList = document.getElementById("message-list");
@@ -206,8 +203,8 @@ const EventPage = () => {
         "23b08bc0-c50c-4bb1-8606-6a2db940919e",
         [
           {
-            id: 91519
-          }
+            id: 91519,
+          },
         ]
       );
 
@@ -819,7 +816,7 @@ const EventPage = () => {
               <SectionBlock id="competitors">
                 <SectionTitle>Competitors</SectionTitle>
                 <CompetitorRow>
-                  {surfers_melbourne_2020.map(surfer => (
+                  {surfers_melbourne_2020.map((surfer) => (
                     <CompetitorCard>
                       <img src={surfer.photo} />
                       <div>
