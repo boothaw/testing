@@ -16,7 +16,7 @@ import { Spin, message } from "antd";
 
 import {
   surfers_melbourne_2020,
-  ladybirds_melbourne_2020,
+  ladybirds_melbourne_2020
 } from "../../../surfers";
 
 import {
@@ -49,7 +49,7 @@ import {
   S100Logo,
   BodyContainer,
   SeeMoreButton,
-  Input,
+  Input
 } from "./styles";
 
 const EventPage = () => {
@@ -129,6 +129,9 @@ const EventPage = () => {
           surfboards for all three of our Surf100 competitors, making this event
           one big (free) advertisement for his product.{" "}
         </SecondaryText>
+        <SeeMoreButton onClick={() => window.location.replace("/#giveaway")}>
+          See More...
+        </SeeMoreButton>
         <h3>Register to Vote</h3>
         <Input placeholder="Email address" />
         <ButtonSecondary>Submit</ButtonSecondary>
@@ -181,7 +184,7 @@ const EventPage = () => {
     checkUserSignedIn();
 
     const threadRef = fire.database().ref("thread");
-    threadRef.on("value", function (snapshot) {
+    threadRef.on("value", function(snapshot) {
       setMessages(snapshot.val());
       // should update message???
       const messageList = document.getElementById("message-list");
@@ -203,8 +206,8 @@ const EventPage = () => {
         "23b08bc0-c50c-4bb1-8606-6a2db940919e",
         [
           {
-            id: 108337,
-          },
+            id: 108337
+          }
         ]
       );
 
@@ -816,7 +819,7 @@ const EventPage = () => {
               <SectionBlock id="competitors">
                 <SectionTitle>Competitors</SectionTitle>
                 <CompetitorRow>
-                  {surfers_melbourne_2020.map((surfer) => (
+                  {surfers_melbourne_2020.map(surfer => (
                     <CompetitorCard>
                       <img src={surfer.photo} />
                       <div>
