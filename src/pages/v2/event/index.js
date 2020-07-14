@@ -221,13 +221,13 @@ const EventPage = () => {
       <Nav>
         <img src={Surf100Logo} />
         <div>
-          <a
+          {/* <a
             style={{ marginLeft: "8px", fontSize: "18px" }}
             target="_blank"
             href="https://www.facebook.com/StabSurfMagazine/"
           >
             <i class="fa fa-facebook" aria-hidden="true"></i>
-          </a>
+          </a> */}
           <a
             style={{ marginLeft: "8px", fontSize: "18px" }}
             target="_blank"
@@ -236,13 +236,13 @@ const EventPage = () => {
             <i class="fa fa-instagram" aria-hidden="true"></i>
           </a>
 
-          <a
+          {/* <a
             style={{ marginLeft: "8px", fontSize: "18px" }}
             target="_blank"
             href="https://twitter.com/stabmagazine?lang=en"
           >
             <i class="fa fa-twitter" aria-hidden="true"></i>
-          </a>
+          </a> */}
         </div>
       </Nav>
       <PageContainer>
