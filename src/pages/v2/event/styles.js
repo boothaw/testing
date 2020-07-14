@@ -3,6 +3,7 @@ import styled from "styled-components";
 import EventBannerImage from "../../../lib/assets/stab_melbourne_2020.jpg";
 
 const Nav = styled.div`
+  width: 100%;
   height: 64px;
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
