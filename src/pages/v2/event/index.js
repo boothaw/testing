@@ -4,7 +4,6 @@ import VansLogo from "../../../lib/assets/vans.png";
 import MonsterLogo from "../../../lib/assets/monster.png";
 import HostImage from "../../../lib/assets/urbnsurf_logo.png";
 
-import StabLogo from "../../../lib/assets/stab-logo.svg";
 import Surf100Logo from "../../../lib/assets/surf-100.png";
 import useCollapse from "react-collapsed";
 
@@ -219,34 +218,31 @@ const EventPage = () => {
 
   return (
     <>
-      {/* <SorryBanner>
-        Event Cancelled. Expect your refund to process within the next 36 hours
-      </SorryBanner> */}
       <Nav>
         <img src={Surf100Logo} />
         <div>
-          <a
+          {/* <a
             style={{ marginLeft: "8px", fontSize: "18px" }}
             target="_blank"
             href="https://www.facebook.com/StabSurfMagazine/"
           >
             <i class="fa fa-facebook" aria-hidden="true"></i>
-          </a>
+          </a> */}
           <a
             style={{ marginLeft: "8px", fontSize: "18px" }}
             target="_blank"
-            href="https://www.facebook.com/StabSurfMagazine/"
+            href="https://www.instagram.com/surf100.tv/?hl=en"
           >
             <i class="fa fa-instagram" aria-hidden="true"></i>
           </a>
 
-          <a
+          {/* <a
             style={{ marginLeft: "8px", fontSize: "18px" }}
             target="_blank"
             href="https://twitter.com/stabmagazine?lang=en"
           >
             <i class="fa fa-twitter" aria-hidden="true"></i>
-          </a>
+          </a> */}
         </div>
       </Nav>
       <PageContainer>
@@ -279,13 +275,6 @@ const EventPage = () => {
                 active={activeTab === "Scoring"}
               >
                 Scoring
-              </MenuItem>
-              <MenuItem
-                href="/#sponsor"
-                onClick={() => setActiveTab("Sponsor")}
-                active={activeTab === "Sponsor"}
-              >
-                Sponsors
               </MenuItem>
               {/* <MenuItem
               href="/#schedule"
@@ -413,22 +402,6 @@ const EventPage = () => {
                     <li>Capiche?</li>
                   </ul>
                 </SectionCopy>
-              </SectionBlock>
-
-              <SectionBlock id="sponsor">
-                <SectionTitle>Sponsored By</SectionTitle>
-                <SponsorsRow>
-                  <a href="https://stabmag.com/" target="_blank">
-                    <SponsorCard>
-                      <img src={StabLogo} />
-                    </SponsorCard>
-                  </a>
-                  <a href="https://www.monsterenergy.com/" target="_blank">
-                    <SponsorCard large>
-                      <img src={MonsterLogo} />
-                    </SponsorCard>
-                  </a>
-                </SponsorsRow>
               </SectionBlock>
 
               <SectionBlock id="giveaway">
