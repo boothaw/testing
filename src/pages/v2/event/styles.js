@@ -3,7 +3,6 @@ import styled from "styled-components";
 import EventBannerImage from "../../../lib/assets/stab_melbourne_2020.jpg";
 
 const Nav = styled.div`
-  // margin-bottom: 16px;
   height: 64px;
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
@@ -197,7 +196,7 @@ align-items: center;
 justify-content: center;
 height: 100%;
 padding: 0px 24px;
-border-bottom: 2px solid ${(props) => (props.active ? "#000" : "#fff")};
+border-bottom: 2px solid ${props => (props.active ? "#000" : "#fff")};
 color: #000;
 text-decoration: none;
 &:hover {
@@ -292,7 +291,7 @@ const SponsorCard = styled.div`
   align-items: center;
   justify-content: center;
   img {
-    height: ${(props) => (props.large ? "100px" : "40px")};
+    height: ${props => (props.large ? "100px" : "40px")};
   }
 `;
 
@@ -459,7 +458,7 @@ const Button = styled.button`
   color: #ffffff;
   cursor: pointer;
   transition: 0.2s ease;
-  ${(props) => props.mb && `margin-bottom: ${props.mb};`}
+  ${props => props.mb && `margin-bottom: ${props.mb};`}
   &:hover {
     transform: scale(1.02);
   }
@@ -568,7 +567,7 @@ const LostDesktopContainer = styled.div`
     padding: 0;
     cursor: pointer;
     transition: 0.2s ease;
-    ${(props) => props.mb && `margin-bottom: ${props.mb};`}
+    ${props => props.mb && `margin-bottom: ${props.mb};`}
     &:hover {
       transform: scale(1.02);
     }
@@ -590,7 +589,7 @@ const SeeMoreButton = styled.button`
   padding: 0;
   cursor: pointer;
   transition: 0.2s ease;
-  ${(props) => props.mb && `margin-bottom: ${props.mb};`}
+  ${props => props.mb && `margin-bottom: ${props.mb};`}
   &:hover {
     transform: scale(1.02);
   }
@@ -629,5 +628,5 @@ export {
   LostDesktopContainer,
   LostMobileContainer,
   SeeMoreButton,
-  Input,
+  Input
 };
