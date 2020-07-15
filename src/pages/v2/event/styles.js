@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import EventBannerImage from "../../../lib/assets/stab_melbourne_2020.jpg";
-
 const Nav = styled.div`
   width: 100vw;
   height: 64px;
@@ -169,7 +167,6 @@ const EventDetails = styled.div`
 
 const EventBanner = styled.div`
   height: 320px;
-  background-image: url(${EventBannerImage});
   background-size: cover;
   background-position: center;
   border-top-left-radius: 6px;

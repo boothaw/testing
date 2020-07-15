@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import Surf100Logo from "../../../lib/assets/surf-100.png";
-import fire from "../../../lib/firebase";
 
 import { surfers_melbourne_2020 } from "../../../surfers";
 
@@ -31,7 +30,7 @@ import {
   Title,
   CompetitorRow,
   CompetitorCard,
-  Input,
+  Input
 } from "./styles";
 
 const EventPage = () => {
@@ -53,8 +52,8 @@ const EventPage = () => {
         "23b08bc0-c50c-4bb1-8606-6a2db940919e",
         [
           {
-            id: 108337,
-          },
+            id: 108337
+          }
         ]
       );
 
@@ -131,7 +130,7 @@ const EventPage = () => {
         ) : (
           <div>
             <Input
-              onChange={(e) => setEmail(e.currentTarget.value)}
+              onChange={e => setEmail(e.currentTarget.value)}
               value={email}
               placeholder="Email address"
             />
@@ -142,7 +141,7 @@ const EventPage = () => {
     );
   };
 
-  const renderScoring = (emailAddress) => {
+  const renderScoring = emailAddress => {
     return (
       <IframeContainer>
         <iframe
@@ -409,7 +408,7 @@ const EventPage = () => {
               <SectionBlock id="competitors">
                 <SectionTitle>Competitors</SectionTitle>
                 <CompetitorRow>
-                  {surfers_melbourne_2020.map((surfer) => (
+                  {surfers_melbourne_2020.map(surfer => (
                     <CompetitorCard key={surfer.name}>
                       <img src={surfer.photo} />
                       <div>
