@@ -87,8 +87,6 @@ const EventPage = () => {
           <div className="row">
             <i className="fa fa-clock-o" aria-hidden="true"></i>
             Show live 6pm, Thursday July 23, California (PST)
-            {/* & 11am, Friday
-            July 24, QLD/NSW/Vic (AEST) */}
           </div>
           <div className="row">
             & at 11am, Friday July 24, QLD/NSW/Vic (AEST)
@@ -177,7 +175,9 @@ const EventPage = () => {
           <Main>
             <EventDetails>
               {renderCTA()}
-              <ButtonSecondary>Purchase Pay-Per-View</ButtonSecondary>
+              {/* <ButtonSecondary onClick="">
+                Purchase Pay-Per-View
+              </ButtonSecondary> */}
             </EventDetails>
 
             <div

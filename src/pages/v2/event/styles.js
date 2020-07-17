@@ -63,6 +63,10 @@ const Main = styled.div`
     width: 100%;
     color: #fff;
 
+    .brandheader {
+      display: none;
+    }
+
     .preview-text {
       color: #fff;
       position: absolute;
