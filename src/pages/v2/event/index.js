@@ -85,7 +85,7 @@ const EventPage = () => {
 
         <div className="dates-and-price">
           <div className="row">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <i className="fa fa-clock-o" aria-hidden="true"></i>
             Show live 6pm, Thursday July 23, California (PST)
             {/* & 11am, Friday
             July 24, QLD/NSW/Vic (AEST) */}
@@ -94,7 +94,7 @@ const EventPage = () => {
             & at 11am, Friday July 24, QLD/NSW/Vic (AEST)
           </div>
           <div className="row">
-            <i class="fa fa-ticket" aria-hidden="true"></i>
+            <i className="fa fa-ticket" aria-hidden="true"></i>
             $14.99
           </div>
         </div>
@@ -136,8 +136,8 @@ const EventPage = () => {
           id="scaled-frame"
           src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
           frameBorder="no"
-          allowTransparency="true"
-          allowFullscreen="true"
+          allowtransparency="true"
+          allowtullscreen="true"
         ></iframe>
       </IframeContainer>
     );

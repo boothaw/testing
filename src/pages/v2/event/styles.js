@@ -408,14 +408,14 @@ const ScheduleCard = styled.div`
 `;
 
 const CompetitorRow = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: row;
+  // grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-column-gap: 16px;
+  // grid-column-gap: 16px;
   grid-row-gap: 16px;
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-  }
+  // @media (max-width: 900px) {
+  //   grid-template-columns: 1fr;
+  // }
 `;
 
 const CompetitorCard = styled.div`
@@ -429,6 +429,7 @@ const CompetitorCard = styled.div`
   position: relative;
   display: flex;
   align-items: flex-start;
+  margin-top: 8px;
   h4 {
     margin-top: 0px;
     font-size: 14px;
