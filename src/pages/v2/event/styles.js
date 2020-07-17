@@ -9,7 +9,7 @@ const Nav = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0px 32px;
-  min-width: 400px;
+  min-width: 420px;
   img {
     height: 30px;
   }
@@ -23,7 +23,7 @@ const PageContainer = styled.div`
   padding: 16px 16px 0;
   margin-left: auto;
   margin-right: auto;
-  min-width: 400px;
+  min-width: 420px;
 `;
 
 const BodyContainer = styled.div`
