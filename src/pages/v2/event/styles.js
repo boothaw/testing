@@ -9,6 +9,7 @@ const Nav = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0px 32px;
+  min-width: 400px;
   img {
     height: 30px;
   }
@@ -22,6 +23,7 @@ const PageContainer = styled.div`
   padding: 16px 16px 0;
   margin-left: auto;
   margin-right: auto;
+  min-width: 400px;
 `;
 
 const BodyContainer = styled.div`
@@ -102,9 +104,10 @@ const EventDetails = styled.div`
   border-radius: 8px;
   margin-bottom: 16px;
 
-  @media (max-width: 900px) {
-    padding: 16px;
-  }
+  // @media (max-width: 900px) {
+  //   padding: 16px;
+  // }
+
   .dates-and-price {
     margin-bottom: 12px;
     font-size: 14px;
@@ -116,6 +119,9 @@ const EventDetails = styled.div`
     align-items: center;
     i {
       margin-right: 4px;
+    }
+    :nth-of-type(2n) {
+      margin-left: 16px;
     }
   }
   .host-banner {
@@ -185,6 +191,10 @@ const MenuBar = styled.div`
   position: sticky;
   top: 0px;
   z-index: 3;
+
+  @media (max-width: 900px) {
+    height: 72px;
+  }
 `;
 
 const MenuItem = styled.a`
@@ -201,7 +211,7 @@ text-decoration: none;
   cursor: pointer;
 }
 @media (max-width: 900px) {
-  padding: 0px;
+  padding: 8px;
   font-size: 12px;
 }
 `;

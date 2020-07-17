@@ -10,7 +10,6 @@ import {
   Main,
   Panel,
   EventDetails,
-  EventBanner,
   MenuBar,
   MenuItem,
   MainSection,
@@ -79,16 +78,20 @@ const EventPage = () => {
   const renderCTA = () => {
     return (
       <>
-        <Title>Details</Title>
+        <Title>SURF100:</Title>
         <SubTitle>
-          Duis pharetra dictum hendrerit. Morbi nisi turpis, elementum vel
-          tristique non.{" "}
+          An audience judged 100-minute wave riding demonstration.
         </SubTitle>
 
         <div className="dates-and-price">
           <div className="row">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            Tues. 21 July 2020 6:00pm AEDT
+            Show live 6pm, Thursday July 23, California (PST)
+            {/* & 11am, Friday
+            July 24, QLD/NSW/Vic (AEST) */}
+          </div>
+          <div className="row">
+            & at 11am, Friday July 24, QLD/NSW/Vic (AEST)
           </div>
           <div className="row">
             <i class="fa fa-ticket" aria-hidden="true"></i>
@@ -103,40 +106,23 @@ const EventPage = () => {
     return (
       <>
         <div className="host-banner">
-          <div className="host">
-            {/* need permission or better logo for lost img here */}
-            <img src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/10517675_10152745041342688_1556850807273125968_n.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=8s_gIcQNuGIAX8g4ija&_nc_ht=scontent-sea1-1.xx&oh=5c6de695163248a8e5cc4e8591429489&oe=5F1AABC6" />{" "}
-          </div>
           <div>
-            <Title>...Lost Giveaway</Title>
+            <Title>How to score: </Title>
             <label></label>
           </div>
         </div>
         <SecondaryText>
-          Matt ‘Mayhem’ Biolos is a revered San Clemente shaper, surf film
-          director, and always-abiding alliterator. He also happens to construct
-          surfboards for all three of our Surf100 competitors, making this event
-          one big (free) advertisement for his product.{" "}
+          Scoring a clip out of 50 points is unusual, we admit. For simplicity’s
+          sake, we recommend you{" "}
+          {/* <Text style={{ fontWeight: "bold" }}> with</Text>score each ride out */}
+          of 100, then cut it in half. Decimal points get rounded up to the
+          nearest whole number. If you can’t do that math, please consult your
+          local 4th grade teacher. Oh, and the “best” judge wins a custom
+          Mayhem/...Lost quiver.
         </SecondaryText>
         <SeeMoreButton onClick={() => window.location.replace("/#giveaway")}>
-          See More...
+          More on that below.
         </SeeMoreButton>
-
-        {isRegistered ? (
-          <div>
-            {" "}
-            <h3>Registration Complete!</h3>
-          </div>
-        ) : (
-          <div>
-            <Input
-              onChange={e => setEmail(e.currentTarget.value)}
-              value={email}
-              placeholder="Email address"
-            />
-            <ButtonSecondary onClick={handleEmailSave}>Submit</ButtonSecondary>
-          </div>
-        )}
       </>
     );
   };
@@ -189,6 +175,11 @@ const EventPage = () => {
       <PageContainer>
         <BodyContainer>
           <Main>
+            <EventDetails>
+              {renderCTA()}
+              <ButtonSecondary>Purchase Pay-Per-View</ButtonSecondary>
+            </EventDetails>
+
             <div
               id="inplayer-108337"
               className="inplayer-paywall preview-frame"
@@ -200,46 +191,40 @@ const EventPage = () => {
                 onClick={() => setActiveTab("Concept")}
                 active={activeTab === "Concept"}
               >
-                Concept
+                What’s going here?
               </MenuItem>
               <MenuItem
                 href="/#description"
                 onClick={() => setActiveTab("Description")}
                 active={activeTab === "Description"}
               >
-                Description
+                Ok, but how does it work?
               </MenuItem>
-              <MenuItem
-                href="/#scoring"
-                onClick={() => setActiveTab("Scoring")}
-                active={activeTab === "Scoring"}
-              >
-                Scoring
-              </MenuItem>
-              {/* <MenuItem
-              href="/#schedule"
-              onClick={() => setActiveTab("Schedule")}
-              active={activeTab === "Schedule"}
-            >
-              Schedule
-            </MenuItem> */}
+
               <MenuItem
                 href="/#giveaway"
                 onClick={() => setActiveTab("Giveaway")}
                 active={activeTab === "Giveaway"}
               >
-                Giveaway
+                ...Lost Surfboard Giveaway
               </MenuItem>
               <MenuItem
                 href="/#competitors"
                 onClick={() => setActiveTab("Competitors")}
                 active={activeTab === "Competitors"}
               >
-                Competitors
+                Who are these “surfers”, anyway?
+              </MenuItem>
+              <MenuItem
+                href="/#faq"
+                onClick={() => setActiveTab("FAQ")}
+                active={activeTab === "FAQ"}
+              >
+                FAQ & Other Dumb Questions
               </MenuItem>
             </MenuBar>
             <MobileView>
-              <EventDetails>
+              {/* <EventDetails>
                 <Title>Details</Title>
                 <SubTitle>
                   Duis pharetra dictum hendrerit. Morbi nisi turpis, elementum
@@ -256,17 +241,18 @@ const EventPage = () => {
                     $14.99
                   </div>
                 </div>
-              </EventDetails>
+              </EventDetails> */}
               <EventDetails>{renderGiveAway()}</EventDetails>
             </MobileView>
             <MainSection>
               <SectionBlock id="concept">
-                <SectionTitle>Concept</SectionTitle>
+                <SectionTitle>What’s going here?</SectionTitle>
                 <SectionCopy>
                   <ul>
+                    <li>Easy, Karen. </li>
                     <li>
-                      SURF100 is a video-part competition that takes place over
-                      a single, 100-minute period and is judged live, at a later
+                      SURF100 is a waveriding exposition that takes place over a
+                      single, 100-minute period and is judged live, at a later
                       date, by the internet. All of this is done following
                       social distancing guidelines.
                     </li>
@@ -274,139 +260,97 @@ const EventPage = () => {
                 </SectionCopy>
               </SectionBlock>
               <SectionBlock id="description">
-                <SectionTitle>Description</SectionTitle>
+                <SectionTitle>Ok, but how does it work?</SectionTitle>
                 <SectionCopy>
                   <ul>
                     <li>
-                      The first event will be held at Lower Trestles, but we
-                      plan to recreate this format around the globe.
-                    </li>
-                  </ul>
-                  <ul>
-                    <li>Here’s how it works:</li>
-                  </ul>
-                  <ul>
-                    <li>
-                      Three prominent surfers from a shared region will convene
-                      on a pristine day of waves at their local. They will surf
-                      against one another for 100 minutes, attempting to capture
-                      the best two-wave (right + left) video section in that
+                      San Clemente’s own Kolohe Andino, Griffin Colapinto, and
+                      Ian Crane will paddle out for a 100-minute waveriding
+                      demonstration at Lower Trestles. While negotiating a
+                      typical Lowers crowd, they’ll attempt to capture the best
+                      two-wave (right + left) video section in the allotted
                       time.
                     </li>
                   </ul>
                   <ul>
                     <li>
-                      Unlike a traditional competition, the surfers will be
-                      performing in a lineup of everyday punters, just as they
-                      do every other day of the year. There are no spot permits,
-                      water-clearings, start-of-the-session horns, nor enforced
-                      priority between the surfers.
-                    </li>
-                  </ul>
-
-                  <ul>
-                    <li>
-                      The 100 minutes start with the wave of the
-                      local/state/country flag.{" "}
-                    </li>
-                  </ul>
-                  <ul>
-                    <li>
                       The surfers can ride as many waves as they want in the
-                      100-minute session. The waves will each be considered
-                      separate “clips” that can be used in their final
-                      “section”. Each section will consist of two clips—one
-                      right, one left.
-                    </li>
-                  </ul>
-                  <ul>
-                    <li>The best section, according to the internet, wins. </li>
-                  </ul>
-                </SectionCopy>
-              </SectionBlock>
-
-              <SectionBlock id="scoring">
-                <SectionTitle>How to score a wave:</SectionTitle>
-                <SectionCopy>
-                  <ul>
-                    <li>
-                      Our 50-point scale is based on 5 universal principles of
-                      surf spectating: first impression, style/flow, wave
-                      magnitude, productivity, and performance.
-                    </li>
-                  </ul>
-                  <ul>
-                    <li>Step 1: Watch the clip.</li>
-                    <li>
-                      Step 2: Consider the clip's quality relative to other
-                      clips from the session.
-                    </li>
-                    <li>Step 3: Score the clip out of 50.</li>
-                  </ul>
-                  <ul>
-                    <li>
-                      Hint: If you're used to scoring clips out of 10, simply
-                      multiply the score that came to your mind by 5.
+                      100-minute session. Each wave will be considered a
+                      separate “clip” that can be used in their final “section”.
+                      Each section will consist of two clips—one right, one
+                      left—which will be judged out of 50 points apiece, 100
+                      points total. (See above for more info on judging.){" "}
                     </li>
                   </ul>
                   <ul>
                     <li>
-                      So, if you think a clip is a 5/10, it would be a 25/50
-                      here.
+                      The best section (two clip total), according to the
+                      internet, wins.
                     </li>
-                  </ul>
-                  <ul>
-                    <li>Capiche?</li>
                   </ul>
                 </SectionCopy>
               </SectionBlock>
 
               <SectionBlock id="giveaway">
-                <SectionTitle>...Lost Giveaway</SectionTitle>
+                <SectionTitle>...Lost Surfboard Giveaway</SectionTitle>
                 <SectionCopy>
                   <ul>
                     <li>
-                      Matt ‘Mayhem’ Biolos is a revered San Clemente shaper,
-                      surf film director, and always-abiding alliterator. He
-                      also happens to construct surfboards for all three of our
-                      Surf100 competitors, making this event one big (free)
-                      advertisement for his product.{" "}
+                      All three Surf100 competitors ride the surfboards of
+                      renowned San Clemente shaper and recent Stab in the Dark
+                      winner, Matt ‘Mayhem’ Biolos.
                     </li>
                   </ul>
                   <ul>
-                    <li>You’re welcome, Matt. </li>
+                    <li>
+                      Matt, a fervent believer in internet justice, will shape a
+                      three-board quiver to the most judicious SURF100 critic.
+                    </li>
                   </ul>
 
                   <ul>
-                    <li>
-                      Recognizing his good fortune and wanting to pay it
-                      forward, Mayhem is offering a free board to one lucky
-                      Surf100 viewer. Actually, it’s less about “luck” and more
-                      about scoring a subjective sport as closely as possible to
-                      another flawed human. Silly, yes, but officially a “game
-                      of skill.”
-                    </li>
-                  </ul>
-                  <ul>
-                    <li>Here’s how you win: </li>
+                    <li>Here’s how you win:</li>
                   </ul>
                   <ul>
                     <li>
-                      Score each wave in the event out of 50 points. The viewer
-                      whose scores on average are closest to our head judge’s,
-                      wins.
+                      Step 1: Score every wave as closely as possible to our
+                      head critic, Michael Ciaramella.
                     </li>
                   </ul>
                   <ul>
+                    <li>...That’s it.</li>
+                  </ul>
+                  <ul>
                     <li>
-                      It’s that easy...and that arbitrary. Good lu-- skill!{" "}
+                      The person whose scores (on average) are closest to MC’s,
+                      wins the ...Lost Surfboard quiver. It’s a completely
+                      arbitrary performance metric, sure, but with free
+                      surfboards on the line and no collateral required, are you
+                      really in a position to argue?
                     </li>
                   </ul>
+                  {isRegistered ? (
+                    <div>
+                      {" "}
+                      <h3>Registration Complete!</h3>
+                    </div>
+                  ) : (
+                    <div>
+                      <Input
+                        onChange={e => setEmail(e.currentTarget.value)}
+                        value={email}
+                        placeholder="Email address"
+                      />
+                      <ButtonSecondary onClick={handleEmailSave}>
+                        Submit
+                      </ButtonSecondary>
+                    </div>
+                  )}
                 </SectionCopy>
               </SectionBlock>
 
               <SectionBlock id="competitors">
-                <SectionTitle>Competitors</SectionTitle>
+                <SectionTitle>Who are these “surfers”, anyway?</SectionTitle>
                 <CompetitorRow>
                   {surfers_melbourne_2020.map(surfer => (
                     <CompetitorCard key={surfer.name}>
@@ -422,12 +366,29 @@ const EventPage = () => {
                   ))}
                 </CompetitorRow>
               </SectionBlock>
+
+              <SectionBlock id="faq">
+                <SectionTitle>FAQ and Other Dumb Questions</SectionTitle>
+                <SectionCopy>
+                  <h4>Why don't I surf like that?</h4>
+                  <ul>
+                    <li>Because you are on a wavestorm, kid.</li>
+                  </ul>
+                  <h4>Why don't I surf like that?</h4>
+                  <ul>
+                    <li>Because you are on a wavestorm, kid.</li>
+                  </ul>
+                  <h4>Why don't I surf like that?</h4>
+                  <ul>
+                    <li>Because you are on a wavestorm, kid.</li>
+                  </ul>
+                </SectionCopy>
+              </SectionBlock>
             </MainSection>
           </Main>
           <Panel>
             <DesktopView>
               <StickyScroll>
-                <EventDetails>{renderCTA()}</EventDetails>
                 <EventDetails>{renderGiveAway()}</EventDetails>
               </StickyScroll>
             </DesktopView>
