@@ -111,12 +111,10 @@ const EventPage = () => {
         </div>
         <SecondaryText>
           Scoring a clip out of 50 points is unusual, we admit. For simplicity’s
-          sake, we recommend you{" "}
-          {/* <Text style={{ fontWeight: "bold" }}> with</Text>score each ride out */}
-          of 100, then cut it in half. Decimal points get rounded up to the
-          nearest whole number. If you can’t do that math, please consult your
-          local 4th grade teacher. Oh, and the “best” judge wins a custom
-          Mayhem/...Lost quiver.
+          sake, we recommend you <b>score each ride</b> out of 100, then cut it
+          in half. Decimal points get rounded up to the nearest whole number. If
+          you can’t do that math, please consult your local 4th grade teacher.
+          Oh, and the “best” judge wins a custom Mayhem/...Lost quiver.
         </SecondaryText>
         <SeeMoreButton onClick={() => window.location.replace("/#giveaway")}>
           More on that below.
