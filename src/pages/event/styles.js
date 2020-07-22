@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Nav = styled.div`
   width: 100vw;
-  height: 64px;
+  height: 72px;
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
   display: flex;
@@ -16,6 +16,37 @@ const Nav = styled.div`
   a {
     color: #000;
   }
+
+  @media (min-width: 900px) {
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+  }
+`;
+
+const DesktopNavBar = styled.div`
+  width: 100%;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
+const MobileNavBar = styled.div`
+  @media (min-width: 900px) {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+  }
+`;
+
+const SocialContainer = styled.div`
+  min-width: 68px;
 `;
 
 const PageContainer = styled.div`
@@ -108,10 +139,6 @@ const EventDetails = styled.div`
   border-radius: 8px;
   margin-bottom: 16px;
 
-  // @media (max-width: 900px) {
-  //   padding: 16px;
-  // }
-
   .dates-and-price {
     margin-bottom: 12px;
     font-size: 14px;
@@ -191,10 +218,6 @@ const MenuBar = styled.div`
   align-items: center;
   background-color: #fff;
   height: 64px;
-  box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
-  position: sticky;
-  top: 0px;
-  z-index: 3;
 
   @media (max-width: 900px) {
     height: 72px;
@@ -208,9 +231,10 @@ align-items: center;
 justify-content: center;
 height: 100%;
 padding: 0px 24px;
-border-bottom: 2px solid ${props => (props.active ? "#000" : "#fff")};
+border-bottom: 2px solid ${(props) => (props.active ? "#000" : "#fff")};
 color: #000;
 text-decoration: none;
+font-weight: bold;
 &:hover {
   cursor: pointer;
 }
@@ -303,7 +327,7 @@ const SponsorCard = styled.div`
   align-items: center;
   justify-content: center;
   img {
-    height: ${props => (props.large ? "100px" : "40px")};
+    height: ${(props) => (props.large ? "100px" : "40px")};
   }
 `;
 
@@ -471,7 +495,7 @@ const Button = styled.button`
   color: #ffffff;
   cursor: pointer;
   transition: 0.2s ease;
-  ${props => props.mb && `margin-bottom: ${props.mb};`}
+  ${(props) => props.mb && `margin-bottom: ${props.mb};`}
   &:hover {
     transform: scale(1.02);
   }
@@ -525,7 +549,7 @@ const DesktopView = styled.div`
 
 const StickyScroll = styled.div`
   position: sticky;
-  top: 16px;
+  top: 78px;
 `;
 
 const SorryBanner = styled.div`
@@ -541,11 +565,8 @@ const SorryBanner = styled.div`
 
 const IframeContainer = styled.div`
   position: relative;
-  // overflow: hidden;
   width: 100%;
   max-width: 875px;
-  // padding-top: 75%;
-  height: 895px;
   margin-left: auto;
   margin-right: auto;
 
@@ -557,6 +578,15 @@ const IframeContainer = styled.div`
     right: 0;
     width: 100%;
     height: 100%;
+  }
+
+  @media (min-width: 900px) {
+    height: 325px;
+  }
+
+  @media (max-width: 900px) {
+    min-height: 895px;
+    // border: 1px solid pink;
   }
 `;
 
@@ -580,7 +610,7 @@ const LostDesktopContainer = styled.div`
     padding: 0;
     cursor: pointer;
     transition: 0.2s ease;
-    ${props => props.mb && `margin-bottom: ${props.mb};`}
+    ${(props) => props.mb && `margin-bottom: ${props.mb};`}
     &:hover {
       transform: scale(1.02);
     }
@@ -602,7 +632,7 @@ const SeeMoreButton = styled.button`
   padding: 0;
   cursor: pointer;
   transition: 0.2s ease;
-  ${props => props.mb && `margin-bottom: ${props.mb};`}
+  ${(props) => props.mb && `margin-bottom: ${props.mb};`}
   &:hover {
     transform: scale(1.02);
   }
@@ -641,5 +671,8 @@ export {
   LostDesktopContainer,
   LostMobileContainer,
   SeeMoreButton,
-  Input
+  Input,
+  SocialContainer,
+  DesktopNavBar,
+  MobileNavBar,
 };

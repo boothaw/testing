@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-import Surf100Logo from "../../../lib/assets/surf-100.png";
+import Surf100Logo from "../../lib/assets/surf-100.png";
 
-import { surfers_melbourne_2020 } from "../../../surfers";
+import { surfers_melbourne_2020 } from "../../surfers";
+// import { createPortal } from "react-dom";
+// import Ifr from "../../components/iframe/index";
 
 import {
   Nav,
@@ -29,7 +31,10 @@ import {
   Title,
   CompetitorRow,
   CompetitorCard,
-  Input
+  Input,
+  SocialContainer,
+  DesktopNavBar,
+  MobileNavBar,
 } from "./styles";
 
 const EventPage = () => {
@@ -37,6 +42,13 @@ const EventPage = () => {
   const [loading, setLoading] = useState(true);
   const [isRegistered, setIsRegistered] = useState(false);
   const [email, setEmail] = useState("");
+  const [height, setHeight] = useState(null);
+
+  // useEffect(() => {
+  //   const obj = ReactDOM.findDOMNode(this);
+
+  //   setHeight(obj..scrollHeight + "px");
+  // });
 
   useEffect(() => {
     const emailRegistered = localStorage.getItem("SURF100.email");
@@ -51,8 +63,8 @@ const EventPage = () => {
         "23b08bc0-c50c-4bb1-8606-6a2db940919e",
         [
           {
-            id: 108337
-          }
+            id: 108337,
+          },
         ]
       );
 
@@ -106,7 +118,6 @@ const EventPage = () => {
         <div className="host-banner">
           <div>
             <Title>How to score: </Title>
-            <label></label>
           </div>
         </div>
         <SecondaryText>
@@ -123,9 +134,16 @@ const EventPage = () => {
     );
   };
 
-  const renderScoring = emailAddress => {
+  const renderScoring = (emailAddress) => {
     return (
-      <IframeContainer>
+      <IframeContainer
+        style={{
+          maxWidth: 875,
+          width: "100%",
+          height: 325,
+          overflow: "auto",
+        }}
+      >
         <iframe
           width="100%"
           height="100%"
@@ -139,11 +157,57 @@ const EventPage = () => {
     );
   };
 
+  const renderNavMenu = () => {
+    return (
+      <MenuBar>
+        <MenuItem
+          href="/#concept"
+          onClick={() => setActiveTab("Concept")}
+          active={activeTab === "Concept"}
+        >
+          What is SURF 100?
+        </MenuItem>
+        <MenuItem
+          href="/#description"
+          onClick={() => setActiveTab("Description")}
+          active={activeTab === "Description"}
+        >
+          Ok, but how does it work?
+        </MenuItem>
+
+        <MenuItem
+          href="/#giveaway"
+          onClick={() => setActiveTab("Giveaway")}
+          active={activeTab === "Giveaway"}
+        >
+          ...Lost Surfboard Giveaway
+        </MenuItem>
+        <MenuItem
+          href="/#competitors"
+          onClick={() => setActiveTab("Competitors")}
+          active={activeTab === "Competitors"}
+        >
+          Who are these “surfers”?
+        </MenuItem>
+        <MenuItem
+          href="/#faq"
+          onClick={() => setActiveTab("FAQ")}
+          active={activeTab === "FAQ"}
+        >
+          FAQ & Other Dumb Questions
+        </MenuItem>
+      </MenuBar>
+    );
+  };
+
   return (
     <>
       <Nav>
-        <img src={Surf100Logo} />
-        <div>
+        <a href="/">
+          <img src={Surf100Logo} />
+        </a>
+        <DesktopNavBar>{renderNavMenu()}</DesktopNavBar>
+        <SocialContainer>
           <a
             style={{ marginLeft: "8px", fontSize: "18px" }}
             target="_blank"
@@ -166,85 +230,26 @@ const EventPage = () => {
           >
             <i className="fa fa-twitter" aria-hidden="true"></i>
           </a>
-        </div>
+        </SocialContainer>
       </Nav>
       <PageContainer>
         <BodyContainer>
           <Main>
-            <EventDetails>
-              {renderCTA()}
-              {/* <ButtonSecondary onClick="">
-                Purchase Pay-Per-View
-              </ButtonSecondary> */}
-            </EventDetails>
+            {/* <Ifr></Ifr> */}
+            <EventDetails>{renderCTA()}</EventDetails>
 
             <div
               id="inplayer-108337"
               className="inplayer-paywall preview-frame"
             ></div>
             {renderScoring(email)}
-            <MenuBar>
-              <MenuItem
-                href="/#concept"
-                onClick={() => setActiveTab("Concept")}
-                active={activeTab === "Concept"}
-              >
-                What’s going here?
-              </MenuItem>
-              <MenuItem
-                href="/#description"
-                onClick={() => setActiveTab("Description")}
-                active={activeTab === "Description"}
-              >
-                Ok, but how does it work?
-              </MenuItem>
-
-              <MenuItem
-                href="/#giveaway"
-                onClick={() => setActiveTab("Giveaway")}
-                active={activeTab === "Giveaway"}
-              >
-                ...Lost Surfboard Giveaway
-              </MenuItem>
-              <MenuItem
-                href="/#competitors"
-                onClick={() => setActiveTab("Competitors")}
-                active={activeTab === "Competitors"}
-              >
-                Who are these “surfers”, anyway?
-              </MenuItem>
-              <MenuItem
-                href="/#faq"
-                onClick={() => setActiveTab("FAQ")}
-                active={activeTab === "FAQ"}
-              >
-                FAQ & Other Dumb Questions
-              </MenuItem>
-            </MenuBar>
+            <MobileNavBar>{renderNavMenu()}</MobileNavBar>
             <MobileView>
-              {/* <EventDetails>
-                <Title>Details</Title>
-                <SubTitle>
-                  Duis pharetra dictum hendrerit. Morbi nisi turpis, elementum
-                  vel tristique non.{" "}
-                </SubTitle>
-
-                <div className="dates-and-price">
-                  <div className="row">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                    Tues. 21 July 2020 6:00pm AEDT
-                  </div>
-                  <div className="row">
-                    <i class="fa fa-ticket" aria-hidden="true"></i>
-                    $14.99
-                  </div>
-                </div>
-              </EventDetails> */}
               <EventDetails>{renderGiveAway()}</EventDetails>
             </MobileView>
             <MainSection>
               <SectionBlock id="concept">
-                <SectionTitle>What’s going here?</SectionTitle>
+                <SectionTitle>What is SURF 100?</SectionTitle>
                 <SectionCopy>
                   <ul>
                     <li>Easy, Karen. </li>
@@ -335,7 +340,7 @@ const EventPage = () => {
                   ) : (
                     <div>
                       <Input
-                        onChange={e => setEmail(e.currentTarget.value)}
+                        onChange={(e) => setEmail(e.currentTarget.value)}
                         value={email}
                         placeholder="Email address"
                       />
@@ -350,7 +355,7 @@ const EventPage = () => {
               <SectionBlock id="competitors">
                 <SectionTitle>Who are these “surfers”, anyway?</SectionTitle>
                 <CompetitorRow>
-                  {surfers_melbourne_2020.map(surfer => (
+                  {surfers_melbourne_2020.map((surfer) => (
                     <CompetitorCard key={surfer.name}>
                       <img src={surfer.photo} />
                       <div>
