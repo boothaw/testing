@@ -42,10 +42,9 @@ const PageContainer = styled.div`
 
     position: relative;
     top: 0;
-    // left: 500px;
     width: 700px;
     height: 400px;
-    // text-align: center;
+    text-align: center;
   }
 
   .modal-header {
