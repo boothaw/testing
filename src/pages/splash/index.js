@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ReactPlayer from "react-player/lazy";
+import ReactPlayer from "react-player";
 
 import {
   NavBar,
@@ -23,7 +23,15 @@ import {
   ColumnOne,
   ColumnTwo,
   Footer,
+  PageContainer,
+  VidSection,
+  NavSection,
 } from "./styles";
+
+import Modal from "../../components/modal/Modal";
+import useModal from "../../components/modal/useModal";
+
+import Popup from "reactjs-popup";
 
 import s100dark from "../../lib/assets/s100logodark.png";
 import kolohe from "../../lib/assets/Kolohe.png";
@@ -36,28 +44,45 @@ import s100white from "../../lib/assets/s100logowhite.png";
 import insta from "../../lib/assets/insta.png";
 
 const SplashPage = () => {
+  const { isShowing, toggle } = useModal();
+  // return (
+  //   <div>
+  //     <button className="button-default" onClick={toggle}>Show Modal</button>
+  //   </div>
+
   return (
-    <>
-      <Banner></Banner>
-      <ContentContainer>
+    <PageContainer>
+      <NavSection>
+        {" "}
+        <Banner></Banner>
         <NavBar>
           <div>
             <img src={s100dark}></img>
           </div>
-          <Button>Buy Early-Bird Pay-Per-View ($USD9.99)</Button>
+          <div>
+            <Button onClick={toggle}>
+              Buy Early-Bird Pay-Per-View ($USD9.99)
+            </Button>
+            <Modal isShowing={isShowing} hide={toggle} />
+          </div>
         </NavBar>
+      </NavSection>
+
+      <ContentContainer>
         <TitleSection>
           <h2>An audience-judged, 100-minute wave riding demonstration.</h2>
-          <h2>6pm July 30, 2020</h2>
+          <h2>6pm (PST) July 30, 2020</h2>
         </TitleSection>
-        <VidContainer>
-          {" "}
-          <ReactPlayer
-            className="plyr"
-            url="https://vimeo.com/437010903/83639a1da2"
-            controls="true"
-          />
-        </VidContainer>
+        <VidSection>
+          <VidContainer>
+            {" "}
+            <ReactPlayer
+              className="plyr"
+              url="https://vimeo.com/437010903/83639a1da2"
+              controls="true"
+            />
+          </VidContainer>
+        </VidSection>
       </ContentContainer>
       <Featuring>
         <ContentContainer>
@@ -117,8 +142,8 @@ const SplashPage = () => {
               The surfers can ride as many waves as they want in the 100-minute
               session. Each wave will be considered a separate “clip” that can
               be used in their final “section”. Each section will consist of two
-              clips—one right, one left—which will be judged out of 50 points
-              apiece, 100 points total. (See above for more info on judging.)
+              clips—one right, one left—which will be judged out of 100 points
+              apiece, 200 points total. (See above for more info on judging.)
             </p>
             <p>
               While negotiating a typical Lowers crowd, they’ll attempt to
@@ -141,14 +166,14 @@ const SplashPage = () => {
         <ShowContent>
           <h2>Show Time:</h2>
           <TimeUs>
-            <p>6pm, Thursday July 23, California (PST)</p>
+            <p>6pm, Thursday July 30, California (PST)</p>
           </TimeUs>
           <TimeOz>
-            <p>11am, Friday July 24, QLD/NSW/Vic (AEST)</p>
+            <p>11am, Friday July 31, QLD/NSW/VIC (AEST)</p>
           </TimeOz>
         </ShowContent>
       </ShowTime>
-      <FaqSection>
+      <FaqSection id="faq">
         <h2>FAQs</h2>
         <FaqContainer>
           <ColumnOne>
@@ -289,13 +314,13 @@ const SplashPage = () => {
         </a>
         <div>
           <h4>Have more questions? Contact Us.</h4>
-          <a href="mailto: Surf100@stabmag.com">Surf100@stabmag.com</a>
+          <a href="mailto: questions@surf100.tv">questions@surf100.tv</a>
         </div>
         <a target="_blank" href="https://www.instagram.com/surf100.tv/?hl=en">
           <img src={insta} />
         </a>
       </Footer>
-    </>
+    </PageContainer>
   );
 };
 

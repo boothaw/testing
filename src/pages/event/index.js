@@ -122,11 +122,11 @@ const EventPage = () => {
           </div>
         </div>
         <SecondaryText>
-          Scoring a clip out of 50 points is unusual, we admit. For simplicity’s
-          sake, we recommend you <b>score each ride</b> out of 100, then cut it
-          in half. Decimal points get rounded up to the nearest whole number. If
-          you can’t do that math, please consult your local 4th grade teacher.
-          Oh, and the “best” judge wins a custom Mayhem/...Lost quiver.
+          In Surf100, clips are scored out of 100 points (whole numbers only, no
+          decimals). A decent wave might be worth 50 points, a solid wave is 70,
+          and a barn-burner could be 90. For a surfer to earn 100 points on a
+          clip, they better put your goddamn chin on the linoleum. Oh, and the
+          “best” judge of the event will win a custom Mayhem/...Lost quiver.
         </SecondaryText>
         <SeeMoreButton onClick={() => window.location.replace("/#giveaway")}>
           More on that below.
@@ -168,13 +168,6 @@ const EventPage = () => {
         >
           What is SURF 100?
         </MenuItem>
-        {/* <MenuItem
-          href="/#description"
-          onClick={() => setActiveTab("Description")}
-          active={activeTab === "Description"}
-        >
-          Ok, but how does it work?
-        </MenuItem> */}
 
         <MenuItem
           href="/#giveaway"
@@ -301,7 +294,7 @@ const EventPage = () => {
                       100-minute session. Each wave will be considered a
                       separate “clip” that can be used in their final “section”.
                       Each section will consist of two clips—one right, one
-                      left—which will be judged out of 50 points apiece, 100
+                      left—which will be judged out of 100 points apiece, 200
                       points total. (See above for more info on judging.)
                     </p>
                     <p>
