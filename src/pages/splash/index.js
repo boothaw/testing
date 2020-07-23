@@ -66,7 +66,7 @@ const SplashPage = () => {
         "23b08bc0-c50c-4bb1-8606-6a2db940919e",
         [
           {
-            id: 108337,
+            id: 109708,
           },
         ]
       );
@@ -83,21 +83,18 @@ const SplashPage = () => {
         {" "}
         <Banner></Banner>
         <NavBar>
+          <a href="/">
+            <img src={s100dark} />
+          </a>
           <div>
-            <img src={s100dark}></img>
-          </div>
-          <div>
-            <Button>Early-Bird Pay-Per-View ($USD9.99) Coming Soon</Button>
+            <Button href="#inplayer">Early-Bird Pay-Per-View ($USD9.99)</Button>
           </div>
         </NavBar>
       </NavSection>
 
       <ContentContainer>
         <Modal isShowing={isShowing} hide={toggle}></Modal>
-        {/* <div
-          id="inplayer-108337"
-          className="inplayer-paywall preview-frame"
-        ></div> */}
+
         <TitleSection>
           <h2>An audience-judged, 100-minute wave riding demonstration.</h2>
           <h2>6pm (PST) July 30, 2020</h2>
@@ -338,6 +335,9 @@ const SplashPage = () => {
           </ColumnTwo>
         </FaqContainer>
       </FaqSection>
+      <div id="inplayer">
+        <div id="inplayer-109708" className="inplayer-paywall preview-frame" />
+      </div>
       <Footer>
         <a href="/">
           <img src={s100white} />

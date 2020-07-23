@@ -129,7 +129,7 @@ const NavBar = styled.div`
   justify-content: space-between;
   width: 100%;
 
-  div img {
+  a img {
     height: 42px;
   }
 
@@ -148,7 +148,7 @@ const ContentContainer = styled.div`
   position: relative;
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   background: white;
   color: black;
   border: 2px solid black;
