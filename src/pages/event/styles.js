@@ -231,10 +231,11 @@ align-items: center;
 justify-content: center;
 height: 100%;
 padding: 0px 24px;
-border-bottom: 2px solid ${(props) => (props.active ? "#000" : "#fff")};
+ border-bottom: 2px solid ${(props) => (props.active ? "#000" : "#fff")};
 color: #000;
 text-decoration: none;
 font-weight: bold;
+font-size: 12px;
 &:hover {
   cursor: pointer;
 }
@@ -301,6 +302,10 @@ const SectionCopy = styled.div`
 
   li {
     list-style: none;
+  }
+
+  .questions {
+    margin-top: 16px;
   }
 `;
 
@@ -437,13 +442,8 @@ const ScheduleCard = styled.div`
 
 const CompetitorRow = styled.div`
   display: row;
-  // grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  // grid-column-gap: 16px;
   grid-row-gap: 16px;
-  // @media (max-width: 900px) {
-  //   grid-template-columns: 1fr;
-  // }
 `;
 
 const CompetitorCard = styled.div`
@@ -559,8 +559,14 @@ const SorryBanner = styled.div`
   background-color: #e74c3c;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   color: #fff;
+
+  h4 {
+    color: white;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
 `;
 
 const IframeContainer = styled.div`
@@ -638,6 +644,34 @@ const SeeMoreButton = styled.button`
   }
 `;
 
+const FAQCard = styled.div`
+  border: 1px solid #f1f2f5;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
+  border-radius: 8px;
+  min-height: 90px;
+  width: 100%;
+  padding: 16px 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 8px;
+
+  h4 {
+    margin-top: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 13px;
+    color: #757a8a;
+  }
+`;
+
 export {
   Nav,
   PageContainer,
@@ -675,4 +709,5 @@ export {
   SocialContainer,
   DesktopNavBar,
   MobileNavBar,
+  FAQCard,
 };
