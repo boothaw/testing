@@ -10,8 +10,8 @@ function App() {
   return (
     <Router>
       <Route exact path="/">
-        <EventPage />
-        {/* <SplashPage /> */}
+        {/* <EventPage /> */}
+        <SplashPage />
       </Route>
     </Router>
   );
