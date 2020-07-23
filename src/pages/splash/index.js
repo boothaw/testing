@@ -55,6 +55,7 @@ const SplashPage = () => {
   useEffect(() => {
     const emailRegistered = localStorage.getItem("SURF100.email");
 
+    console.log("run run", emailRegistered);
     if (emailRegistered) {
       setEmail(emailRegistered);
       setIsRegistered(true);
@@ -78,8 +79,6 @@ const SplashPage = () => {
 
   return (
     <PageContainer>
-      <Modal isShowing={isShowing} hide={toggle} />
-
       <NavSection>
         {" "}
         <Banner></Banner>
@@ -96,6 +95,7 @@ const SplashPage = () => {
       </NavSection>
 
       <ContentContainer>
+        <Modal isShowing={isShowing} hide={toggle}></Modal>
         {/* <div
           id="inplayer-108337"
           className="inplayer-paywall preview-frame"

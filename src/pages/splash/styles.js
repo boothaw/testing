@@ -3,48 +3,54 @@ import styled from "styled-components";
 const PageContainer = styled.div`
   min-width: 400px;
 
+  .divdiv {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+  }
+
   .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 5;
     width: 100%;
     height: 100%;
-    background-color: red;
+    background-color: black;
     opacity: 0.6;
   }
 
   .modal-wrapper {
     position: fixed;
-    top: 0;
-    left: 0;
     z-index: 10;
-    width: 100%;
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
     outline: 0;
+    display: flex;
+    jusift-content: center;
+    align-content: center;
   }
 
   .modal {
     z-index: 100;
     background: white;
     position: relative;
-    margin: 1.75rem auto;
+    margin: auto;
     border-radius: 3px;
-    max-width: 1200px;
     padding: 2rem;
 
     position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
+    top: 0;
+    // left: 500px;
+    width: 700px;
+    height: 400px;
+    // text-align: center;
   }
 
   .modal-header {
-    display: flex;
-    justify-content: flex-end;
+    // display: flex;
+    // justify-content: flex-end;
   }
 
   .modal-close-button {
@@ -64,44 +70,44 @@ const PageContainer = styled.div`
 
   //inplayer styles below here
 
-  .inplayer-paywall {
-    width: 100%;
-    color: #fff;
+  //   .inplayer-paywall {
+  //     width: 100%;
+  //     color: #fff;
 
-    .brandheader {
-      display: none;
-    }
+  //     .brandheader {
+  //       display: none;
+  //     }
 
-    .preview-text {
-      color: #fff;
-      position: absolute;
-      bottom: -30px;
-      width: 100%;
-      text-align: center;
-    }
-  }
+  //     .preview-text {
+  //       color: #fff;
+  //       position: absolute;
+  //       bottom: -30px;
+  //       width: 100%;
+  //       text-align: center;
+  //     }
+  //   }
 
-  .preview-frame {
-    > div {
-      position: relative;
-      overflow: hidden;
-      padding-top: 56.25%;
-    }
+  //   .preview-frame {
+  //     > div {
+  //       position: relative;
+  //       overflow: hidden;
+  //       padding-top: 56.25%;
+  //     }
 
-    .inplayer-preview-box {
-      padding: 0px;
-      border: none;
-    }
+  //     .inplayer-preview-box {
+  //       padding: 0px;
+  //       border: none;
+  //     }
 
-    .iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-  }
+  //     .iframe {
+  //       position: absolute;
+  //       top: 0;
+  //       left: 0;
+  //       width: 100%;
+  //       height: 100%;
+  //       border: 0;
+  //     }
+  //   }
 `;
 
 const NavSection = styled.div`

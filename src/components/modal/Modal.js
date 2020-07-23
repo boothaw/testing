@@ -13,24 +13,20 @@ const Modal = ({ isShowing, hide }) =>
         role="dialog"
       >
         <div className="modal">
-          <div className="modal-header">
-            <div
-              id="inplayer-108337"
-              className="inplayer-paywall preview-frame"
-            ></div>
-            <p>inplay above this??</p>
-            <button
-              type="button"
-              className="modal-close-button"
-              data-dismiss="modal"
-              aria-label="Close"
-              onClick={hide}
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
+          <div className="divdiv">hihihih</div>
+
+          <button
+            type="button"
+            className="modal-close-button"
+            data-dismiss="modal"
+            aria-label="Close"
+            onClick={hide}
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
       </div>
+      {/* </div> */}
     </React.Fragment>
   ) : null;
 

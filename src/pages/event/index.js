@@ -39,17 +39,11 @@ import {
 } from "./styles";
 
 const EventPage = () => {
+  const [height, setHeight] = useState(null);
   const [activeTab, setActiveTab] = useState("Scoring");
   const [loading, setLoading] = useState(true);
   const [isRegistered, setIsRegistered] = useState(false);
   const [email, setEmail] = useState("");
-  const [height, setHeight] = useState(null);
-
-  // useEffect(() => {
-  //   const obj = ReactDOM.findDOMNode(this);
-
-  //   setHeight(obj..scrollHeight + "px");
-  // });
 
   useEffect(() => {
     const emailRegistered = localStorage.getItem("SURF100.email");
