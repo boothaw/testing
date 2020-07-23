@@ -165,9 +165,9 @@ const TitleSection = styled.div`
   padding: 32px 0;
   //   height: 500px;
 
-  //   @media (max-width: 900px) {
-  //     height: 250px;
-  //   }
+  @media (max-width: 900px) {
+    padding-top: 16px;
+  }
 
   h2 {
     max-width: 575px;
@@ -184,35 +184,42 @@ const TitleSection = styled.div`
 `;
 
 const VidContainer = styled.div`
-  padding-top: 16px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 32px;
+  //   width: 640px;
+  position: absolute;
+  bottom: -24p;
+  width: 640px;
 
-  //   @media (max-width: 900px) {
-  //     position: absolute;
-  //     left: 10%;
-  //     right: 10%;
-  //   }
+  @media (max-width: 900px) {
+    position: absolute;
+    bottom: -24px;
+    width: 90%;
+  }
 `;
 
 const VidSection = styled.div`
-  //   height: 340px;
-  //   position: relative;
+  height: 340px;
+  position: relative;
   display: flex;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
 
-  //   @media (max-width: 900px) {
-  //   }
+  @media (max-width: 900px) {
+    height: 320px;
+  }
+
+  @media (max-width: 700px) {
+    height: 300px;
+  }
+
+  @media (max-width: 600px) {
+    height: 260px;
+  }
 `;
 
 const Featuring = styled.div`
   width: 100%;
   background: #e98956;
-  //   padding-top: 72px;
-  padding: 32px 0px;
+  padding: 56px 0 32px 0;
 
   h2 {
     font-size: 32px;
@@ -282,9 +289,9 @@ const Description = styled.div`
 
   ul {
     max-width: 750px;
-    text-align: justified;
     margin-left: auto;
     margin-right: auto;
+    padding-right: 40px;
   }
 `;
 

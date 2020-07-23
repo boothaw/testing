@@ -78,6 +78,8 @@ const SplashPage = () => {
 
   return (
     <PageContainer>
+      <Modal isShowing={isShowing} hide={toggle} />
+
       <NavSection>
         {" "}
         <Banner></Banner>
@@ -89,7 +91,6 @@ const SplashPage = () => {
             <Button onClick={toggle}>
               Buy Early-Bird Pay-Per-View ($USD9.99)
             </Button>
-            <Modal isShowing={isShowing} hide={toggle} />
           </div>
         </NavBar>
       </NavSection>
@@ -110,6 +111,7 @@ const SplashPage = () => {
               className="plyr"
               url="https://vimeo.com/437010903/83639a1da2"
               controls="true"
+              width="100%"
             />
           </VidContainer>
         </VidSection>
