@@ -31,8 +31,6 @@ import {
 import Modal from "../../components/modal/Modal";
 import useModal from "../../components/modal/useModal";
 
-import Popup from "reactjs-popup";
-
 import s100dark from "../../lib/assets/s100logodark.png";
 import kolohe from "../../lib/assets/Kolohe.png";
 import griffin from "../../lib/assets/Griffin.png";
@@ -45,10 +43,38 @@ import insta from "../../lib/assets/insta.png";
 
 const SplashPage = () => {
   const { isShowing, toggle } = useModal();
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [isRegistered, setIsRegistered] = useState(false);
+
   // return (
   //   <div>
   //     <button className="button-default" onClick={toggle}>Show Modal</button>
   //   </div>
+
+  useEffect(() => {
+    const emailRegistered = localStorage.getItem("SURF100.email");
+
+    if (emailRegistered) {
+      setEmail(emailRegistered);
+      setIsRegistered(true);
+    }
+
+    if (window.InplayerPaywall) {
+      var paywall = new window.InplayerPaywall(
+        "23b08bc0-c50c-4bb1-8606-6a2db940919e",
+        [
+          {
+            id: 108337,
+          },
+        ]
+      );
+
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+    }
+  }, []);
 
   return (
     <PageContainer>
@@ -69,6 +95,10 @@ const SplashPage = () => {
       </NavSection>
 
       <ContentContainer>
+        {/* <div
+          id="inplayer-108337"
+          className="inplayer-paywall preview-frame"
+        ></div> */}
         <TitleSection>
           <h2>An audience-judged, 100-minute wave riding demonstration.</h2>
           <h2>6pm (PST) July 30, 2020</h2>

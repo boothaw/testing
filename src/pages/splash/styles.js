@@ -4,46 +4,36 @@ const PageContainer = styled.div`
   min-width: 400px;
 
   .modal-overlay {
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    // z-index: 10;
-    // width: 100%;
-    // height: 100%;
-    // background-color: red;
-    // opacity: 0.6;
-    height: 100%;
-    width: 0;
     position: fixed;
-    z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
-    overflow-x: hidden;
-    transition: 0.5s;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    opacity: 0.6;
   }
 
   .modal-wrapper {
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    // z-index: 10;
-    // width: 100%;
-    // height: 100%;
-    // overflow-x: hidden;
-    // overflow-y: auto;
-    // outline: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
   }
 
   .modal {
-    // z-index: 100;
-    // background: white;
-    // position: relative;
-    // margin: 1.75rem auto;
-    // border-radius: 3px;
-    // max-width: 1200px;
-    // padding: 2rem;
+    z-index: 100;
+    background: white;
+    position: relative;
+    margin: 1.75rem auto;
+    border-radius: 3px;
+    max-width: 1200px;
+    padding: 2rem;
 
     position: relative;
     top: 25%;
@@ -94,8 +84,8 @@ const PageContainer = styled.div`
   .preview-frame {
     > div {
       position: relative;
-      // overflow: hidden;
-      // padding-top: 56.25%;
+      overflow: hidden;
+      padding-top: 56.25%;
     }
 
     .inplayer-preview-box {
