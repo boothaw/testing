@@ -47,6 +47,9 @@ const ContentContainer = styled.div`
 `;
 
 const Button = styled.a`
+  :hover {
+    color: #598cc0;
+  }
   background: white;
   color: black;
   border: 2px solid black;
@@ -54,7 +57,7 @@ const Button = styled.a`
   cursor: pointer;
   transition: 0.2s ease;
   ${(props) => props.mb && `margin-bottom: ${props.mb};`}
-  &:hover {
+  & {
     transform: scale(1.02);
   }
 

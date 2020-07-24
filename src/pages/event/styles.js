@@ -236,7 +236,7 @@ color: #000;
 text-decoration: none;
 font-weight: bold;
 font-size: 12px;
-&:hover {
+& {
   cursor: pointer;
 }
 @media (max-width: 900px) {
@@ -496,7 +496,7 @@ const Button = styled.button`
   cursor: pointer;
   transition: 0.2s ease;
   ${(props) => props.mb && `margin-bottom: ${props.mb};`}
-  &:hover {
+  & {
     transform: scale(1.02);
   }
 `;
@@ -518,7 +518,7 @@ const ButtonSecondary = styled.button`
   background: #ffffff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
   border-radius: 4px;
-  &:hover {
+  & {
     transform: scale(1.02);
   }
 `;
@@ -617,7 +617,7 @@ const LostDesktopContainer = styled.div`
     cursor: pointer;
     transition: 0.2s ease;
     ${(props) => props.mb && `margin-bottom: ${props.mb};`}
-    &:hover {
+    & {
       transform: scale(1.02);
     }
   }
@@ -639,7 +639,7 @@ const SeeMoreButton = styled.button`
   cursor: pointer;
   transition: 0.2s ease;
   ${(props) => props.mb && `margin-bottom: ${props.mb};`}
-  &:hover {
+  & {
     transform: scale(1.02);
   }
 `;

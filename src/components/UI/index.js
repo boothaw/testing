@@ -87,7 +87,7 @@ const SidebarIcon = styled.img`
   opacity: 0.2;
   transition: 0.2s ease;
 
-  &:hover {
+  & {
     opacity: 1;
     cursor: pointer;
   }
@@ -101,5 +101,5 @@ export {
   SidebarIcon,
   SidebarIconWrap,
   SidebarText,
-  ContentContainer
+  ContentContainer,
 };
