@@ -189,7 +189,6 @@ const TitleSection = styled.div`
 `;
 
 const VidContainer = styled.div`
-  //   width: 640px;
   position: absolute;
   bottom: -24p;
   width: 640px;
@@ -210,14 +209,6 @@ const VidSection = styled.div`
 
   @media (max-width: 900px) {
     height: 320px;
-  }
-
-  @media (max-width: 700px) {
-    height: 300px;
-  }
-
-  @media (max-width: 600px) {
-    height: 260px;
   }
 `;
 
