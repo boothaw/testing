@@ -155,12 +155,12 @@ const SplashPage = () => {
 
       <ContentContainer>
         <Description>
-          <h2>What is Surf100?</h2>
+          <h2>What is Surf 100?</h2>
           <ul>
             <p>
-              SURF100 is a waveriding exposition that takes place over a single,
-              100-minute period and is judged live, at a later date, by the
-              internet. All of this is done following social distancing
+              Surf 100 is a waveriding exposition that takes place over a
+              single, 100-minute period and is judged live, at a later date, by
+              the internet. All of this is done following social distancing
               guidelines. San Clemente favorite sons Kolohe Andino, Griffin
               Colapinto, and Ian Crane will paddle out for a 100-minute
               waveriding demonstration at Lower Trestles.
@@ -205,7 +205,10 @@ const SplashPage = () => {
         <FaqContainer>
           <ColumnOne>
             <h4>When is the event live?</h4>
-            <p>The broadcast goes live - sometime </p>
+            <p>
+              6pm, Thursday July 30, California (PST) & 11am, Friday July 31,
+              QLD/NSW/VIC (AEST){" "}
+            </p>
 
             <h4>Are there going to be more events?</h4>
             <p>
@@ -223,7 +226,7 @@ const SplashPage = () => {
 
             <h4>
               I’m on a phone so only have the Safari browser, will I be able to
-              watch Surf100?
+              watch Surf 100?
             </h4>
             <p>Yes.</p>
 
