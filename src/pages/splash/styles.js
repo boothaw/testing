@@ -182,7 +182,6 @@ const TitleSection = styled.div`
     margin-top: 0;
     margin-bottom: 0;
     font-size: 36px;
-    font-weight: bold;
     line-height: 38px;
 
     @media (max-width: 900px) {
