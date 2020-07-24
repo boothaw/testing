@@ -127,6 +127,7 @@ const NavBar = styled.div`
   padding: 16px 32px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 
   a img {
@@ -134,6 +135,8 @@ const NavBar = styled.div`
   }
 
   @media (max-width: 900px) {
+    padding: 8px 16px;
+
     div img {
       height: 32px;
     }
@@ -161,8 +164,8 @@ const Button = styled.a`
   }
 
   @media (max-width: 900px) {
-    font-size: 12px;
-    padding: 0 8px;
+    font-size: 16px;
+    padding: 4px;
   }
 `;
 
