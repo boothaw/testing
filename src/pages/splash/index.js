@@ -104,7 +104,7 @@ const SplashPage = () => {
             {" "}
             <ReactPlayer
               className="plyr"
-              url="https://vimeo.com/437010903/83639a1da2"
+              url="https://youtu.be/F-uIHXwf87I"
               controls="true"
               width="100%"
             />
