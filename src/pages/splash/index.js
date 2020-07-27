@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import {
   NavBar,
@@ -87,7 +88,7 @@ const SplashPage = () => {
             <img src={s100dark} />
           </a>
           <div>
-            <Button href="#inplayer">Early-Bird Pay-Per-View ($USD9.99)</Button>
+            <Button href="/event">Watch the Event!</Button>
           </div>
         </NavBar>
       </NavSection>
@@ -253,7 +254,7 @@ const SplashPage = () => {
 
             <h4>How do I pre-order the pay per view?</h4>
             <p>
-              <a href="/">Click here.</a>
+              <a href="/event">Click here.</a>
             </p>
 
             <h4>Does it cost more to get the pay per view in HD.</h4>
@@ -338,9 +339,9 @@ const SplashPage = () => {
           </ColumnTwo>
         </FaqContainer>
       </FaqSection>
-      <div id="inplayer">
+      {/* <div id="inplayer">
         <div id="inplayer-109708" className="inplayer-paywall preview-frame" />
-      </div>
+      </div> */}
       <Footer>
         <a href="/">
           <img src={s100white} />

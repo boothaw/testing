@@ -603,32 +603,6 @@ const S100Logo = styled.div`
   }
 `;
 
-const LostDesktopContainer = styled.div`
-  @media (max-width: 1205px) {
-    display: none;
-  }
-
-  button {
-    border: none;
-    background-color: white;
-    color: black;
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-    transition: 0.2s ease;
-    ${(props) => props.mb && `margin-bottom: ${props.mb};`}
-    & {
-      transform: scale(1.02);
-    }
-  }
-`;
-
-const LostMobileContainer = styled.div`
-  @media (min-width: 1205px) {
-    display: none;
-  }
-`;
-
 const SeeMoreButton = styled.button`
   border: none;
   background-color: white;
@@ -672,6 +646,34 @@ const FAQCard = styled.div`
   }
 `;
 
+const Footer = styled.div`
+  width: 100%;
+  background: black;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+
+  h4 {
+    color: #f0f0f0;
+  }
+
+  a {
+    margin-top: auto;
+    margin-bottom: auto;
+    color: red;
+  }
+
+  @media (max-width: 900px) {
+    img {
+      height: 32px;
+    }
+
+    h4 {
+      font-size: 12px;
+    }
+  }
+`;
+
 export {
   Nav,
   PageContainer,
@@ -702,12 +704,11 @@ export {
   IframeContainer,
   S100Logo,
   BodyContainer,
-  LostDesktopContainer,
-  LostMobileContainer,
   SeeMoreButton,
   Input,
   SocialContainer,
   DesktopNavBar,
   MobileNavBar,
   FAQCard,
+  Footer,
 };
