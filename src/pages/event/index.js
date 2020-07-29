@@ -93,10 +93,10 @@ const EventPage = () => {
         <div className="dates-and-price">
           <div className="row">
             <i className="fa fa-clock-o" aria-hidden="true"></i>
-            Show live 6pm, Thursday July 23, California (PST)
+            Show live 6pm, Thursday August 6, California (PST)
           </div>
           <div className="row">
-            & at 11am, Friday July 24, QLD/NSW/Vic (AEST)
+            & at 11am, Friday August 7, QLD/NSW/Vic (AEST)
           </div>
           <div className="row">
             <i className="fa fa-ticket" aria-hidden="true"></i>
