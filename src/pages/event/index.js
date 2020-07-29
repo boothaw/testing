@@ -27,7 +27,7 @@ import {
   IframeContainer,
   S100Logo,
   BodyContainer,
-  SeeMoreButton,
+  ExpandButton,
   Title,
   CompetitorRow,
   CompetitorCard,
@@ -144,8 +144,6 @@ const EventPage = () => {
         }}
       >
         <iframe
-          width="100%"
-          height="100%"
           id="scaled-frame"
           src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
           frameBorder="no"
@@ -260,7 +258,6 @@ const EventPage = () => {
       <PageContainer>
         <BodyContainer>
           <Main>
-            {/* <Ifr></Ifr> */}
             <EventDetails>{renderCTA()}</EventDetails>
 
             <div
@@ -268,6 +265,14 @@ const EventPage = () => {
               className="inplayer-paywall preview-frame"
             ></div>
             {renderScoring(email)}
+            <div>
+              {/* <ExpandButton
+                onClick={() => window.location.replace("/event/#giveaway")}
+              >
+                Expand Scoring
+              </ExpandButton> */}
+            </div>
+
             <MobileNavBar>{renderNavMenu()}</MobileNavBar>
             <MobileView>
               <EventDetails>{renderGiveAway()}</EventDetails>

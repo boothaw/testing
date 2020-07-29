@@ -246,7 +246,7 @@ font-size: 12px;
 `;
 
 const MainSection = styled.div`
-  padding: 48px 24px;
+  padding: 24px 24px;
   margin-top: 16px;
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
@@ -584,6 +584,7 @@ const IframeContainer = styled.div`
     right: 0;
     width: 100%;
     height: 100%;
+    margin-bottom: 24px;
   }
 
   @media (min-width: 900px) {
@@ -603,18 +604,33 @@ const S100Logo = styled.div`
   }
 `;
 
-const SeeMoreButton = styled.button`
+const ExpandButton = styled.button`
+  height: 48px;
+  max-width: 852px;
+  width: 100%;
+  outline: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  padding: 8px;
+  width: 100%;
   border: none;
-  background-color: white;
-  color: #757a8a;
-  margin: 0;
-  margin-bottom: 8px;
+  background-color: black;
+  color: white;
+  margin: 16px 0;
   padding: 0;
   cursor: pointer;
   transition: 0.2s ease;
   ${(props) => props.mb && `margin-bottom: ${props.mb};`}
   & {
     transform: scale(1.02);
+  }
+
+  @media (min-width: 900px) {
+    margin-left: 24px;
+    margin-right: 24px;
   }
 `;
 
@@ -704,7 +720,7 @@ export {
   IframeContainer,
   S100Logo,
   BodyContainer,
-  SeeMoreButton,
+  ExpandButton,
   Input,
   SocialContainer,
   DesktopNavBar,
