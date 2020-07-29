@@ -94,12 +94,12 @@ const EventPage = () => {
         <div className="dates-and-price">
           <div className="row">
             <i className="fa fa-clock-o" aria-hidden="true"></i>
-            6pm, Thursday July 30, California (PST) & 11am, Friday July 31,
+            6pm, Thursday August 6, California (PST) & 11am, Friday August 7,
             QLD/NSW/VIC (AEST)
           </div>
-          <div className="row">
+          {/* <div className="row">
             & at 11am, Friday July 24, QLD/NSW/Vic (AEST)
-          </div>
+          </div> */}
           <div className="row">
             <i className="fa fa-ticket" aria-hidden="true"></i>
             $14.99
@@ -393,8 +393,8 @@ const EventPage = () => {
                   <FAQCard>
                     <h4>When is the event live?</h4>
                     <p>
-                      6pm, Thursday July 30, California (PST) & 11am, Friday
-                      July 31, QLD/NSW/VIC (AEST){" "}
+                      6pm, Thursday August 6, California (PST) & 11am, Friday
+                      August 7, QLD/NSW/VIC (AEST){" "}
                     </p>{" "}
                   </FAQCard>
 
