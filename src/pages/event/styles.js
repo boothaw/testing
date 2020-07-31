@@ -664,7 +664,7 @@ const FAQCard = styled.div`
 
 const Footer = styled.div`
   width: 100%;
-  background: black;
+  background: red;
   padding: 16px;
   display: flex;
   justify-content: center;

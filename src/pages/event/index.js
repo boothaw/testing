@@ -118,16 +118,15 @@ const EventPage = () => {
           </div>
         </div>
         <SecondaryText>
-          In Surf100, clips are scored out of 100 points (whole numbers only, no
-          decimals). A decent wave might be worth 50 points, a solid wave is 70,
-          and a barn-burner could be 90. For a surfer to earn 100 points on a
-          clip, they better put your goddamn chin on the linoleum. Oh, and the
-          “best” judge of the event will win a custom Mayhem/...Lost quiver.
+          Clips are scored out of 100 points, so take what you’d give a wave out
+          of 10 and move the decimal one to the right. It’s not rocket surgery,
+          but if you do a good job, you can win a custom …Lost Surfboards
+          quiver.
         </SecondaryText>
         <ButtonSecondary
           onClick={() => window.location.replace("/event/#giveaway")}
         >
-          More on that below.
+          Tap your email below to be entered.
         </ButtonSecondary>
       </>
     );
