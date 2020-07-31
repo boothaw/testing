@@ -87,7 +87,7 @@ const SplashPage = () => {
             <img src={s100dark} />
           </a>
           <div>
-            <Button href="#inplayer">Early-Bird Pay-Per-View ($USD9.99)</Button>
+            <Button href="#inplayer">Early-Bird Pay-Per-View ($9.99)</Button>
           </div>
         </NavBar>
       </NavSection>
