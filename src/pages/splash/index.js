@@ -345,6 +345,7 @@ const SplashPage = () => {
         <a href="/">
           <img src={s100white} />
         </a>
+        {/* email */}
         <div>
           <h4>Have more questions? Contact Us.</h4>
           <a href="mailto: surf100@stabmag.com">questions@surf100.tv</a>
