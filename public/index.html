@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="SURF 100" content="A 100 minute viewer judged surf contest" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Karla:700&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      type="text/javascript"
-      src="https://assets.inplayer.com/paywall/latest/paywall.min.js"
-    ></script>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="SURF 100" content="A 100 minute viewer judged surf contest" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <script src="https://use.fontawesome.com/aae5e8dad7.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Karla:700&display=swap"
+    rel="stylesheet" />
+  <script type="text/javascript" src="https://assets.inplayer.com/paywall/latest/paywall.min.js"></script>
 
-   
+  <script src="https://use.fontawesome.com/aae5e8dad7.js"></script>
 
-    <title>SURF 100</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
 
-  <script>
+
+
+  <title>SURF 100</title>
+</head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174416028-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'UA-174416028-1');
+</script>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
+
+<script>
     // let iframe = document.getElementById("stab_iframe");
     // let endpoint =
     //   "https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html";
@@ -43,5 +49,6 @@
     // let uidURL = endpoint + "?user=" + user;
     // console.log(uidURL);
     // iframe.src = uidURL;
-  </script>
+</script>
+
 </html>
