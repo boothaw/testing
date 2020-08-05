@@ -271,7 +271,7 @@ const SplashPage = () => {
             <p>You can definitely ask.</p>
             <h4>What if I can’t afford the pay per view?</h4>
             <p>
-              Email us at  <a href="mailto: surf100@stabmag.com">surf100@stabmag.com</a>, tell us your name, age and where you’re from and why you can’t pay and we’ll send you a code.
+              Email us at  <a href="mailto: surf100@stabmag.com">surf100@stabmag.com</a>, tell us your name, age, where you’re from and why you can’t pay and we’ll send you a code.
             </p>
           </ColumnOne>
           <ColumnTwo>
