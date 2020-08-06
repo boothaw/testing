@@ -319,6 +319,7 @@ const Footer = styled.div`
 `;
 
 const SorryBanner = styled.div`
+  min-width: 375px;
   min-height: 32px;
   padding: 8px 12px;
   text-align: center;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Nav = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 72px;
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
@@ -9,7 +9,7 @@ const Nav = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0px 32px;
-  min-width: 420px;
+  min-width: 375px;
   img {
     height: 30px;
   }
@@ -54,7 +54,7 @@ const PageContainer = styled.div`
   padding: 16px 16px 0;
   margin-left: auto;
   margin-right: auto;
-  min-width: 420px;
+  min-width: 375px;
 `;
 
 const BodyContainer = styled.div`
@@ -137,7 +137,8 @@ const EventDetails = styled.div`
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
   border-radius: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
+  margin-top: 16px;
 
   .dates-and-price {
     margin-bottom: 12px;
@@ -185,20 +186,20 @@ const EventDetails = styled.div`
     }
   }
 
-  .hosts100 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 76px;
-    width: 76px;
-    border: 1px solid #f1f2f5;
-    box-sizing: border-box;
-    box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
-    border-radius: 8px;
-    margin-right: 12px;
-    img {
-      height: 30px;
-    }
+  // .hosts100 {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   height: 76px;
+  //   width: 76px;
+  //   border: 1px solid #f1f2f5;
+  //   box-sizing: border-box;
+  //   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
+  //   border-radius: 8px;
+  //   margin-right: 12px;
+  //   img {
+  //     height: 30px;
+  //   }
   }
 `;
 
@@ -239,6 +240,7 @@ font-size: 12px;
 & {
   cursor: pointer;
 }
+
 @media (max-width: 900px) {
   padding: 8px;
   font-size: 12px;
@@ -246,18 +248,23 @@ font-size: 12px;
 `;
 
 const MainSection = styled.div`
-  padding: 24px 24px;
+  padding: 24px 24px 0 24px;
   margin-top: 16px;
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
   border-radius: 8px;
   @media (max-width: 900px) {
     padding-top: 24px;
+    
   }
 `;
 
 const SectionBlock = styled.div`
+  margin-top: -85px;
+  padding-top: 85px;
+  display: inline-block;
   margin-bottom: 48px;
+
 `;
 
 const Title = styled.h2`
@@ -530,13 +537,13 @@ const MobileView = styled.div`
     display: none;
   }
 
-  @media (max-width: 1205px) {
-    display: row;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
-    margin-top: 16px;
-  }
+  // @media (max-width: 1205px) {
+  //   display: row;
+  //   grid-template-columns: 1fr 1fr;
+  //   grid-column-gap: 16px;
+  //   grid-row-gap: 16px;
+  //   margin-top: 16px;
+  // }
 `;
 
 const DesktopView = styled.div`
@@ -553,10 +560,11 @@ const StickyScroll = styled.div`
 `;
 
 const SorryBanner = styled.div`
+  min-width: 375px;
   min-height: 32px;
-  padding: 8px 12px;
+  padding: 8px 16px;
   text-align: center;
-  background-color: #e74c3c;
+  background-color: red;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -569,12 +577,42 @@ const SorryBanner = styled.div`
   }
 `;
 
-const IframeContainer = styled.div`
+const IframeContainerSmall = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 375px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+
+  #scaled-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 24px;
+  }
+
+  // @media (min-width: 900px) {
+  //   height: 325px;
+  // }
+
+  @media (max-width: 900px) {
+    min-height: 895px;
+    // border: 1px solid pink;
+  }
+`;
+
+const IframeContainerBig = styled.div`
   position: relative;
   width: 100%;
   max-width: 875px;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 5px;
 
   #scaled-frame {
     position: absolute;
@@ -588,7 +626,7 @@ const IframeContainer = styled.div`
   }
 
   @media (min-width: 900px) {
-    height: 325px;
+    height: 625px;
   }
 
   @media (max-width: 900px) {
@@ -632,6 +670,10 @@ const ExpandButton = styled.button`
     margin-left: 24px;
     margin-right: 24px;
   }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const FAQCard = styled.div`
@@ -664,10 +706,11 @@ const FAQCard = styled.div`
 
 const Footer = styled.div`
   width: 100%;
-  background: red;
+  background: black;
   padding: 16px;
   display: flex;
   justify-content: center;
+  min-width: 375px;
 
   h4 {
     color: #f0f0f0;
@@ -690,6 +733,22 @@ const Footer = styled.div`
   }
 `;
 
+const SeeMoreButton = styled.a`
+  text-decoration: underline;
+  border: none;
+  background-color: white;
+  color: black;
+  margin: 0;
+  margin-bottom: 8px;
+  padding: 0;
+  cursor: pointer;
+  // transition: 0.2s ease;
+  // ${(props) => props.mb && `margin-bottom: ${props.mb};`}
+  // & {
+  //   transform: scale(1.02);
+  }
+`;
+
 export {
   Nav,
   PageContainer,
@@ -701,6 +760,7 @@ export {
   MenuItem,
   MainSection,
   Title,
+  SeeMoreButton,
   SecondaryText,
   SubTitle,
   SectionTitle,
@@ -717,7 +777,8 @@ export {
   DesktopView,
   StickyScroll,
   SorryBanner,
-  IframeContainer,
+  IframeContainerSmall,
+  IframeContainerBig,
   S100Logo,
   BodyContainer,
   ExpandButton,

@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import Surf100Logo from "../../lib/assets/surf-100.png";
 
 import { surfers_trestles_2020 } from "../../surfers";
-// import { createPortal } from "react-dom";
-// import Ifr from "../../components/iframe/index";
 
 import {
   Nav,
@@ -24,7 +22,8 @@ import {
   MobileView,
   DesktopView,
   StickyScroll,
-  IframeContainer,
+  IframeContainerSmall,
+  IframeContainerBig,
   S100Logo,
   BodyContainer,
   ExpandButton,
@@ -37,14 +36,17 @@ import {
   MobileNavBar,
   FAQCard,
   Footer,
+  SeeMoreButton,
+  SorryBanner
 } from "./styles";
 
 const EventPage = () => {
-  const [height, setHeight] = useState(null);
   const [activeTab, setActiveTab] = useState("Scoring");
   const [loading, setLoading] = useState(true);
   const [isRegistered, setIsRegistered] = useState(false);
   const [email, setEmail] = useState("");
+  const [isShowing, setIsShowing] = useState(false);
+
 
   useEffect(() => {
     const emailRegistered = localStorage.getItem("SURF100.email");
@@ -59,7 +61,7 @@ const EventPage = () => {
         "23b08bc0-c50c-4bb1-8606-6a2db940919e",
         [
           {
-            id: 108337,
+            id: 109708,
           },
         ]
       );
@@ -69,6 +71,14 @@ const EventPage = () => {
       }, 1000);
     }
   }, []);
+
+
+  const toggle = () => {
+    console.log("showing status", isShowing);
+    setIsShowing(!isShowing);
+
+  };
+
 
   const handleEmailSave = () => {
     // VALIDATE
@@ -97,9 +107,6 @@ const EventPage = () => {
             6pm, Thursday August 6, California (PST) & 11am, Friday August 7,
             QLD/NSW/VIC (AEST)
           </div>
-          {/* <div className="row">
-            & at 11am, Friday July 24, QLD/NSW/Vic (AEST)
-          </div> */}
           <div className="row">
             <i className="fa fa-ticket" aria-hidden="true"></i>
             $14.99
@@ -123,25 +130,48 @@ const EventPage = () => {
           but if you do a good job, you can win a custom …Lost Surfboards
           quiver.
         </SecondaryText>
-        <ButtonSecondary
-          onClick={() => window.location.replace("/event/#giveaway")}
-        >
+        <SeeMoreButton href="/event/#giveaway">
           Tap your email below to be entered.
-        </ButtonSecondary>
+        </SeeMoreButton>
       </>
     );
   };
 
+
   const renderScoring = (emailAddress) => {
+    // {(!isShowing && renderContracted()) || (isShowing && renderExpanded())}
+
+    if (isShowing) {
+      return (
+
+        <IframeContainerBig
+          style={{
+            maxWidth: 875,
+            width: "100%",
+            height: 925,
+            overflow: "auto"
+          }}
+        >
+          <iframe
+            id="scaled-frame"
+            src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
+            frameBorder="no"
+            allowtransparency="true"
+            allowtullscreen="true"
+          ></iframe>
+        </IframeContainerBig>
+
+      );
+
+    }
     return (
-      <IframeContainer
+      <IframeContainerSmall
         style={{
           maxWidth: 875,
           width: "100%",
           height: 325,
-          overflow: "auto",
-        }}
-      >
+          overflow: "auto"
+        }} >
         <iframe
           id="scaled-frame"
           src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
@@ -149,14 +179,17 @@ const EventPage = () => {
           allowtransparency="true"
           allowtullscreen="true"
         ></iframe>
-      </IframeContainer>
+      </IframeContainerSmall >
     );
+
+
   };
 
   const renderNavMenu = () => {
     return (
       <MenuBar>
         <MenuItem
+
           href="/event/#concept"
           onClick={() => setActiveTab("Concept")}
           active={activeTab === "Concept"}
@@ -187,39 +220,6 @@ const EventPage = () => {
         </MenuItem>
       </MenuBar>
     );
-  };
-
-  // Random component
-  const Completionist = () => <span>Start Watching!</span>;
-
-  // Renderer callback with condition
-  const renderer = ({ hours, minutes, seconds, completed }) => {
-    if (completed) {
-      // Render a completed state
-      return <Completionist />;
-    } else {
-      // Render a countdown
-      return (
-        <span>
-          {hours}:{minutes}:{seconds}
-        </span>
-      );
-    }
-  };
-
-  const calculateTimeLeft = () => {
-    let year = new Date().getFullYear();
-    const difference = +new Date(`${year}-10-1`) - +new Date();
-    let timeLeft = {};
-    timeLeft = {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
-
-    return timeLeft;
-    console.log("time left", { timeLeft });
   };
 
   return (
@@ -259,18 +259,21 @@ const EventPage = () => {
           <Main>
             <EventDetails>{renderCTA()}</EventDetails>
 
-            <div
+            {/* <div
               id="inplayer-108337"
               className="inplayer-paywall preview-frame"
-            ></div>
-            {renderScoring(email)}
-            <div>
-              {/* <ExpandButton
-                onClick={() => window.location.replace("/event/#giveaway")}
-              >
-                Expand Scoring
-              </ExpandButton> */}
+            ></div> */}
+
+            <div id="inplayer-109708" class="inplayer-paywall"></div>
+
+
+            <div >
+              <ExpandButton onClick={toggle}>
+                {isShowing ? "Collapse Scoring" : "Expand Scoring"}
+              </ExpandButton>
+              {renderScoring()}
             </div>
+
 
             <MobileNavBar>{renderNavMenu()}</MobileNavBar>
             <MobileView>
@@ -359,17 +362,20 @@ const EventPage = () => {
                       <h3>Registration Complete!</h3>
                     </div>
                   ) : (
-                    <div>
-                      <Input
-                        onChange={(e) => setEmail(e.currentTarget.value)}
-                        value={email}
-                        placeholder="Email address"
-                      />
-                      <ButtonSecondary onClick={handleEmailSave}>
-                        Submit
-                      </ButtonSecondary>
-                    </div>
-                  )}
+                      <div>
+                        <form>
+                          <Input
+                            onChange={(e) => setEmail(e.currentTarget.value)}
+                            value={email}
+                            placeholder="Email address"
+                          />
+
+                          <ButtonSecondary onClick={handleEmailSave}>
+                            Submit
+                        </ButtonSecondary>
+                        </form>
+                      </div>
+                    )}
                 </SectionCopy>
               </SectionBlock>
 
@@ -601,6 +607,15 @@ const EventPage = () => {
                     </p>
                   </FAQCard>
 
+                  <FAQCard>
+                    <h4>What if I can’t afford the pay per view?
+                  </h4>
+                    <p>Email us at <a href="mailto: surf100@stabmag.com">surf100@stabmag.com</a>, tell us your name, age, where you’re from, why you can’t pay and we’ll send you a code.
+                      </p>
+                  </FAQCard>
+
+
+
                   {/* </FAQCard> */}
                 </SectionCopy>
               </SectionBlock>
@@ -615,10 +630,12 @@ const EventPage = () => {
           </Panel>
         </BodyContainer>
       </PageContainer>
+      {/* <SorryBanner>Times are tough. If you want to watch and can't swing it, email us with your name, age and a bit about yourself.</SorryBanner> */}
+
       <Footer>
         <div>
           <h4>Have more questions? Contact Us.</h4>
-          <a href="mailto: questions@surf100.tv">questions@surf100.tv</a>
+          <a href="mailto: surf100@stabmag.com">surf100@stabmag.com</a>
         </div>
       </Footer>
     </>

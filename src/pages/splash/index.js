@@ -28,7 +28,6 @@ import {
   VidSection,
   NavSection,
   SorryBanner
-
 } from "./styles";
 
 import Modal from "../../components/modal/Modal";
@@ -90,7 +89,7 @@ const SplashPage = () => {
             <img src={s100dark} />
           </a>
           <div>
-            <Button href="/event">Watch the Event!</Button>
+            <Button href="/event">Watch the Event</Button>
           </div>
         </NavBar>
       </NavSection>
@@ -209,7 +208,7 @@ const SplashPage = () => {
           <ColumnOne>
             <h4>When is the event live?</h4>
             <p>
-              6pm, Thursday August 6, California (PST) & 11am, Friday August 7,
+              6pm, Thursday August 6, California (PST) & 11am, Friday August 6,
               QLD/NSW/VIC (AEST){" "}
             </p>
 
@@ -272,6 +271,11 @@ const SplashPage = () => {
 
             <h4>Can I get a refund if I don’t like the show?</h4>
             <p>You can definitely ask.</p>
+
+            <h4>What if I can’t afford the pay per view?
+</h4>
+            <p>Email us at <a href="mailto: surf100@stabmag.com">surf100@stabmag.com</a>, tell us your name, age, where you’re from, why you can’t pay and we’ll send you a code.
+</p>
           </ColumnOne>
           <ColumnTwo>
             <h4>Does Dane Reynolds judge?</h4>
@@ -344,15 +348,14 @@ const SplashPage = () => {
       {/* <div id="inplayer">
         <div id="inplayer-109708" className="inplayer-paywall preview-frame" />
       </div> */}
-      {/* <SorryBanner>Times are tough. If you want to watch and can't swing it financially, email us up with your name, age and a bit about yourself.</SorryBanner> */}
-
+      {/* <SorryBanner>Times are tough. If you want to watch and can't swing it, email us with your name, age and a bit about yourself.</SorryBanner> */}
       <Footer>
         <a href="/">
           <img src={s100white} />
         </a>
         <div>
           <h4>Have more questions? Contact Us.</h4>
-          <a href="mailto: questions@surf100.tv">questions@surf100.tv</a>
+          <a href="mailto: surf100@stabmag.com">surf100@stabmag.com</a>
         </div>
         <a target="_blank" href="https://www.instagram.com/surf100.tv/?hl=en">
           <img src={insta} />
