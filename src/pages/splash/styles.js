@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const PageContainer = styled.div`
-  min-width: 400px;
+  min-width: 375px;
 `;
 
 const NavSection = styled.div`
