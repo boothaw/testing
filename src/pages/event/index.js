@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Surf100Logo from "../../lib/assets/surf-100.png";
 
-import { surfers_melbourne_2020 } from "../../surfers";
-// import { createPortal } from "react-dom";
-// import Ifr from "../../components/iframe/index";
+import { surfers_trestles_2020 } from "../../surfers";
 
 import {
   Nav,
@@ -24,10 +22,11 @@ import {
   MobileView,
   DesktopView,
   StickyScroll,
-  IframeContainer,
+  IframeContainerSmall,
+  IframeContainerBig,
   S100Logo,
   BodyContainer,
-  SeeMoreButton,
+  ExpandButton,
   Title,
   CompetitorRow,
   CompetitorCard,
@@ -36,14 +35,18 @@ import {
   DesktopNavBar,
   MobileNavBar,
   FAQCard,
+  Footer,
+  SeeMoreButton,
+  SorryBanner
 } from "./styles";
 
 const EventPage = () => {
-  const [height, setHeight] = useState(null);
   const [activeTab, setActiveTab] = useState("Scoring");
   const [loading, setLoading] = useState(true);
   const [isRegistered, setIsRegistered] = useState(false);
   const [email, setEmail] = useState("");
+  const [isShowing, setIsShowing] = useState(false);
+
 
   useEffect(() => {
     const emailRegistered = localStorage.getItem("SURF100.email");
@@ -58,7 +61,7 @@ const EventPage = () => {
         "23b08bc0-c50c-4bb1-8606-6a2db940919e",
         [
           {
-            id: 108337,
+            id: 109708,
           },
         ]
       );
@@ -68,6 +71,14 @@ const EventPage = () => {
       }, 1000);
     }
   }, []);
+
+
+  const toggle = () => {
+    console.log("showing status", isShowing);
+    setIsShowing(!isShowing);
+
+  };
+
 
   const handleEmailSave = () => {
     // VALIDATE
@@ -93,10 +104,8 @@ const EventPage = () => {
         <div className="dates-and-price">
           <div className="row">
             <i className="fa fa-clock-o" aria-hidden="true"></i>
-            Show live 6pm, Thursday August 6, California (PST)
-          </div>
-          <div className="row">
-            & at 11am, Friday August 7, QLD/NSW/Vic (AEST)
+            6pm, Thursday August 6, California (PST) & 11am, Friday August 7,
+            QLD/NSW/VIC (AEST)
           </div>
           <div className="row">
             <i className="fa fa-ticket" aria-hidden="true"></i>
@@ -116,47 +125,72 @@ const EventPage = () => {
           </div>
         </div>
         <SecondaryText>
-          In Surf100, clips are scored out of 100 points (whole numbers only, no
-          decimals). A decent wave might be worth 50 points, a solid wave is 70,
-          and a barn-burner could be 90. For a surfer to earn 100 points on a
-          clip, they better put your goddamn chin on the linoleum. Oh, and the
-          “best” judge of the event will win a custom Mayhem/...Lost quiver.
+          Clips are scored out of 100 points, so take what you’d give a wave out
+          of 10 and move the decimal one to the right. It’s not rocket surgery,
+          but if you do a good job, you can win a custom …Lost Surfboards
+          quiver.
         </SecondaryText>
-        <SeeMoreButton onClick={() => window.location.replace("/#giveaway")}>
-          More on that below.
+        <SeeMoreButton href="/event/#giveaway">
+          Tap your email below to be entered.
         </SeeMoreButton>
       </>
     );
   };
 
+
   const renderScoring = (emailAddress) => {
+    // {(!isShowing && renderContracted()) || (isShowing && renderExpanded())}
+
+    if (isShowing) {
+      return (
+
+        <IframeContainerBig
+          style={{
+            maxWidth: 875,
+            width: "100%",
+            height: 925,
+            overflow: "auto"
+          }}
+        >
+          <iframe
+            id="scaled-frame"
+            src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
+            frameBorder="no"
+            allowtransparency="true"
+            allowtullscreen="true"
+          ></iframe>
+        </IframeContainerBig>
+
+      );
+
+    }
     return (
-      <IframeContainer
+      <IframeContainerSmall
         style={{
           maxWidth: 875,
           width: "100%",
           height: 325,
-          overflow: "auto",
-        }}
-      >
+          overflow: "auto"
+        }} >
         <iframe
-          width="100%"
-          height="100%"
           id="scaled-frame"
           src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
           frameBorder="no"
           allowtransparency="true"
           allowtullscreen="true"
         ></iframe>
-      </IframeContainer>
+      </IframeContainerSmall >
     );
+
+
   };
 
   const renderNavMenu = () => {
     return (
       <MenuBar>
         <MenuItem
-          href="/#concept"
+
+          href="/event/#concept"
           onClick={() => setActiveTab("Concept")}
           active={activeTab === "Concept"}
         >
@@ -164,21 +198,21 @@ const EventPage = () => {
         </MenuItem>
 
         <MenuItem
-          href="/#giveaway"
+          href="/event/#giveaway"
           onClick={() => setActiveTab("Giveaway")}
           active={activeTab === "Giveaway"}
         >
           ...Lost Surfboard Giveaway
         </MenuItem>
         <MenuItem
-          href="/#competitors"
+          href="/event/#competitors"
           onClick={() => setActiveTab("Competitors")}
           active={activeTab === "Competitors"}
         >
           Who are these “surfers”?
         </MenuItem>
         <MenuItem
-          href="/#faq"
+          href="/event/#faq"
           onClick={() => setActiveTab("FAQ")}
           active={activeTab === "FAQ"}
         >
@@ -186,39 +220,6 @@ const EventPage = () => {
         </MenuItem>
       </MenuBar>
     );
-  };
-
-  // Random component
-  const Completionist = () => <span>Start Watching!</span>;
-
-  // Renderer callback with condition
-  const renderer = ({ hours, minutes, seconds, completed }) => {
-    if (completed) {
-      // Render a completed state
-      return <Completionist />;
-    } else {
-      // Render a countdown
-      return (
-        <span>
-          {hours}:{minutes}:{seconds}
-        </span>
-      );
-    }
-  };
-
-  const calculateTimeLeft = () => {
-    let year = new Date().getFullYear();
-    const difference = +new Date(`${year}-10-1`) - +new Date();
-    let timeLeft = {};
-    timeLeft = {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
-
-    return timeLeft;
-    console.log("time left", { timeLeft });
   };
 
   return (
@@ -256,14 +257,24 @@ const EventPage = () => {
       <PageContainer>
         <BodyContainer>
           <Main>
-            {/* <Ifr></Ifr> */}
             <EventDetails>{renderCTA()}</EventDetails>
 
-            <div
+            {/* <div
               id="inplayer-108337"
               className="inplayer-paywall preview-frame"
-            ></div>
-            {renderScoring(email)}
+            ></div> */}
+
+            <div id="inplayer-109708" class="inplayer-paywall"></div>
+
+
+            <div >
+              <ExpandButton onClick={toggle}>
+                {isShowing ? "Collapse Scoring" : "Expand Scoring"}
+              </ExpandButton>
+              {renderScoring()}
+            </div>
+
+
             <MobileNavBar>{renderNavMenu()}</MobileNavBar>
             <MobileView>
               <EventDetails>{renderGiveAway()}</EventDetails>
@@ -274,14 +285,13 @@ const EventPage = () => {
                 <SectionCopy>
                   <ul>
                     <p>
-                      San Clemente favorite sons Kolohe Andino, Griffin
-                      Colapinto, and Ian Crane will paddle out for a 100-minute
-                      waveriding demonstration at Lower Trestles.{" "}
-                    </p>
-                    <p>
-                      While negotiating a typical Lowers crowd, they’ll attempt
-                      to capture the best two-wave (right + left) video clip in
-                      the allotted time.
+                      Surf 100 is a waveriding exposition that takes place over
+                      a single, 100-minute period and is judged live, at a later
+                      date, by the internet. All of this is done following
+                      social distancing guidelines. San Clemente favorite sons
+                      Kolohe Andino, Griffin Colapinto, and Ian Crane will
+                      paddle out for a 100-minute waveriding demonstration at
+                      Lower Trestles.
                     </p>
                     <p>
                       The surfers can ride as many waves as they want in the
@@ -290,6 +300,11 @@ const EventPage = () => {
                       Each section will consist of two clips—one right, one
                       left—which will be judged out of 100 points apiece, 200
                       points total. (See above for more info on judging.)
+                    </p>
+                    <p>
+                      While negotiating a typical Lowers crowd, they’ll attempt
+                      to capture the best two-wave (right + left) video clip in
+                      the allotted time.
                     </p>
                     <p>
                       The best section (two clip total), according to the
@@ -303,38 +318,6 @@ const EventPage = () => {
                   </ul>
                 </SectionCopy>
               </SectionBlock>
-              {/* <SectionBlock id="description">
-                <SectionTitle>Ok, but how does it work?</SectionTitle>
-                <SectionCopy>
-                  <ul>
-                    <li>
-                      San Clemente’s own Kolohe Andino, Griffin Colapinto, and
-                      Ian Crane will paddle out for a 100-minute waveriding
-                      demonstration at Lower Trestles. While negotiating a
-                      typical Lowers crowd, they’ll attempt to capture the best
-                      two-wave (right + left) video section in the allotted
-                      time.
-                    </li>
-                  </ul>
-                  <ul>
-                    <li>
-                      The surfers can ride as many waves as they want in the
-                      100-minute session. Each wave will be considered a
-                      separate “clip” that can be used in their final “section”.
-                      Each section will consist of two clips—one right, one
-                      left—which will be judged out of 50 points apiece, 100
-                      points total. (See above for more info on judging.){" "}
-                    </li>
-                  </ul>
-                  <ul>
-                    <li>
-                      The best section (two clip total), according to the
-                      internet, wins.
-                    </li>
-                  </ul>
-                </SectionCopy>
-              </SectionBlock> */}
-
               <SectionBlock id="giveaway">
                 <SectionTitle>...Lost Surfboard Giveaway</SectionTitle>
                 <SectionCopy>
@@ -379,24 +362,27 @@ const EventPage = () => {
                       <h3>Registration Complete!</h3>
                     </div>
                   ) : (
-                    <div>
-                      <Input
-                        onChange={(e) => setEmail(e.currentTarget.value)}
-                        value={email}
-                        placeholder="Email address"
-                      />
-                      <ButtonSecondary onClick={handleEmailSave}>
-                        Submit
-                      </ButtonSecondary>
-                    </div>
-                  )}
+                      <div>
+                        <form>
+                          <Input
+                            onChange={(e) => setEmail(e.currentTarget.value)}
+                            value={email}
+                            placeholder="Email address"
+                          />
+
+                          <ButtonSecondary onClick={handleEmailSave}>
+                            Submit
+                        </ButtonSecondary>
+                        </form>
+                      </div>
+                    )}
                 </SectionCopy>
               </SectionBlock>
 
               <SectionBlock id="competitors">
-                <SectionTitle>Who are these “surfers”, anyway?</SectionTitle>
+                <SectionTitle>Who are these “surfers”?</SectionTitle>
                 <CompetitorRow>
-                  {surfers_melbourne_2020.map((surfer) => (
+                  {surfers_trestles_2020.map((surfer) => (
                     <CompetitorCard key={surfer.name}>
                       <img src={surfer.photo} />
                       <div>
@@ -416,7 +402,10 @@ const EventPage = () => {
                 <SectionCopy>
                   <FAQCard>
                     <h4>When is the event live?</h4>
-                    <p>The broadcast goes live - sometime </p>
+                    <p>
+                      6pm, Thursday August 6, California (PST) & 11am, Friday
+                      August 7, QLD/NSW/VIC (AEST){" "}
+                    </p>{" "}
                   </FAQCard>
 
                   <FAQCard>
@@ -495,7 +484,7 @@ const EventPage = () => {
                   <FAQCard>
                     <h4>How do I pre-order the pay per view?</h4>
                     <p>
-                      <a href="/">Click here.</a>
+                      <a href="/event">Click here.</a>
                     </p>
                   </FAQCard>
 
@@ -618,13 +607,14 @@ const EventPage = () => {
                     </p>
                   </FAQCard>
 
-                  {/* <FAQCard> */}
-                  <div className="questions">
-                    <h4>Have more questions? Contact us.</h4>
-                    <a href="mailto: Surf100@stabmag.com">
-                      Surf100@stabmag.com
-                    </a>
-                  </div>
+                  <FAQCard>
+                    <h4>What if I can’t afford the pay per view?
+                  </h4>
+                    <p>Email us at <a href="mailto: surf100@stabmag.com">surf100@stabmag.com</a>, tell us your name, age, where you’re from, why you can’t pay and we’ll send you a code.
+                      </p>
+                  </FAQCard>
+
+
 
                   {/* </FAQCard> */}
                 </SectionCopy>
@@ -640,6 +630,14 @@ const EventPage = () => {
           </Panel>
         </BodyContainer>
       </PageContainer>
+      {/* <SorryBanner>Times are tough. If you want to watch and can't swing it, email us with your name, age and a bit about yourself.</SorryBanner> */}
+
+      <Footer>
+        <div>
+          <h4>Have more questions? Contact Us.</h4>
+          <a href="mailto: surf100@stabmag.com">surf100@stabmag.com</a>
+        </div>
+      </Footer>
     </>
   );
 };

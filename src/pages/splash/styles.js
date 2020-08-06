@@ -318,6 +318,24 @@ const Footer = styled.div`
   }
 `;
 
+const SorryBanner = styled.div`
+  min-width: 375px;
+  min-height: 32px;
+  padding: 8px 12px;
+  text-align: center;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #fff;
+
+  h4 {
+    color: white;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+`;
+
 export {
   Banner,
   ContentContainer,
@@ -343,4 +361,5 @@ export {
   PageContainer,
   VidSection,
   NavSection,
+  SorryBanner
 };
