@@ -37,7 +37,8 @@ import {
   FAQCard,
   Footer,
   SeeMoreButton,
-  SorryBanner
+  SorryBanner,
+  KoloheBanner
 } from "./styles";
 
 const EventPage = () => {
@@ -254,6 +255,7 @@ const EventPage = () => {
           </a>
         </SocialContainer>
       </Nav>
+      <KoloheBanner><a href="https://stabmag.com/news/kolohe-andino-wins-surf100-at-lower-trestles/">Kolohe Andino wins inaugural Surf100 at Lowers</a></KoloheBanner>
       <PageContainer>
         <BodyContainer>
           <Main>

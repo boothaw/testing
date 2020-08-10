@@ -336,6 +336,19 @@ const SorryBanner = styled.div`
   }
 `;
 
+const KoloheBanner = styled.div`
+  width: 100%;
+  background: #598cc0;
+  text-align: center;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: bold;
+
+a {
+  color: white;
+}
+`;
+
 export {
   Banner,
   ContentContainer,
@@ -361,5 +374,6 @@ export {
   PageContainer,
   VidSection,
   NavSection,
-  SorryBanner
+  SorryBanner,
+  KoloheBanner
 };

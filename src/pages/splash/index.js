@@ -27,7 +27,8 @@ import {
   PageContainer,
   VidSection,
   NavSection,
-  SorryBanner
+  SorryBanner,
+  KoloheBanner
 } from "./styles";
 
 import Modal from "../../components/modal/Modal";
@@ -93,10 +94,9 @@ const SplashPage = () => {
           </div>
         </NavBar>
       </NavSection>
+      <KoloheBanner><a href="https://stabmag.com/news/kolohe-andino-wins-surf100-at-lower-trestles/">Kolohe Andino wins inaugural Surf100 at Lowers</a></KoloheBanner>
 
       <ContentContainer>
-        <Modal isShowing={isShowing} hide={toggle}></Modal>
-
         <TitleSection>
           <h2>An audience-judged, 100-minute wave riding demonstration.</h2>
           <h2>6pm (PST) August 6, 2020</h2>

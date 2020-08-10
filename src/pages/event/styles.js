@@ -749,6 +749,19 @@ const SeeMoreButton = styled.a`
   }
 `;
 
+const KoloheBanner = styled.div`
+  width: 100%;
+  background: #598cc0;
+  text-align: center;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: bold;
+
+a {
+  color: white;
+}
+`;
+
 export {
   Nav,
   PageContainer,
@@ -788,4 +801,5 @@ export {
   MobileNavBar,
   FAQCard,
   Footer,
+  KoloheBanner
 };
