@@ -139,8 +139,7 @@ const EventPage = () => {
   };
 
 
-  const renderScoring = (emailAddress) => {
-    // {(!isShowing && renderContracted()) || (isShowing && renderExpanded())}
+  const renderScoring = (email) => {
 
     if (isShowing) {
       return (
@@ -155,7 +154,7 @@ const EventPage = () => {
         >
           <iframe
             id="scaled-frame"
-            src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
+            src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${email}`}
             frameBorder="no"
             allowtransparency="true"
             allowtullscreen="true"
@@ -175,7 +174,7 @@ const EventPage = () => {
         }} >
         <iframe
           id="scaled-frame"
-          src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
+          src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${email}`}
           frameBorder="no"
           allowtransparency="true"
           allowtullscreen="true"
