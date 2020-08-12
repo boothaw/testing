@@ -130,10 +130,11 @@ const ContentContainer = styled.div`
 `;
 
 const TitleSection = styled.div`
-  padding: 16px 0;
+  padding: 32px 0 16px;
 
   @media (max-width: 900px) {
     padding-top: 16px;
+    padding-bottom: 16px;
   }
 
   h2 {
