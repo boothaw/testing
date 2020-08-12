@@ -90,7 +90,7 @@ const TitleSection = styled.div`
 
 const VidContainer = styled.div`
   position: absolute;
-  bottom: -24p;
+  bottom: -24px;
   width: 640px;
 
   @media (max-width: 900px) {
@@ -293,9 +293,13 @@ const ColumnTwo = styled.div`
 const Footer = styled.div`
   width: 100%;
   background: black;
-  padding: 32px 16px;
+  padding: 16px;
   display: flex;
   justify-content: space-between;
+
+  div {
+    text-align: center;
+  }
 
   h4 {
     color: #f0f0f0;

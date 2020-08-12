@@ -34,7 +34,7 @@ import {
 import Modal from "../../components/modal/Modal";
 import useModal from "../../components/modal/useModal";
 
-import s100dark from "../../lib/assets/s100logodark.png";
+
 import kolohe from "../../lib/assets/Kolohe.png";
 import griffin from "../../lib/assets/Griffin.png";
 import ian from "../../lib/assets/Ian.png";
@@ -42,6 +42,7 @@ import dane from "../../lib/assets/Dane.png";
 import selema from "../../lib/assets/Selema.png";
 import taylor from "../../lib/assets/Taylor.png";
 import s100white from "../../lib/assets/s100logowhite.png";
+import s100dark from "../../lib/assets/s100logodark.png";
 import insta from "../../lib/assets/insta.png";
 
 const SplashPage = () => {
@@ -345,18 +346,13 @@ const SplashPage = () => {
           </ColumnTwo>
         </FaqContainer>
       </FaqSection>
-      {/* <div id="inplayer">
-        <div id="inplayer-109708" className="inplayer-paywall preview-frame" />
-      </div> */}
-      {/* <SorryBanner>Times are tough. If you want to watch and can't swing it, email us with your name, age and a bit about yourself.</SorryBanner> */}
       <Footer>
         <a href="/">
           <img src={s100white} />
         </a>
-        {/* email */}
         <div>
-          <h4>Have more questions? Contact Us.</h4>
-          <a href="mailto: surf100@stabmag.com">surf100@stabmag.com</a>
+          <h4>Have more questions?</h4>
+          <a href="/contact">Contact Us</a>
         </div>
         <a target="_blank" href="https://www.instagram.com/surf100.tv/?hl=en">
           <img src={insta} />

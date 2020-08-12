@@ -4,6 +4,10 @@ import Surf100Logo from "../../lib/assets/surf-100.png";
 
 import { surfers_trestles_2020 } from "../../surfers";
 
+import s100white from "../../lib/assets/s100logowhite.png";
+import insta from "../../lib/assets/insta.png";
+
+
 import {
   Nav,
   PageContainer,
@@ -634,10 +638,16 @@ const EventPage = () => {
       {/* <SorryBanner>Times are tough. If you want to watch and can't swing it, email us with your name, age and a bit about yourself.</SorryBanner> */}
 
       <Footer>
+        <a href="/">
+          <img src={s100white} />
+        </a>
         <div>
-          <h4>Have more questions? Contact Us.</h4>
-          <a href="mailto: surf100@stabmag.com">surf100@stabmag.com</a>
+          <h4>Have more questions?</h4>
+          <a href="/contact">Contact Us</a>
         </div>
+        <a target="_blank" href="https://www.instagram.com/surf100.tv/?hl=en">
+          <img src={insta} />
+        </a>
       </Footer>
     </>
   );

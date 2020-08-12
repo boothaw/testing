@@ -5,6 +5,7 @@ import "antd/dist/antd.css";
 
 import EventPage from "./pages/event/index";
 import SplashPage from "./pages/splash/index";
+import Contact from "./pages/contact/index";
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
       </Route>
       <Route exact path="/event">
         <EventPage />
+      </Route>
+      <Route exact path="/contact">
+        <Contact />
       </Route>
     </Router>
   );

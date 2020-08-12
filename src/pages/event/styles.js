@@ -249,7 +249,7 @@ font-size: 12px;
 
 const MainSection = styled.div`
   padding: 24px 24px 0 24px;
-  margin-top: 16px;
+  margin: 16px 0;
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
   border-radius: 8px;
@@ -709,8 +709,11 @@ const Footer = styled.div`
   background: black;
   padding: 16px;
   display: flex;
-  justify-content: center;
-  min-width: 375px;
+  justify-content: space-between;
+
+  div {
+    text-align: center;
+  }
 
   h4 {
     color: #f0f0f0;
