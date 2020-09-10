@@ -2,16 +2,19 @@ import styled from "styled-components";
 
 const Nav = styled.div`
   width: 100%;
-  height: 72px;
+  height: 100%;
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 32px;
+  padding: 8px 32px;
   min-width: 375px;
+  border-top: 8px solid #871612;
+  border-bottom: 1px solid black;
+
   img {
-    height: 30px;
+    height: 42px;
   }
   a {
     color: #000;
@@ -22,6 +25,12 @@ const Nav = styled.div`
     top: 0px;
     z-index: 3;
   }
+`;
+
+const Banner = styled.div`
+  width: 100%;
+  height: 8px;
+  background: #871612;
 `;
 
 const DesktopNavBar = styled.div`
@@ -61,8 +70,6 @@ const BodyContainer = styled.div`
   max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
-  display: grid;
-  grid-template-columns: 1fr 300px;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
 
@@ -149,12 +156,13 @@ const EventDetails = styled.div`
   .row {
     display: flex;
     align-items: center;
+
     i {
       margin-right: 4px;
+      margin-top: 6px;
+      align-self: start;
     }
-    :nth-of-type(2n) {
-      margin-left: 16px;
-    }
+
   }
   .host-banner {
     display: flex;
@@ -255,7 +263,6 @@ const MainSection = styled.div`
   border-radius: 8px;
   @media (max-width: 900px) {
     padding-top: 24px;
-    
   }
 `;
 
@@ -264,7 +271,6 @@ const SectionBlock = styled.div`
   padding-top: 85px;
   display: inline-block;
   margin-bottom: 48px;
-
 `;
 
 const Title = styled.h2`
@@ -564,7 +570,7 @@ const SorryBanner = styled.div`
   min-height: 32px;
   padding: 8px 16px;
   text-align: center;
-  background-color: red;
+  // background-color: red;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -616,10 +622,10 @@ const IframeContainerBig = styled.div`
 
   #scaled-frame {
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    // top: 0;
+    // left: 0;
+    // bottom: 0;
+    // right: 0;
     width: 100%;
     height: 100%;
     margin-bottom: 24px;
@@ -671,7 +677,7 @@ const ExpandButton = styled.button`
     margin-right: 24px;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 906px) {
     display: none;
   }
 `;
@@ -702,6 +708,10 @@ const FAQCard = styled.div`
     font-size: 13px;
     color: #757a8a;
   }
+
+  a {
+    color: #871612;
+  }
 `;
 
 const Footer = styled.div`
@@ -722,7 +732,7 @@ const Footer = styled.div`
   a {
     margin-top: auto;
     margin-bottom: auto;
-    color: red;
+    color: #871612;
   }
 
   @media (max-width: 900px) {
@@ -760,9 +770,9 @@ const KoloheBanner = styled.div`
   font-size: 16px;
   font-weight: bold;
 
-a {
-  color: white;
-}
+  a {
+    color: white;
+  }
 `;
 
 export {
@@ -804,5 +814,6 @@ export {
   MobileNavBar,
   FAQCard,
   Footer,
-  KoloheBanner
+  KoloheBanner,
+  Banner,
 };

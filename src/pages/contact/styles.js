@@ -7,8 +7,7 @@ const PageContainer = styled.div`
   grid-template-rows: 1fr auto auto;
 `;
 
-const ContentWrapper = styled.div`
-`;
+const ContentWrapper = styled.div``;
 
 const NavSection = styled.div`
   position: sticky;
@@ -21,7 +20,7 @@ const NavSection = styled.div`
 const Banner = styled.div`
   width: 100%;
   height: 8px;
-  background: #598cc0;
+  background: #871612;
 `;
 
 const NavBar = styled.div`
@@ -52,9 +51,9 @@ const KoloheBanner = styled.div`
   font-size: 16px;
   font-weight: bold;
 
-a {
-  color: white;
-}
+  a {
+    color: white;
+  }
 `;
 
 const Button = styled.a`
@@ -123,10 +122,6 @@ const ContentContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 0 16px;
-
-
-
-
 `;
 
 const TitleSection = styled.div`
@@ -161,7 +156,7 @@ const ContactInfo = styled.div`
   align-content: center;
 
   img {
-    padding: 0 32px;
+    padding: 0 32px 0 0;
   }
 
   div {
@@ -178,14 +173,13 @@ const ContactInfo = styled.div`
     div {
       font-size: 12px;
     }
-    img{
+    img {
       padding: 16px;
-     height: 100px;
-     width: 100px;
+      height: 100px;
+      width: 100px;
     }
   }
 `;
-
 
 export {
   PageContainer,
@@ -198,5 +192,5 @@ export {
   ContentContainer,
   TitleSection,
   ContactInfo,
-  ContentWrapper
+  ContentWrapper,
 };

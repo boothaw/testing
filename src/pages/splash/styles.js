@@ -10,12 +10,13 @@ const NavSection = styled.div`
   background: white;
   z-index: 1;
   border-bottom: 1px solid black;
+  border-top: 8px solid #871612;
 `;
 
 const Banner = styled.div`
   width: 100%;
   height: 8px;
-  background: #598cc0;
+  background: #871612;
 `;
 
 const NavBar = styled.div`
@@ -48,7 +49,7 @@ const ContentContainer = styled.div`
 
 const Button = styled.a`
   :hover {
-    color: #598cc0;
+    color: #871612;
   }
   background: white;
   color: black;
@@ -114,7 +115,7 @@ const VidSection = styled.div`
 
 const Featuring = styled.div`
   width: 100%;
-  background: #e98956;
+  background: #d5d5d5;
   padding: 56px 0 32px 0;
 
   h2 {
@@ -129,21 +130,34 @@ const Featuring = styled.div`
 `;
 
 const HeadShot = styled.img`
-  width: 275px;
+  width: 100%;
+  max-width: 175px;
   height: auto;
 
   @media (max-width: 900px) {
-    width: 120px;
+    min-width: 150px;
+  }
+`;
+
+const HostShot = styled.img`
+  width: 200px;
+  height: auto;
+
+  @media (max-width: 900px) {
+    width: 100px;
   }
 `;
 
 const HeadShotContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 32px;
+  row-gap: 32px;
 
   @media (max-width: 900px) {
-    justify-content: space-evenly;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8px;
+    row-gap: 8px;
   }
 `;
 
@@ -165,6 +179,10 @@ const ProfileContainer = styled.div`
 const HostedSection = styled.div`
   background: black;
   padding: 32px 0px;
+
+  .hosted {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
   h2 {
     color: #f0f0f0;
@@ -192,9 +210,8 @@ const Description = styled.div`
 `;
 
 const ShowTime = styled.div`
-  background: #8c6295;
+  background: #871612;
   padding 32px 0;
-  
 
   @media (max-width: 900px) {
     padding: 16px;
@@ -206,6 +223,10 @@ const ShowTime = styled.div`
 
   h2 {
       font-size: 38px;
+      color: #000;
+  }
+  p{
+    color: #000;
   }
 
 `;
@@ -223,8 +244,22 @@ const TimeOz = styled.div`
   width: 400px;
   font-size: 32px;
   margin-right: 0;
+  align-self: center;
+
+  .west {
+    align-self: end;
+  }
+
+  @media (max-width: 900px) {
+    width: 300px;
+  }
+`;
+
+const TimeWOz = styled.div`
+  width: 400px;
+  font-size: 32px;
+  margin-right: 0;
   align-self: flex-end;
-  tex-align: right;
 
   @media (max-width: 900px) {
     width: 300px;
@@ -275,6 +310,12 @@ const ColumnOne = styled.div`
   p {
     margin-top: 0;
   }
+  a {
+    color: #871612;
+    :hover {
+      color: #871612;
+    }
+  }
 `;
 
 const ColumnTwo = styled.div`
@@ -287,6 +328,12 @@ const ColumnTwo = styled.div`
   }
   p {
     margin-top: 0;
+  }
+  a {
+    color: #871612;
+    :hover {
+      color: #871612;
+    }
   }
 `;
 
@@ -302,13 +349,16 @@ const Footer = styled.div`
   }
 
   h4 {
-    color: #f0f0f0;
+    color: #871612;
   }
 
   a {
     margin-top: auto;
     margin-bottom: auto;
-    color: red;
+    color: #871612;
+    :hover {
+      color: #871612;
+    }
   }
 
   @media (max-width: 900px) {
@@ -348,9 +398,13 @@ const KoloheBanner = styled.div`
   font-size: 16px;
   font-weight: bold;
 
-a {
-  color: white;
-}
+  a {
+    color: white;
+  }
+`;
+
+const HeaderImg = styled.img`
+  width: 100%;
 `;
 
 export {
@@ -379,5 +433,8 @@ export {
   VidSection,
   NavSection,
   SorryBanner,
-  KoloheBanner
+  KoloheBanner,
+  HeaderImg,
+  TimeWOz,
+  HostShot,
 };

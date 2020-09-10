@@ -1,30 +1,39 @@
-import kolohe from "./lib/assets/Kolohe.png";
-import griffin from "./lib/assets/Griffin.png";
-import ian from "./lib/assets/Ian.png";
+import jack from "./lib/assets/jack.jpg";
+import jay from "./lib/assets/jay.jpg";
+import jacob from "./lib/assets/jacob.jpg";
+import kael from "./lib/assets/kael.jpg";
 
 export const surfers_trestles_2020 = [
   {
-    name: "Kolohe Andino",
-    photo: kolohe,
-    age: 26,
-    hometown: "San Clemente, CA, USA",
+    name: "Jack Robinson",
+    photo: jack,
+    age: 22,
+    hometown: "Margaret River, WA, Australia",
     bio:
-      "Kolohe Andino is currently Lowers’ alpha male. Ruling by respect, not fear, Brother struts through his kingdom with long, confident strides, often scratching into waves that others would need a motor, a paddle, or a push from daddy to catch. Then he surfs them with a Navy Seal’s precision and tap dancer’s grace.",
+      "Jack Robinson is a top-5 barrel-rider in the world, and the best to ever do it at North Point. His read of the ocean is entirely preternatural—he sees things other surfers do not, and has a technique that borders on perfection. Despite being just 22, he is the odds-on favorite to win this event.",
   },
   {
-    name: "Griffin Colapinto",
-    photo: griffin,
+    name: "Jay Davies",
+    photo: jay,
+    age: 33,
+    hometown: "Yallingup, WA, Australia",
+    bio:
+      "The next in line for North Point supremacy is the silverback himself, Jay Davies. A little older and a little wiser, Jay will likely wait for the biggest, meanest double-ups of the day to begin his rampage against the youths. Having recently been subjected to laboring on a tugboat, Jay’s got a surf career to revive.",
+  },
+  {
+    name: "Jacob Willcox",
+    photo: jacob,
+    age: 23,
+    hometown: "Margaret River, WA, Australia",
+    bio:
+      "Being the sole goofyfoot in the draw, Jacob will be at a distinct disadvantage at North Point. That’s not how he sees it though. In Jacob’s eyes, his ability to stall and maximize tube time will clip the naturals at their knees and prove once and for all that screwfoots can go both ways.",
+  },
+  {
+    name: "Kael Walsh",
+    photo: kael,
     age: 21,
-    hometown: "San Clemente, CA, USA",
+    hometown: "Yallingup, WA, Australia",
     bio:
-      "The next in line for Lowers supremacy is Griffin Colapinto, whose very existence threatens Kolohe’s reign. More of a “feel” surfer than Brother, Griffin’s languid approach is easy on the eyes and warming to the heart. But don’t let his leisurely gait fool you--Griff’s as competitive as they come and would love nothing more than to knock Kolohe from his royal perch. ",
-  },
-  {
-    name: "Ian Crane",
-    photo: ian,
-    age: 26,
-    hometown: "San Clemente, CA, USA",
-    bio:
-      "The jester. The outcast. The horse whose hue skews dark. As a goofy-footer and non-CT surfer, Ian Crane is the least likely Surf100 winner...on paper. The funny thing about paper, though, is that it tends to fall apart in water. And for our money, Crane-o’s got the most creative bag of the bunch, which might just be the difference-maker at this cookie-cutter point.",
+      "Kael Walsh is the undisputed darkhorse of this Surf100. With a blatant disregard for reef impact, he’s one you might expect to take off well under the lip or huck himself off a heaving closeout section. If he falls, he falls. If he doesn’t, watch out. ",
   },
 ];
