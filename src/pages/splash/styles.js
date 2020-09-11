@@ -32,10 +32,8 @@ const Banner = styled.div`
     text-align: center;
   }
 
-  .countdown {
-    @media (min-width: 900px) {
-      display: none;
-    }
+  @media (min-width: 900px) {
+    display: none;
   }
 `;
 
