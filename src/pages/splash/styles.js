@@ -349,7 +349,7 @@ const Footer = styled.div`
   }
 
   h4 {
-    color: #871612;
+    color: white;
   }
 
   a {
@@ -357,7 +357,7 @@ const Footer = styled.div`
     margin-bottom: auto;
     color: #871612;
     :hover {
-      color: #871612;
+      color: white;
     }
   }
 

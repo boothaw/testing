@@ -136,9 +136,7 @@ const EventPage = () => {
         </div>
         <SecondaryText>
           Clips are scored out of 100 points, so take what you’d give a wave out
-          of 10 and move the decimal one to the right. It’s not rocket surgery,
-          but if you do a good job, you can win a custom …Lost Surfboards
-          quiver.
+          of 10 and move the decimal one to the right. It’s not rocket surgery.
         </SecondaryText>
         <SeeMoreButton href="/event/#giveaway">
           Tap your email below to be entered.
@@ -204,7 +202,7 @@ const EventPage = () => {
           onClick={() => setActiveTab("Giveaway")}
           active={activeTab === "Giveaway"}
         >
-          ...Lost Surfboard Giveaway
+          Surfboard Giveaway
         </MenuItem>
         <MenuItem
           href="/event/#competitors"
@@ -268,12 +266,12 @@ const EventPage = () => {
 
             <div id="inplayer-121240" className="inplayer-paywall"></div>
 
-            <div>
+            {/* <div>
               <ExpandButton onClick={toggle}>
                 {isShowing ? "Collapse Scoring" : "Expand Scoring"}
               </ExpandButton>
               {renderScoring()}
-            </div>
+            </div> */}
 
             <MobileNavBar>{renderNavMenu()}</MobileNavBar>
 

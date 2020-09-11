@@ -733,6 +733,9 @@ const Footer = styled.div`
     margin-top: auto;
     margin-bottom: auto;
     color: #871612;
+    :hover {
+      color: white;
+    }
   }
 
   @media (max-width: 900px) {
