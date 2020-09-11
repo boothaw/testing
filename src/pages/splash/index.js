@@ -95,7 +95,7 @@ const SplashPage = () => {
           <a href="/">
             <img src={s100dark} />
           </a>
-          {/* <Countdown date={Date.now()} /> */}
+          <Countdown date={Date.now()} />
           <div>
             <Button href="/event">Watch the Event</Button>
           </div>
