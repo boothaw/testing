@@ -33,6 +33,7 @@ import {
   HeaderImg,
   TimeWOz,
   HostShot,
+  CountCountainer,
 } from "./styles";
 
 // import Modal from "../../components/modal/Modal";
@@ -115,13 +116,16 @@ const SplashPage = () => {
           <a href="/">
             <img src={s100dark} />
           </a>
-          <Countdown date={"09/17/2020 6:00 PM PST"} renderer={renderer} />
-          {/* "09/17/2020 6:00 PM PST" */}
-          {/* Date.now() + 10000 */}
+          <CountCountainer>
+            <Countdown date={"09/17/2020 6:00 PM PST"} renderer={renderer} />
+          </CountCountainer>{" "}
           <div>
             <Button href="/event">Watch the Event</Button>
           </div>
         </NavBar>
+        <Banner>
+          <Countdown date={"09/17/2020 6:00 PM PST"} renderer={renderer} />
+        </Banner>
       </NavSection>
       <HeaderImg src={imgheader}></HeaderImg>
 
