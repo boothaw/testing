@@ -266,7 +266,7 @@ const EventPage = () => {
               className="inplayer-paywall preview-frame"
             ></div> */}
 
-            <div id="inplayer-121240" class="inplayer-paywall"></div>
+            <div id="inplayer-121240" className="inplayer-paywall"></div>
 
             <div>
               <ExpandButton onClick={toggle}>
@@ -345,7 +345,7 @@ const EventPage = () => {
                   </ul>
                   {isRegistered ? (
                     <div>
-                      {" "}
+                      {console.log(email)}
                       <h3>Registration Complete!</h3>
                     </div>
                   ) : (

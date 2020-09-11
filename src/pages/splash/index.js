@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Countdown from "react-countdown";
 
 import {
   NavBar,
@@ -94,6 +95,7 @@ const SplashPage = () => {
           <a href="/">
             <img src={s100dark} />
           </a>
+          {/* <Countdown date={Date.now()} /> */}
           <div>
             <Button href="/event">Watch the Event</Button>
           </div>
