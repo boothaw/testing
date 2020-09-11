@@ -576,7 +576,9 @@ const EventPage = () => {
         </BodyContainer>
       </PageContainer>
       {/* <SorryBanner>Times are tough. If you want to watch and can't swing it, email us with your name, age and a bit about yourself.</SorryBanner> */}
-
+      <KoloheBanner>
+        <a href="/trestles">Surf 100 - Trestles</a>
+      </KoloheBanner>
       <Footer>
         <a href="/">
           <img src={s100white} />

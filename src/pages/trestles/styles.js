@@ -10,31 +10,12 @@ const NavSection = styled.div`
   background: white;
   z-index: 1;
   border-bottom: 1px solid black;
-  border-top: 8px solid #871612;
 `;
 
 const Banner = styled.div`
   width: 100%;
-  color: #d5d5d5;
-  font-weight: 600;
-  font-size: 18px;
-  text-transform: uppercase;
-  font-size: 12px;
-  padding: 4px;
-
-  span {
-    color: #871612;
-    margin: 0;
-  }
-
-  p {
-    margin: 0;
-    text-align: center;
-  }
-
-  @media (min-width: 900px) {
-    display: none;
-  }
+  height: 8px;
+  background: #598cc0;
 `;
 
 const NavBar = styled.div`
@@ -57,27 +38,6 @@ const NavBar = styled.div`
   }
 `;
 
-const CountCountainer = styled.div`
-  color: #d5d5d5;
-  font-weight: bold;
-  font-size: 18px;
-  text-transform: uppercase;
-
-  span {
-    color: #871612;
-    margin: 0;
-  }
-
-  p {
-    margin: 0;
-    text-align: center;
-  }
-
-  @media (max-width: 900px) {
-    display: none;
-  }
-`;
-
 const ContentContainer = styled.div`
   max-width: 900px;
   margin-left: auto;
@@ -88,7 +48,7 @@ const ContentContainer = styled.div`
 
 const Button = styled.a`
   :hover {
-    color: #871612;
+    color: #598cc0;
   }
   background: white;
   color: black;
@@ -154,7 +114,7 @@ const VidSection = styled.div`
 
 const Featuring = styled.div`
   width: 100%;
-  background: #d5d5d5;
+  background: #e98956;
   padding: 56px 0 32px 0;
 
   h2 {
@@ -169,34 +129,21 @@ const Featuring = styled.div`
 `;
 
 const HeadShot = styled.img`
-  width: 100%;
-  max-width: 175px;
+  width: 275px;
   height: auto;
 
   @media (max-width: 900px) {
-    min-width: 150px;
-  }
-`;
-
-const HostShot = styled.img`
-  width: 200px;
-  height: auto;
-
-  @media (max-width: 900px) {
-    width: 100px;
+    width: 120px;
   }
 `;
 
 const HeadShotContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 32px;
-  row-gap: 32px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 
   @media (max-width: 900px) {
-    grid-template-columns: 1fr 1fr;
-    column-gap: 8px;
-    row-gap: 8px;
+    justify-content: space-evenly;
   }
 `;
 
@@ -218,10 +165,6 @@ const ProfileContainer = styled.div`
 const HostedSection = styled.div`
   background: black;
   padding: 32px 0px;
-
-  .hosted {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 
   h2 {
     color: #f0f0f0;
@@ -249,8 +192,9 @@ const Description = styled.div`
 `;
 
 const ShowTime = styled.div`
-  background: #871612;
+  background: #8c6295;
   padding 32px 0;
+  
 
   @media (max-width: 900px) {
     padding: 16px;
@@ -262,10 +206,6 @@ const ShowTime = styled.div`
 
   h2 {
       font-size: 38px;
-      color: #000;
-  }
-  p{
-    color: #000;
   }
 
 `;
@@ -283,22 +223,8 @@ const TimeOz = styled.div`
   width: 400px;
   font-size: 32px;
   margin-right: 0;
-  align-self: center;
-
-  .west {
-    align-self: end;
-  }
-
-  @media (max-width: 900px) {
-    width: 300px;
-  }
-`;
-
-const TimeWOz = styled.div`
-  width: 400px;
-  font-size: 32px;
-  margin-right: 0;
   align-self: flex-end;
+  tex-align: right;
 
   @media (max-width: 900px) {
     width: 300px;
@@ -349,12 +275,6 @@ const ColumnOne = styled.div`
   p {
     margin-top: 0;
   }
-  a {
-    color: #871612;
-    :hover {
-      color: #871612;
-    }
-  }
 `;
 
 const ColumnTwo = styled.div`
@@ -367,12 +287,6 @@ const ColumnTwo = styled.div`
   }
   p {
     margin-top: 0;
-  }
-  a {
-    color: #871612;
-    :hover {
-      color: #871612;
-    }
   }
 `;
 
@@ -388,16 +302,13 @@ const Footer = styled.div`
   }
 
   h4 {
-    color: white;
+    color: #f0f0f0;
   }
 
   a {
     margin-top: auto;
     margin-bottom: auto;
-    color: #871612;
-    :hover {
-      color: white;
-    }
+    color: red;
   }
 
   @media (max-width: 900px) {
@@ -431,7 +342,7 @@ const SorryBanner = styled.div`
 
 const KoloheBanner = styled.div`
   width: 100%;
-  background: #871612;
+  background: #598cc0;
   text-align: center;
   padding: 8px;
   font-size: 16px;
@@ -440,10 +351,6 @@ const KoloheBanner = styled.div`
   a {
     color: white;
   }
-`;
-
-const HeaderImg = styled.img`
-  width: 100%;
 `;
 
 export {
@@ -473,8 +380,4 @@ export {
   NavSection,
   SorryBanner,
   KoloheBanner,
-  HeaderImg,
-  TimeWOz,
-  HostShot,
-  CountCountainer,
 };

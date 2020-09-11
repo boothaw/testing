@@ -771,7 +771,7 @@ const SeeMoreButton = styled.a`
 
 const KoloheBanner = styled.div`
   width: 100%;
-  background: #598cc0;
+  background: #871612;
   text-align: center;
   padding: 8px;
   font-size: 16px;

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Countdown from "react-countdown";
 
 import {
   NavBar,
@@ -30,39 +29,26 @@ import {
   NavSection,
   SorryBanner,
   KoloheBanner,
-  HeaderImg,
-  TimeWOz,
-  HostShot,
-  CountCountainer,
 } from "./styles";
 
-// import Modal from "../../components/modal/Modal";
-// import useModal from "../../components/modal/useModal";
+import Modal from "../../components/modal/Modal";
+import useModal from "../../components/modal/useModal";
 
-import kael from "../../lib/assets/kael.jpg";
-import jack from "../../lib/assets/jack.jpg";
-import jay from "../../lib/assets/jay.jpg";
-import jacob from "../../lib/assets/jacob.jpg";
-
-import yadin from "../../lib/assets/yadin.jpg";
+import kolohe from "../../lib/assets/Kolohe.png";
+import griffin from "../../lib/assets/Griffin.png";
+import ian from "../../lib/assets/Ian.png";
 import dane from "../../lib/assets/Dane.png";
-import selema from "../../lib/assets/selema.jpg";
+import selema from "../../lib/assets/Selema.png";
 import taylor from "../../lib/assets/Taylor.png";
 import s100white from "../../lib/assets/s100logowhite.png";
 import s100dark from "../../lib/assets/s100logodark.png";
 import insta from "../../lib/assets/insta.png";
-import imgheader from "../../lib/assets/site_header.jpg";
 
 const SplashPage = () => {
-  // const { isShowing, toggle } = useModal();
+  const { isShowing, toggle } = useModal();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(true);
   const [isRegistered, setIsRegistered] = useState(false);
-
-  // return (
-  //   <div>
-  //     <button className="button-default" onClick={toggle}>Show Modal</button>
-  //   </div>
 
   useEffect(() => {
     const emailRegistered = localStorage.getItem("SURF100.email");
@@ -89,57 +75,37 @@ const SplashPage = () => {
     }
   }, []);
 
-  const Completionist = () => <span>SHOW IS STARTING</span>;
-
-  const renderer = ({ days, hours, minutes, seconds, completed }) => {
-    if (completed) {
-      // Render a completed state
-      return <Completionist />;
-    } else {
-      // Render a countdown
-      return (
-        <div class="countdown">
-          <p>
-            <span>Show time</span> : <span>{days} Days</span> :{" "}
-            <span>{hours} Hours</span> : <span>{minutes} Minutes</span> :{" "}
-            <span>{seconds} Seconds</span>
-          </p>
-        </div>
-      );
-    }
-  };
-
   return (
     <PageContainer>
       <NavSection>
+        {" "}
+        <Banner></Banner>
         <NavBar>
           <a href="/">
             <img src={s100dark} />
           </a>
-          <CountCountainer>
-            <Countdown date={"09/17/2020 6:00 PM PST"} renderer={renderer} />
-          </CountCountainer>{" "}
           <div>
-            <Button href="/event">Buy Now</Button>
+            <Button href="/event">Current Scoring Page</Button>
           </div>
         </NavBar>
-        <Banner>
-          <Countdown date={"09/17/2020 6:00 PM PST"} renderer={renderer} />
-        </Banner>
       </NavSection>
-      <HeaderImg src={imgheader}></HeaderImg>
+      <KoloheBanner>
+        <a href="https://stabmag.com/news/kolohe-andino-wins-surf100-at-lower-trestles/">
+          Kolohe Andino wins inaugural Surf100 at Lowers
+        </a>
+      </KoloheBanner>
 
       <ContentContainer>
         <TitleSection>
           <h2>An audience-judged, 100-minute wave riding demonstration.</h2>
-          <h2>6pm (PST) September 17, 2020</h2>
+          <h2>6pm (PST) August 6, 2020</h2>
         </TitleSection>
         <VidSection>
           <VidContainer>
             {" "}
             <ReactPlayer
               className="plyr"
-              url="https://www.youtube.com/watch?v=CvaBHhiKddY&feature=youtu.be"
+              url="https://youtu.be/F-uIHXwf87I"
               controls="true"
               width="100%"
             />
@@ -151,44 +117,38 @@ const SplashPage = () => {
           <h2>Featuring:</h2>
           <HeadShotContainer>
             <ProfileContainer>
-              <HeadShot src={kael}></HeadShot>
-              <h5>Kael Walsh</h5>
-              <p>(in yellow)</p>
-            </ProfileContainer>
-            <ProfileContainer>
-              <HeadShot src={jack}></HeadShot>
-              <h5>Jack Robinson</h5>
-              <p>(in red)</p>
-            </ProfileContainer>
-            <ProfileContainer>
-              <HeadShot src={jay}></HeadShot>
-              <h5>Jay Davies</h5>
+              <HeadShot src={kolohe}></HeadShot>
+              <h5>Kolohe Andino</h5>
               <p>(in black)</p>
             </ProfileContainer>
             <ProfileContainer>
-              <HeadShot src={jacob}></HeadShot>
-              <h5>Jacob Willcox</h5>
+              <HeadShot src={griffin}></HeadShot>
+              <h5>Griffin Colapinto</h5>
+              <p>(in orange)</p>
+            </ProfileContainer>
+            <ProfileContainer>
+              <HeadShot src={ian}></HeadShot>
+              <h5>Ian Crane</h5>
               <p>(in blue)</p>
             </ProfileContainer>
           </HeadShotContainer>
         </ContentContainer>
       </Featuring>
-
       <HostedSection>
         <ContentContainer>
           <h2>Hosted by:</h2>
-          <HeadShotContainer className="hosted">
+          <HeadShotContainer>
             <ProfileContainer>
-              <HostShot src={dane}></HostShot>
+              <HeadShot src={dane}></HeadShot>
               <h5>Dane Reynolds</h5>
             </ProfileContainer>
             <ProfileContainer>
-              <HostShot src={selema}></HostShot>
+              <HeadShot src={selema}></HeadShot>
               <h5>Selema Masekela</h5>
             </ProfileContainer>
             <ProfileContainer>
-              <HostShot src={yadin}></HostShot>
-              <h5>Yadin Nicol</h5>
+              <HeadShot src={taylor}></HeadShot>
+              <h5>Taylor Knox</h5>
             </ProfileContainer>
           </HeadShotContainer>
         </ContentContainer>
@@ -202,21 +162,30 @@ const SplashPage = () => {
               Surf 100 is a waveriding exposition that takes place over a
               single, 100-minute period and is judged live, at a later date, by
               the internet. All of this is done following social distancing
-              guidelines. In this edition, West Oz mainstays Jack Robinson, Jay
-              Davies, Jacob Willcox, and Kael Walsh will paddle out for a
-              100-minute waveriding demonstration at North Point.
+              guidelines. San Clemente favorite sons Kolohe Andino, Griffin
+              Colapinto, and Ian Crane will paddle out for a 100-minute
+              waveriding demonstration at Lower Trestles.
             </p>
             <p>
-              While negotiating a typical North Point crowd, the surfers can
-              ride as many waves as they want in the 100-minute session. Each
-              wave will be scored by the audience out of 100 points apiece. The
-              surfer with the best two-wave total, according to the internet,
+              The surfers can ride as many waves as they want in the 100-minute
+              session. Each wave will be considered a separate “clip” that can
+              be used in their final “section”. Each section will consist of two
+              clips—one right, one left—which will be judged out of 100 points
+              apiece, 200 points total. (See above for more info on judging.)
+            </p>
+            <p>
+              While negotiating a typical Lowers crowd, they’ll attempt to
+              capture the best two-wave (right + left) video clip in the
+              allotted time.
+            </p>
+            <p>
+              The best section (two clip total), according to the internet,
               wins.
             </p>
             <p>
-              The show will be anchored by the no holds-barred team of analysts
-              and thought leaders, Dane Reynolds, Selema Masekela, and Yadin
-              Nicol.
+              The show will be anchored with the no holds-barred team of
+              analysts and thought leaders, Dane Reynolds, Taylor Knox and
+              Selema Masekela.
             </p>
           </ul>
         </Description>
@@ -225,14 +194,11 @@ const SplashPage = () => {
         <ShowContent>
           <h2>Show Time:</h2>
           <TimeUs>
-            <p>6pm, Thursday September 17, California (PST)</p>
+            <p>6pm, Thursday August 6, California (PST)</p>
           </TimeUs>
           <TimeOz>
-            <p>11am, Friday September 18, QLD/NSW/VIC (AEST)</p>
+            <p>11am, Friday August 7, QLD/NSW/VIC (AEST)</p>
           </TimeOz>
-          <TimeWOz>
-            <p>9 am, Friday September 18, West Oz (AWST)</p>
-          </TimeWOz>
         </ShowContent>
       </ShowTime>
       <FaqSection id="faq">
@@ -241,15 +207,29 @@ const SplashPage = () => {
           <ColumnOne>
             <h4>When is the event live?</h4>
             <p>
-              6pm, Thursday September 17, California (PST) & 11am, Friday
-              September 18, QLD/NSW/VIC (AEST)
+              6pm, Thursday August 6, California (PST) & 11am, Friday August 7,
+              QLD/NSW/VIC (AEST){" "}
             </p>
+
+            <h4>Are there going to be more events?</h4>
+            <p>
+              Pending the success of the first event, we plan on shooting this
+              in different regions, globally.
+            </p>
+
+            <h4>Does it cost money to download the app?</h4>
+            <p>There’s no app, all viewing takes place on the web browser.</p>
 
             <h4>How long is the broadcast?</h4>
             <p>
-              110 minutes. The 100 minute event (played in “real-time”) plus
-              some pre and post show.
+              110 minutes. The 100 minute event plus some pre and post show.
             </p>
+
+            <h4>
+              I’m on a phone so only have the Safari browser, will I be able to
+              watch Surf 100?
+            </h4>
+            <p>Yes.</p>
 
             <h4>Why are you showing the event after the fact? And not live?</h4>
             <p>
@@ -263,7 +243,7 @@ const SplashPage = () => {
             </h4>
             <p>
               You can watch and score at the same time. Obvs, you can’t view
-              full screen
+              full screen.
             </p>
 
             <h4>Can I watch on one device and score on another?</h4>
@@ -274,8 +254,11 @@ const SplashPage = () => {
 
             <h4>How do I pre-order the pay per view?</h4>
             <p>
-              <a href="/event">Click here.</a>
+              <a href="/trestles">Click here.</a>
             </p>
+
+            <h4>Does it cost more to get the pay per view in HD.</h4>
+            <p>No.</p>
 
             <h4>
               Oh, and does this $USD14,99 get me the season or just one show?
@@ -303,9 +286,17 @@ const SplashPage = () => {
             <h4>What does the winner win?</h4>
             <p>Bragging rights.</p>
 
+            <h4>Is there a separate contest for the viewers who judge?</h4>
+            <p>
+              We have our head critic, Mikey Ciaramella, reveal his scores after
+              our audience scores are locked. At the end of the event, the judge
+              with the same or nearest score to Mikey will win a three-board
+              Mayhem quiver.{" "}
+            </p>
+
             <h4>Can we judge as a group?</h4>
             <p>
-              No, singular judging only, sorry. Everyone can judge individually.
+              No, singular judging only sorry. Everyone can judge individually.
             </p>
 
             <h4>What do I do if my video doesn’t work?</h4>
@@ -314,13 +305,13 @@ const SplashPage = () => {
               athletic surfer from Virginia, will help you through it.
             </p>
 
-            <h4>Does Dane Reynolds judge?</h4>
-            <p>No. He’s on commentary.</p>
-
             <h4>
               What if I’m late to the screening? Do I start from the start?
             </h4>
             <p>You’ll start mid-broadcast.</p>
+
+            <h4>Can I watch on my phone and judge at the same time?</h4>
+            <p>Yup. Your log-in will work on two devices.</p>
 
             <h4>Can I watch it on my smart TV?</h4>
             <p>
@@ -333,8 +324,10 @@ const SplashPage = () => {
 
             <h4>Do I have to judge every wave?</h4>
             <p>
-              Not the “irrelevant waves” with insignificant scores. But every
-              wave of note you will have to score.
+              You don’t but our aim is to have consistent judging so we hope you
+              can so we can have as large a sample size as possible. Also,
+              missing a wave makes it significantly less likely you’ll win the
+              ...Lost quiver.
             </p>
 
             <h4>
@@ -354,9 +347,7 @@ const SplashPage = () => {
           </ColumnTwo>
         </FaqContainer>
       </FaqSection>
-      <KoloheBanner>
-        <a href="/trestles">Surf 100 - Trestles</a>
-      </KoloheBanner>
+      <div id="inplayer-109708" class="inplayer-paywall"></div>
       <Footer>
         <a href="/">
           <img src={s100white} />
