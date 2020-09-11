@@ -97,7 +97,7 @@ const SplashPage = () => {
           </a>
           {/* <Countdown date={Date.now()} /> */}
           <div>
-            <Button href="/event">Watch the Event</Button>
+            <Button href="/event">Buy Now</Button>
           </div>
         </NavBar>
       </NavSection>
