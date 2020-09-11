@@ -231,6 +231,10 @@ const MenuBar = styled.div`
   @media (max-width: 900px) {
     height: 72px;
   }
+
+  a:hover {
+    color: #871612;
+  }
 `;
 
 const MenuItem = styled.a`
