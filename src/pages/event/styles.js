@@ -248,7 +248,7 @@ padding: 0px 24px;
 color: #000;
 text-decoration: none;
 font-weight: bold;
-font-size: 12px;
+font-size: 14px;
 & {
   cursor: pointer;
 }
