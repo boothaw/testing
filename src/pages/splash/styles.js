@@ -11,6 +11,22 @@ const NavSection = styled.div`
   z-index: 1;
   border-bottom: 1px solid black;
   border-top: 8px solid #871612;
+
+  .countdown {
+    color: #d5d5d5;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    span {
+      color: #871612;
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
 `;
 
 const Banner = styled.div`

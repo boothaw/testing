@@ -88,6 +88,26 @@ const SplashPage = () => {
     }
   }, []);
 
+  const Completionist = () => <span>SHOW IS STARTING</span>;
+
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+      // Render a completed state
+      return <Completionist />;
+    } else {
+      // Render a countdown
+      return (
+        <div class="countdown">
+          <p>
+            <span>Show time</span> : <span>{days} Days</span> :{" "}
+            <span>{hours} Hours</span> : <span>{minutes} Minutes</span> :{" "}
+            <span>{seconds} Seconds</span>
+          </p>
+        </div>
+      );
+    }
+  };
+
   return (
     <PageContainer>
       <NavSection>
@@ -95,7 +115,9 @@ const SplashPage = () => {
           <a href="/">
             <img src={s100dark} />
           </a>
-          <Countdown date={Date.now()} />
+          <Countdown date={"09/17/2020 6:00 PM PST"} renderer={renderer} />
+          {/* "09/17/2020 6:00 PM PST" */}
+          {/* Date.now() + 10000 */}
           <div>
             <Button href="/event">Watch the Event</Button>
           </div>
