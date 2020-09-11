@@ -70,13 +70,13 @@ const BodyContainer = styled.div`
   max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 300px;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
-
   @media (max-width: 1205px) {
     grid-template-columns: 1fr;
   }
-
   background-color: #fafafa;
 `;
 
@@ -539,17 +539,17 @@ const ButtonSecondary = styled.button`
 const MobileView = styled.div`
   display: initial;
 
-  @media (min-width: 1205px) {
+  @media (min-width: 1208px) {
     display: none;
   }
 
-  // @media (max-width: 1205px) {
-  //   display: row;
-  //   grid-template-columns: 1fr 1fr;
-  //   grid-column-gap: 16px;
-  //   grid-row-gap: 16px;
-  //   margin-top: 16px;
-  // }
+  @media (max-width: 1208px) {
+    display: row;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    margin-top: 16px;
+  }
 `;
 
 const DesktopView = styled.div`
@@ -562,7 +562,7 @@ const DesktopView = styled.div`
 
 const StickyScroll = styled.div`
   position: sticky;
-  top: 78px;
+  top: 104px;
 `;
 
 const SorryBanner = styled.div`

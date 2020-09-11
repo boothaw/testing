@@ -274,8 +274,10 @@ const EventPage = () => {
             </div> */}
 
             <MobileNavBar>{renderNavMenu()}</MobileNavBar>
-
-            <EventDetails>{renderGiveAway()}</EventDetails>
+            <MobileView>
+              {" "}
+              <EventDetails>{renderGiveAway()}</EventDetails>
+            </MobileView>
             <MainSection>
               <SectionBlock id="concept">
                 <SectionTitle>What is SURF 100?</SectionTitle>
@@ -565,11 +567,11 @@ const EventPage = () => {
             </MainSection>
           </Main>
           <Panel>
-            {/* <DesktopView>
+            <DesktopView>
               <StickyScroll>
                 <EventDetails>{renderGiveAway()}</EventDetails>
               </StickyScroll>
-            </DesktopView> */}
+            </DesktopView>
           </Panel>
         </BodyContainer>
       </PageContainer>
