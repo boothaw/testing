@@ -33,6 +33,7 @@ import {
   HeaderImg,
   TimeWOz,
   HostShot,
+  CountCountainer,
 } from "./styles";
 
 // import Modal from "../../components/modal/Modal";
@@ -88,6 +89,26 @@ const SplashPage = () => {
     }
   }, []);
 
+  const Completionist = () => <span>SHOW IS STARTING</span>;
+
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+      // Render a completed state
+      return <Completionist />;
+    } else {
+      // Render a countdown
+      return (
+        <div class="countdown">
+          <p>
+            <span>Show time</span> : <span>{days} Days</span> :{" "}
+            <span>{hours} Hours</span> : <span>{minutes} Minutes</span> :{" "}
+            <span>{seconds} Seconds</span>
+          </p>
+        </div>
+      );
+    }
+  };
+
   return (
     <PageContainer>
       <NavSection>
@@ -95,11 +116,16 @@ const SplashPage = () => {
           <a href="/">
             <img src={s100dark} />
           </a>
-          {/* <Countdown date={Date.now()} /> */}
+          <CountCountainer>
+            <Countdown date={"09/17/2020 6:00 PM PST"} renderer={renderer} />
+          </CountCountainer>{" "}
           <div>
             <Button href="/event">Buy Now</Button>
           </div>
         </NavBar>
+        <Banner>
+          <Countdown date={"09/17/2020 6:00 PM PST"} renderer={renderer} />
+        </Banner>
       </NavSection>
       <HeaderImg src={imgheader}></HeaderImg>
 

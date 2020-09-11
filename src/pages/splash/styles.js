@@ -15,8 +15,28 @@ const NavSection = styled.div`
 
 const Banner = styled.div`
   width: 100%;
-  height: 8px;
-  background: #871612;
+  color: #d5d5d5;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 4px;
+
+  span {
+    color: #871612;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    text-align: center;
+  }
+
+  .countdown {
+    @media (min-width: 900px) {
+      display: none;
+    }
+  }
 `;
 
 const NavBar = styled.div`
@@ -36,6 +56,27 @@ const NavBar = styled.div`
     div img {
       height: 32px;
     }
+  }
+`;
+
+const CountCountainer = styled.div`
+  color: #d5d5d5;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+
+  span {
+    color: #871612;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    display: none;
   }
 `;
 
@@ -437,4 +478,5 @@ export {
   HeaderImg,
   TimeWOz,
   HostShot,
+  CountCountainer,
 };
