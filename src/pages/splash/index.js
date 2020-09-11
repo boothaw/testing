@@ -113,7 +113,7 @@ const SplashPage = () => {
             {" "}
             <ReactPlayer
               className="plyr"
-              url="https://youtu.be/F-uIHXwf87I"
+              url="https://www.youtube.com/watch?v=CvaBHhiKddY&feature=youtu.be"
               controls="true"
               width="100%"
             />
