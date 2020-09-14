@@ -74,7 +74,7 @@ const BodyContainer = styled.div`
   grid-template-columns: 1fr 300px;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
-  @media (max-width: 1205px) {
+  @media (max-width: 1225px) {
     grid-template-columns: 1fr;
   }
   background-color: #fafafa;
@@ -543,11 +543,11 @@ const ButtonSecondary = styled.button`
 const MobileView = styled.div`
   display: initial;
 
-  @media (min-width: 1208px) {
+  @media (min-width: 1225px) {
     display: none;
   }
 
-  @media (max-width: 1208px) {
+  @media (max-width: 1225px) {
     display: row;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 16px;
@@ -559,7 +559,7 @@ const MobileView = styled.div`
 const DesktopView = styled.div`
   display: initial;
 
-  @media (max-width: 1205px) {
+  @media (max-width: 1225px) {
     display: none;
   }
 `;
@@ -619,7 +619,6 @@ const IframeContainerSmall = styled.div`
 const IframeContainerBig = styled.div`
   position: relative;
   width: 100%;
-  max-width: 875px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;

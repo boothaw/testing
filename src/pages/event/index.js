@@ -150,7 +150,7 @@ const EventPage = () => {
       return (
         <IframeContainerBig
           style={{
-            maxWidth: 900,
+            maxWidth: 875,
             width: "100%",
             height: 925,
             overflow: "auto",
@@ -169,9 +169,9 @@ const EventPage = () => {
     return (
       <IframeContainerSmall
         style={{
-          maxWidth: 900,
+          maxWidth: 875,
           width: "100%",
-          height: 325,
+          height: 350,
           overflow: "auto",
         }}
       >
@@ -266,12 +266,12 @@ const EventPage = () => {
 
             <div id="inplayer-121240" className="inplayer-paywall"></div>
 
-            {/* <div>
+            <div>
               <ExpandButton onClick={toggle}>
                 {isShowing ? "Collapse Scoring" : "Expand Scoring"}
               </ExpandButton>
               {renderScoring()}
-            </div> */}
+            </div>
 
             <MobileNavBar>{renderNavMenu()}</MobileNavBar>
             <MobileView>
