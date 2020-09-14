@@ -127,6 +127,8 @@ const SplashPage = () => {
           <Countdown date={"09/17/2020 6:00 PM PST"} renderer={renderer} />
         </Banner>
       </NavSection>
+      <h4>TESTING SITE TESTING SITE TESTING SITE </h4>
+
       <HeaderImg src={imgheader}></HeaderImg>
 
       <ContentContainer>

@@ -257,6 +257,8 @@ const EventPage = () => {
       <PageContainer>
         <BodyContainer>
           <Main>
+            <h4>TESTING SITE TESTING SITE TESTING SITE </h4>
+
             <EventDetails>{renderCTA()}</EventDetails>
 
             {/* <div
